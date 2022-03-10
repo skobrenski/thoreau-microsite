@@ -109,11 +109,13 @@ const zoomEndEvents = [
   'touchcancel'
 ]
 
-const startZoomOut = () => {
+const startZoomOut = (e) => {
+  e.preventDefault();
   startZooming(ZoomOut);
 }
 
-const startZoomIn = () => {
+const startZoomIn = (e) => {
+  e.preventDefault();
   startZooming(ZoomIn);
 }
 
@@ -127,9 +129,28 @@ zoomEndEvents.forEach((event) => {
   zoomPlus.addEventListener(event, endZooming);
 })
 
+const touchscreen = navigator.maxTouchPoints > 0 || navigator.platform == 'iPhone'
+
+if (touchscreen) {
+  zoomMinus.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+  })
+
+  zoomPlus.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+  })
+
+  dragLayer.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+  })
+
+  artifactWrapper.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+  })
+}
+
 export const setupDragHandling = () => {
   let dragstarted = false;
-  const touchscreen = navigator.maxTouchPoints > 0 || navigator.platform == 'iPhone'
   const originalPos = { x: 0, y: 0 };
 
   const dragEnded = (e) => {
@@ -142,6 +163,13 @@ export const setupDragHandling = () => {
   const updateDxDy = () => {
     zoom.dx = originalPos.x + (zoom.endpos.x - zoom.startpos.x) / zoom.scale;
     zoom.dy = originalPos.y + (zoom.endpos.y - zoom.startpos.y) / zoom.scale;
+
+    let xExtent = dragLayer.clientWidth / 2;
+    let yExtent = dragLayer.clientHeight / 2;
+
+    zoom.dx = Math.min(xExtent, Math.max(-xExtent, zoom.dx));
+    zoom.dy = Math.min(yExtent, Math.max(-yExtent, zoom.dy));
+
     scaleAndTranslate();
   }
 
@@ -209,20 +237,22 @@ export const setupDragHandling = () => {
     dragEnded(e);
   });
 
-  dragLayer.addEventListener('touchend', (e) => {
-    dragEnded(e);
-  });
-
   dragLayer.addEventListener('pointercancel', () => {
     // dragEnded();
   });
 
-  dragLayer.addEventListener('touchcancel', () => {
-    // dragEnded();
+  dragLayer.addEventListener('pointerleave', (e) => {
+    dragEnded(e);
   });
 
-  dragLayer.addEventListener('pointerleave', () => {
-    // dragEnded();
+  dragLayer.addEventListener('touchend', (e) => {
+    e.preventDefault();
+    dragEnded(e);
+  });
+
+  dragLayer.addEventListener('touchcancel', (e) => {
+    e.preventDefault();
+    dragEnded(e);
   });
 
 }

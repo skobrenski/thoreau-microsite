@@ -4,7 +4,7 @@
 import { app } from "./modules/globals.js";
 import { pages } from "./modules/pages.js";
 
-const artifactPages = pages.filter(p => p.type == 'artifact');
+const artifactPages = pages.filter(p => p.type == 'artifact' && p.enabled);
 
 let selectRight, selectLeft, selectedImage, carouselImageContainer;
 
