@@ -72,6 +72,8 @@
   --explore-content-heading-weight: 600;
   --back-button-size: 2em;
   --next-object: 0.85em;
+  --unmute-right-distance: 5.5vw;
+  --next-object-right-margin: 6vw;
 }
 @media only screen and (min-aspect-ratio: 5/2) and (min-width: 1280px) {
   :root {
@@ -905,7 +907,7 @@ div.artifact .dropdown.explore-another-object {
   }
 }
 div.artifact .dropdown.explore-another-object button {
-  padding: 0.35rem 1.5rem;
+  padding: 0.35rem 1.5rem 0.33rem 1.5rem;
   border: none;
   border-radius: 1.25rem;
   background-color: var(--navy-blue);
@@ -925,11 +927,10 @@ div.artifact .dropdown.explore-another-object button span.toggler-icon {
 div.artifact .dropdown.explore-another-object button svg.toggler-svg {
   display: inline-block;
   margin-left: 0.7rem;
-  margin-bottom: 0rem;
-  vertical-align: bottom;
-  width: 1.3rem;
+  margin-bottom: -0.2rem;
+  width: 1.5rem;
   height: auto;
-  stroke-width: 1;
+  stroke-width: 1.5;
   color: white;
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
@@ -1132,8 +1133,13 @@ div.artifact .arrow-scroll-down {
   background-color: transparent;
   transition: opacity var(--explore-images-timing), visibility var(--explore-images-timing);
 }
-div.artifact .arrow-scroll-down img {
-  height: 1.6rem;
+div.artifact .arrow-scroll-down svg.arrow-scroll-down {
+  display: block;
+  transform: rotate(0turn);
+  margin: 0;
+  color: var(--white);
+  stroke-width: 1.5px;
+  height: 2rem;
   width: auto;
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
@@ -1166,7 +1172,7 @@ div.artifact .mute-button {
 div.artifact .mute-button.secondary {
   position: fixed;
   bottom: 2.5vh;
-  right: 5.5vw;
+  right: var(--unmute-right-distance);
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact .mute-button.secondary {
@@ -1214,41 +1220,6 @@ div.artifact .mute-button svg + div {
 div.artifact .mute-button > * {
   pointer-events: none;
 }
-div.artifact .back-to-top {
-  visibility: hidden;
-  opacity: 0;
-  font-size: var(--explore-content-mute-button);
-  color: var(--mute-button-color);
-  position: fixed;
-  bottom: 11.4vh;
-  right: 17vw;
-  font-family: "Nunito Sans", sans-serif;
-  font-weight: 400;
-  pointer-events: auto;
-  height: 2em;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  div.artifact .back-to-top {
-    bottom: 6.5vh;
-    right: unset;
-    left: 6vw;
-    width: 30vw;
-  }
-}
-div.artifact .back-to-top .label {
-  text-transform: uppercase;
-  margin-right: 0.5em;
-}
-div.artifact .back-to-top img {
-  margin-top: -0.2em;
-  height: 0.9em;
-  width: auto;
-  transform: rotate(0.5turn);
-}
 div.artifact .next-object-footer {
   display: flex;
   visibility: hidden;
@@ -1267,8 +1238,35 @@ div.artifact .next-object-footer {
   font-size: var(--next-object);
   font-weight: 300;
 }
+div.artifact .next-object-footer .back-to-top {
+  font-size: var(--explore-content-mute-button);
+  color: var(--navy-blue);
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  pointer-events: auto;
+  height: 1.5rem;
+  margin-right: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+div.artifact .next-object-footer .back-to-top .label {
+  text-transform: uppercase;
+  margin-right: 0.5em;
+}
+div.artifact .next-object-footer .back-to-top svg.back-to-top-svg {
+  display: inline-block;
+  transform: rotate(0.5turn);
+  margin: 0 0 0.275rem 0;
+  align-self: center;
+  stroke-width: 2.25;
+  color: var(--navy-blue);
+  height: 0.75rem;
+  width: auto;
+}
 div.artifact .next-object-footer button {
-  margin-right: 7vw;
+  margin-right: var(--next-object-right-margin);
   background-color: var(--navy-blue);
   opacity: 1;
   color: white;
@@ -1281,9 +1279,9 @@ div.artifact .next-object-footer button svg.next-object-svg {
   transform: rotate(-0.25turn);
   margin-left: 0.7rem;
   vertical-align: middle;
-  stroke-width: 1;
+  stroke-width: 1.8;
   color: white;
-  height: 1.05rem;
+  height: 0.7rem;
   width: auto;
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
@@ -1943,9 +1941,6 @@ div.artifact.walking-stick .background-image-container.walking-stick:before {
   background-color: var(--thoreau-purple);
 }
 
-#walking-stick[data-content-scroll="0"] .arrow-scroll-down img {
-  content: url("../media/images/arrow-scroll-down.png");
-}
 #walking-stick[data-content-scroll="0"] .unmute-footer {
   display: flex;
 }
@@ -1991,9 +1986,12 @@ div.artifact.walking-stick .background-image-container.walking-stick:before {
   opacity: 1;
 }
 #walking-stick[data-content-scroll="0"] .arrow-scroll-down {
-  bottom: 5.5vh;
+  bottom: 5.25vh;
   visibility: visible;
   opacity: 1;
+}
+#walking-stick[data-content-scroll="0"] .arrow-scroll-down svg {
+  color: black;
 }
 
 #walking-stick[data-content-scroll="1"] .background-image-container.walking-stick:before {
