@@ -9,6 +9,10 @@ const dragLayer = artifactWrapper.querySelector('div.draglayer');
 const ZoomIn = Symbol("ZoomIn")
 const ZoomOut = Symbol("ZoomOut")
 
+const touchScreen = navigator.maxTouchPoints > 0;
+
+const iPhoneTouchScreen = touchScreen && navigator.platform == 'iPhone'
+
 export const zoom = {
   scale: 1,
   maxScale: 3,
@@ -33,6 +37,7 @@ export const zoom = {
 const scaleAndTranslate = () => {
   let transform = `scale(${zoom.scale}) translate(${zoom.dx}px, ${zoom.dy}px)`;
   app.logger(transform);
+  app.logger(zoom);
   artifactImage.style.transform = transform;
   if (zoom.scale > 1) {
     artifactWrapper.classList.add('zoomed');
@@ -129,9 +134,7 @@ zoomEndEvents.forEach((event) => {
   zoomPlus.addEventListener(event, endZooming);
 })
 
-const touchscreen = navigator.maxTouchPoints > 0 || navigator.platform == 'iPhone'
-
-if (touchscreen) {
+if (touchScreen) {
   zoomMinus.addEventListener('contextmenu', (e) => {
     e.preventDefault();
   })
@@ -194,7 +197,7 @@ export const setupDragHandling = () => {
   // start
   //
 
-  if (touchscreen) {
+  if (touchScreen) {
     dragLayer.addEventListener('touchstart', (e) => {
       e.preventDefault();
       e.stopPropagation();
@@ -202,16 +205,19 @@ export const setupDragHandling = () => {
       down(touch.clientX, touch.clientY);
     });
   }
-  dragLayer.addEventListener('pointerdown', (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    down(e.offsetX, e.offsetY);
-  });
+
+  if (!iPhoneTouchScreen) {
+    dragLayer.addEventListener('pointerdown', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      down(e.offsetX, e.offsetY);
+    });
+  }
 
   //
   // move
   //
-  if (touchscreen) {
+  if (touchScreen) {
     dragLayer.addEventListener('touchmove', (e) => {
       if (dragstarted) {
         e.preventDefault();
@@ -221,13 +227,15 @@ export const setupDragHandling = () => {
       }
     });
   }
-  dragLayer.addEventListener('pointermove', (e) => {
-    if (dragstarted) {
-      e.preventDefault();
-      e.stopPropagation();
-      move(e.offsetX, e.offsetY);
-    }
-  });
+  if (!iPhoneTouchScreen) {
+    dragLayer.addEventListener('pointermove', (e) => {
+      if (dragstarted) {
+        e.preventDefault();
+        e.stopPropagation();
+        move(e.offsetX, e.offsetY);
+      }
+    });
+  }
 
   //
   // end

@@ -13,6 +13,7 @@
   --white-rgba-00: rgba(255, 255, 255, 0);
   --november-skies: #a7bbca;
   --writing-mask: #cdd7e0;
+  --about-thoreau-close-background: #cdd7e0;
   --border-gray: gray;
   --border-light-gray: #ddd;
   --navy-blue: #25334b;
@@ -44,8 +45,9 @@
 :root {
   --content: 2rem;
   --main-title: 3.6rem;
-  --main-title-world: 8.6rem;
+  --main-title-world: 7.8rem;
   --main-description: 1.2rem;
+  --main-description-line-height: 2rem;
   --artifact-title: 2.1rem;
   --artifact-title-line-height: 2.4rem;
   --artifact-description: 1.2rem;
@@ -53,9 +55,15 @@
     clamp(0px, (0.4vh - 3.61px), 2px)
   );
   --artifact-description-line-height: calc(clamp(30px, (8vh - 26px), 60px));
+  --about-thoreau-title: 1.8rem;
+  --about-thoreau-description: 0.9rem;
+  --about-thoreau-description-line-height: 1.45rem;
+  --about-thoreau-close: 2rem;
+  --about-thoreau-close-radius: 1rem;
+  --about-thoreau-close-svg: 1.2rem;
   --zoom-button-size: 1.1rem;
-  --zoom-button-bottom: 0.8vh;
-  --zoom-button-right: 2.5vw;
+  --zoom-button-top: 89.5vh;
+  --zoom-button-right: 7vw;
   --zoom-button-height: 2rem;
   --zoom-button-width: 2.65rem;
   --zoom-icon-width: 0.9rem;
@@ -66,14 +74,17 @@
   --explore-content-letter-spacing: 0.75px;
   --explore-content-author: 0.88rem;
   --unmute-footer: 0.76rem;
+  --unmute-footer-height: 5.5vh;
+  --unmute-footer-items: 0.9rem;
   --explore-content-mute-button: 0.76rem;
   --explore-content-weight: 400;
   --explore-content-heading: 2.2rem;
   --explore-content-heading-weight: 600;
   --back-button-size: 2em;
-  --next-object: 0.85em;
+  --next-object: 0.875em;
+  --back-to-top: 0.87em;
   --unmute-right-distance: 5.5vw;
-  --next-object-right-margin: 6vw;
+  --next-object-right-margin: 7vw;
 }
 @media only screen and (min-aspect-ratio: 5/2) and (min-width: 1280px) {
   :root {
@@ -84,12 +95,17 @@
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   :root {
-    --main-title: 1.4rem;
-    --main-title-world: 1.7rem;
+    --main-title: 1.6rem;
+    --main-title-world: 1.9rem;
     --main-description: 1.4rem;
+    --main-description-letter-spacing: 0.25px;
     --artifact-title: 1.5rem;
     --artifact-description: 1.25rem;
     --artifact-description-line-height: 1.9rem;
+    --about-thoreau-title: 2.3rem;
+    --about-thoreau-description: 1.5rem;
+    --about-thoreau-description-line-height: 2.45rem;
+    --about-thoreau-close: 2rem;
     --explore-button: 1rem;
     --explore-content: 1.5rem;
     --explore-content-line-height: 160%;
@@ -100,12 +116,12 @@
     --explore-content-heading-weight: 600;
     --back-button-size: 1.4em;
     --unmute-footer: 0.8em;
-    --zoom-button-bottom: 0vh;
-    --zoom-button-right: 1vw;
-    --zoom-button-height: 2.7rem;
-    --zoom-button-width: 3.6rem;
+    --zoom-button-top: 48.5vh;
+    --zoom-button-right: 4vw;
+    --zoom-button-height: 2.6rem;
+    --zoom-button-width: 3.2rem;
     --zoom-icon-width: 1.3rem;
-    --zoom-divide-width: 0.2rem;
+    --zoom-divide-width: 0.3rem;
   }
 }
 @media only screen and (max-width: 320px) and (max-height: 570px) and (orientation: portrait) {
@@ -125,15 +141,19 @@
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   :root {
-    --main-title: 2.4rem;
-    --main-title-world: 4.8rem;
-    --main-description: 1rem;
+    --main-title: 1.4rem;
+    --main-title-world: 1.7rem;
+    --main-description: 1.2rem;
     --artifact-title: 1.6rem;
     --artifact-title-line-height: 2.4rem;
     --artifact-description: 1.2rem;
     --artifact-description-letter-spacing: calc(clamp(0px, (0.2vh - 3px), 2px));
     --artifact-description-line-height: calc(clamp(20px, (8vh - 26px), 60px));
     --zoom-button-size: 1.2rem;
+    --about-thoreau-title: 2rem;
+    --about-thoreau-description: 1.1rem;
+    --about-thoreau-description-line-height: 1.9rem;
+    --about-thoreau-close: 1.8rem;
     --explore: 2rem;
     --explore-button: 0.8rem;
     --explore-content: 1.2rem;
@@ -145,6 +165,12 @@
     --explore-content-heading-weight: 600;
     --back-button-size: 1.4em;
     --unmute-footer: 0.7em;
+    --zoom-button-right: 4vw;
+    --zoom-button-top: 85.5vh;
+    --zoom-button-height: 2.4rem;
+    --zoom-button-width: 3.2rem;
+    --zoom-icon-width: 1.3rem;
+    --zoom-divide-width: 0.3rem;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 320px) and (orientation: landscape) {
@@ -184,6 +210,7 @@
 :root {
   --explore-images-timing: 0.75s 0s ease-in-out;
   --explore-content-timing: 0.5s 0s ease-in-out;
+  --arrow-scroll-timing: 0.1s 0s ease-in-out;
   --explore-video-tint-timing: 0.5s 0s ease-in-out;
   --gallery-carousel-timing: 0.2s;
   --explore-menu-timing: 0.2s 0s ease-in-out;
@@ -241,7 +268,7 @@ div.artifact .content {
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact .content {
-    padding: 2vh 2vw 2vh 4vw;
+    padding: 0;
   }
 }
 div.artifact .content .absolute-content-container {
@@ -311,9 +338,12 @@ div.artifact .content .absolute-content-container.start .menu {
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact .content .absolute-content-container.start .menu {
-    margin-top: 0;
-    display: flex;
+    margin: 0;
+    padding: 0;
+    height: 8vh;
     align-items: center;
+    justify-content: space-between;
+    background-color: var(--mobile-header-gray);
   }
 }
 @media only screen and (min-aspect-ratio: 5/2) and (min-width: 1280px) {
@@ -349,16 +379,12 @@ div.artifact .content .absolute-content-container.start .menu .home a img {
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact .content .absolute-content-container.start .menu .home {
-    width: 9vh;
-    height: 9vh;
-    margin: 1rem 0.5rem 0.5rem 0;
+    display: none;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 320px) and (orientation: landscape) {
   div.artifact .content .absolute-content-container.start .menu .home {
-    width: 10vh;
-    height: 10vh;
-    margin: 0.5rem 0.5rem 0.5rem 0;
+    display: none;
   }
 }
 div.artifact .content .absolute-content-container.start .menu a {
@@ -392,7 +418,9 @@ div.artifact .content .absolute-content-container.start .menu .title .world {
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact .content .absolute-content-container.start .menu .title {
-    margin: 4vh 0 4vh 0;
+    display: block;
+    margin: 3vh 0 3vh 10vw;
+    padding-bottom: 0;
   }
 }
 div.artifact .content .absolute-content-container.start .content {
@@ -416,22 +444,23 @@ div.artifact .content .absolute-content-container.start .content .about-containe
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact .content .absolute-content-container.start .content .about-container {
-    margin: 0 5vw;
+    margin: 0 0 0 5vw;
     width: 70vw;
     align-self: center;
   }
 }
 @media only screen and (max-width: 320px) and (max-height: 570px) and (orientation: portrait) {
   div.artifact .content .absolute-content-container.start .content .about-container {
-    margin: 0 5vw;
+    margin: 0 0 0 5vw;
     width: 70vw;
     align-self: center;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact .content .absolute-content-container.start .content .about-container {
-    width: 35vw;
-    max-width: 35vw;
+    margin: 0 0 0 5vw;
+    width: 40vw;
+    max-width: 40vw;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
@@ -530,7 +559,7 @@ div.artifact .content .absolute-content-container.start .content .about-containe
 div.artifact .content .absolute-content-container.start .content .image-container {
   position: relative;
   margin: 5vh 4vw 0 0.5vw;
-  height: 82vh;
+  height: 77vh;
   width: 75%;
   display: flex;
   flex-direction: column;
@@ -557,9 +586,10 @@ div.artifact .content .absolute-content-container.start .content .image-containe
   left: 0;
   width: 100%;
   height: 100%;
+  cursor: grab;
 }
 div.artifact .content .absolute-content-container.start .content .image-container div.draglayer.dragging {
-  cursor: move;
+  cursor: grabbing;
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact .content .absolute-content-container.start .content .image-container {
@@ -598,35 +628,22 @@ div.artifact .content .absolute-content-container.start .content .image-containe
     height: 85vh;
   }
 }
-div.artifact .content .absolute-content-container.start .content .image-container .zoom-controls {
+div.artifact .content .absolute-content-container.start .content .zoom-controls {
   pointer-events: all;
   z-index: 2;
   position: absolute;
   right: var(--zoom-button-right);
-  bottom: var(--zoom-button-bottom);
+  top: var(--zoom-button-top);
   display: flex;
   flex-direction: row;
   justify-content: center;
   padding: 0em 0em;
 }
-@media only screen and (max-width: 320px) and (max-height: 570px) and (orientation: portrait) {
-  div.artifact .content .absolute-content-container.start .content .image-container .zoom-controls {
-    right: 2vw;
-    bottom: 1vh;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
-  div.artifact .content .absolute-content-container.start .content .image-container .zoom-controls {
-    right: 1vw;
-    bottom: 3vh;
-  }
-}
-div.artifact .content .absolute-content-container.start .content .image-container .zoom-controls button {
+div.artifact .content .absolute-content-container.start .content .zoom-controls button {
   padding: 0;
   margin: 0.075rem 0.25rem;
   margin: 0;
   width: var(--zoom-button-width);
-  height: calc(var(--zoom-button-size) * 1.4);
   height: var(--zoom-button-height);
   background-color: var(--navy-blue);
   border: none;
@@ -635,33 +652,33 @@ div.artifact .content .absolute-content-container.start .content .image-containe
   align-items: center;
   justify-content: center;
   pointer-events: all;
-  cursor: default;
+  cursor: pointer;
 }
-div.artifact .content .absolute-content-container.start .content .image-container .zoom-controls button img {
+div.artifact .content .absolute-content-container.start .content .zoom-controls button img {
   pointer-events: none;
   width: var(--zoom-icon-width);
   height: auto;
   margin: 0;
 }
-div.artifact .content .absolute-content-container.start .content .image-container .zoom-controls button i {
+div.artifact .content .absolute-content-container.start .content .zoom-controls button i {
   color: white;
   font-size: 140%;
 }
-div.artifact .content .absolute-content-container.start .content .image-container .zoom-controls button.zoom-minus {
+div.artifact .content .absolute-content-container.start .content .zoom-controls button.zoom-minus {
   border-top-left-radius: var(--zoom-button-height);
   border-bottom-left-radius: var(--zoom-button-height);
 }
-div.artifact .content .absolute-content-container.start .content .image-container .zoom-controls button.zoom-minus i {
+div.artifact .content .absolute-content-container.start .content .zoom-controls button.zoom-minus i {
   margin-right: -0.4rem;
 }
-div.artifact .content .absolute-content-container.start .content .image-container .zoom-controls button.zoom-plus {
+div.artifact .content .absolute-content-container.start .content .zoom-controls button.zoom-plus {
   border-top-right-radius: var(--zoom-button-height);
   border-bottom-right-radius: var(--zoom-button-height);
 }
-div.artifact .content .absolute-content-container.start .content .image-container .zoom-controls button.zoom-plus i {
+div.artifact .content .absolute-content-container.start .content .zoom-controls button.zoom-plus i {
   margin-left: -0.4rem;
 }
-div.artifact .content .absolute-content-container.start .content .image-container .zoom-controls .v-divide {
+div.artifact .content .absolute-content-container.start .content .zoom-controls .v-divide {
   width: var(--zoom-divide-width);
   min-width: 2px;
   background-color: white;
@@ -707,6 +724,10 @@ div.artifact .content .absolute-content-container .author .audio.player {
 div.artifact .content .absolute-content-container .author .audio.player .playpause {
   font-size: 2.6em;
   pointer-events: all;
+}
+div.artifact .content .absolute-content-container .author .audio.player .playpause .play,
+div.artifact .content .absolute-content-container .author .audio.player .playpause .pause {
+  cursor: pointer;
 }
 div.artifact .content .absolute-content-container .author .audio.player .playpause .play svg,
 div.artifact .content .absolute-content-container .author .audio.player .playpause .pause svg {
@@ -906,6 +927,11 @@ div.artifact .dropdown.explore-another-object {
     margin: 0 4vw 0 0;
   }
 }
+@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  div.artifact .dropdown.explore-another-object {
+    margin: 0 4vw 0 0;
+  }
+}
 div.artifact .dropdown.explore-another-object button {
   padding: 0.35rem 1.5rem 0.33rem 1.5rem;
   border: none;
@@ -933,7 +959,7 @@ div.artifact .dropdown.explore-another-object button svg.toggler-svg {
   stroke-width: 1.5;
   color: white;
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact .dropdown.explore-another-object button svg.toggler-svg {
     display: none;
   }
@@ -941,7 +967,7 @@ div.artifact .dropdown.explore-another-object button svg.toggler-svg {
 div.artifact .dropdown.explore-another-object button::after {
   display: none;
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact .dropdown.explore-another-object button {
     padding: 0.35rem 0;
     border: none;
@@ -1040,7 +1066,7 @@ div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li a.dropdow
   background-color: var(--navy-blue);
   color: white;
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show {
     position: absolute !important;
     top: 0;
@@ -1053,15 +1079,25 @@ div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li a.dropdow
     padding: 3vh 0 0 0 !important;
     background-color: var(--mobile-header-gray);
   }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  div.artifact .dropdown.explore-another-object ul.dropdown-menu.show {
+    left: -94vw;
+    width: 105vw;
+    height: 100vh;
+    padding: 5vh 0 0 0 !important;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show .close {
     display: block;
     position: absolute;
     top: 0.5vh;
     left: 86vw;
     color: var(--navy-blue);
+    border: 1px solid white;
     width: 2.6rem;
     height: 2.6rem;
-    border: 1px solid white;
     border-radius: 1.3rem;
     padding-left: 0.7rem;
     padding-top: 0rem;
@@ -1070,7 +1106,24 @@ div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li a.dropdow
     stroke-width: 2;
     width: 1rem;
     height: 1rem;
+    vertical-align: middle;
   }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  div.artifact .dropdown.explore-another-object ul.dropdown-menu.show .close {
+    top: 0.5vh;
+    left: 94vw;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 1.2rem;
+  }
+  div.artifact .dropdown.explore-another-object ul.dropdown-menu.show .close svg {
+    margin-bottom: -0.5rem;
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li {
     margin: 0;
     padding: 0;
@@ -1092,6 +1145,9 @@ div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li a.dropdow
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li.mobile-only {
     display: flex;
   }
+  div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li .item.popup {
+    font-size: 160%;
+  }
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li .item a.dropdown-item {
     display: inline-block;
     margin-right: auto;
@@ -1107,15 +1163,34 @@ div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li a.dropdow
     font-family: "Nunito Sans", sans-serif;
     font-size: 140%;
   }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li .item a.dropdown-item {
+    font-size: 140%;
+  }
+  div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li .item a.dropdown-item.small {
+    font-size: 120%;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li .item a.dropdown-item.disabled {
     color: gray;
   }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li .item.dropdown-divider {
     width: 20%;
     margin: 2rem 0;
     border: 1px solid white;
     opacity: 1;
   }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li .item.dropdown-divider {
+    margin: 1.2rem 0;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li .item.dropdown-divider.wide {
     width: 100%;
   }
@@ -1131,7 +1206,7 @@ div.artifact .arrow-scroll-down {
   display: flex;
   justify-content: center;
   background-color: transparent;
-  transition: opacity var(--explore-images-timing), visibility var(--explore-images-timing);
+  transition: opacity var(--explore-images-timing), visibility var(--explore-images-timing), bottom var(--arrow-scroll-timing);
 }
 div.artifact .arrow-scroll-down svg.arrow-scroll-down {
   display: block;
@@ -1173,6 +1248,10 @@ div.artifact .mute-button.secondary {
   position: fixed;
   bottom: 2.5vh;
   right: var(--unmute-right-distance);
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.02rem;
+  filter: drop-shadow(0 0 0.5rem var(--navy-blue));
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact .mute-button.secondary {
@@ -1239,13 +1318,14 @@ div.artifact .next-object-footer {
   font-weight: 300;
 }
 div.artifact .next-object-footer .back-to-top {
-  font-size: var(--explore-content-mute-button);
   color: var(--navy-blue);
   font-family: "Nunito Sans", sans-serif;
   font-weight: 400;
+  font-size: var(--back-to-top);
   pointer-events: auto;
   height: 1.5rem;
-  margin-right: 2rem;
+  margin-right: 2.5rem;
+  margin-bottom: -0.3rem;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -1254,15 +1334,16 @@ div.artifact .next-object-footer .back-to-top {
 div.artifact .next-object-footer .back-to-top .label {
   text-transform: uppercase;
   margin-right: 0.5em;
+  margin-top: -0.1rem;
 }
 div.artifact .next-object-footer .back-to-top svg.back-to-top-svg {
   display: inline-block;
   transform: rotate(0.5turn);
-  margin: 0 0 0.275rem 0;
-  align-self: center;
-  stroke-width: 2.25;
+  margin: 0 0 0 0.25rem;
+  align-self: flex-start;
+  stroke-width: 1.25;
   color: var(--navy-blue);
-  height: 0.75rem;
+  height: 1rem;
   width: auto;
 }
 div.artifact .next-object-footer button {
@@ -1271,17 +1352,18 @@ div.artifact .next-object-footer button {
   opacity: 1;
   color: white;
   border: 1px solid white;
-  border-radius: 1rem;
-  padding: 0.3em 0.75rem 0.3em 1rem;
+  border-radius: 1.5rem;
+  padding: 0.37em 0.25rem 0.33em 1.5rem;
 }
 div.artifact .next-object-footer button svg.next-object-svg {
   display: inline-block;
   transform: rotate(-0.25turn);
-  margin-left: 0.7rem;
+  margin-left: 0.8rem;
   vertical-align: middle;
-  stroke-width: 1.8;
+  margin-top: -0.1rem;
+  stroke-width: 1.15;
   color: white;
-  height: 0.7rem;
+  height: 0.9rem;
   width: auto;
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
@@ -1295,14 +1377,14 @@ div.artifact .next-object-footer button svg.next-object-svg {
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact .next-object-footer {
-    height: 6vh;
+    height: 10vh;
   }
 }
 div.artifact .unmute-footer {
   display: flex;
   display: none;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   pointer-events: auto;
   position: fixed;
@@ -1312,7 +1394,7 @@ div.artifact .unmute-footer {
   bottom: 0;
   left: 0;
   width: 100vw;
-  height: 5vh;
+  height: var(--unmute-footer-height);
   padding: 0;
   font-size: var(--unmute-footer);
   font-family: "Nunito Sans", sans-serif;
@@ -1320,7 +1402,14 @@ div.artifact .unmute-footer {
 }
 div.artifact .unmute-footer .label {
   margin-right: 18vw;
+  margin-left: auto;
+  margin-bottom: -0.3rem;
   color: var(--navy-blue);
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact .unmute-footer .label {
+    margin-bottom: 0;
+  }
 }
 div.artifact .unmute-footer.on .label {
   display: none;
@@ -1331,12 +1420,220 @@ div.artifact .unmute-footer.on .label {
     font-size: var(--unmute-footer);
   }
   div.artifact .unmute-footer .label {
-    margin-right: 38vw;
+    margin-right: 42vw;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact .unmute-footer {
-    height: 6vh;
+    height: 7vh;
+    font-size: var(--unmute-footer);
+  }
+  div.artifact .unmute-footer .label {
+    margin-right: 38vw;
+  }
+}
+div.artifact .unmute-footer .footer-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: var(--unmute-footer-items);
+  font-family: "Nunito Sans", sans-serif;
+  font-style: normal;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact .unmute-footer .footer-items {
+    display: none;
+  }
+}
+div.artifact .unmute-footer .footer-items .item {
+  margin: 0 0rem 0 1.5rem;
+}
+div.artifact .unmute-footer .footer-items .item a {
+  color: var(--white);
+}
+div.artifact .unmute-footer .footer-items .item.popup {
+  margin: 0 0.5rem 0 0;
+  padding: 0.45rem 2.5rem;
+  background-color: var(--navy-blue);
+}
+div.artifact .about-thoreau {
+  width: 30vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+  bottom: calc(var(--unmute-footer-height) + 2px);
+  background-color: var(--navy-blue);
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  div.artifact .about-thoreau {
+    width: 100vw;
+    min-height: 100vh;
+  }
+}
+div.artifact .about-thoreau .offcanvas-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30vw;
+  height: 8vh;
+  min-height: 8vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-right: 1.5rem;
+}
+div.artifact .about-thoreau .offcanvas-header button.close {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid white;
+  color: var(--navy-blue);
+  background-color: var(--november-skies);
+  border-radius: 1rem;
+}
+div.artifact .about-thoreau .offcanvas-header button.close svg {
+  display: block;
+  stroke-width: 3;
+  width: 0.8rem;
+  height: 0.8rem;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  div.artifact .about-thoreau .offcanvas-header {
+    position: sticky;
+    width: 100vw;
+    height: 8vh;
+    padding: 0;
+    border-bottom: 1px solid var(--white);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  div.artifact .about-thoreau .offcanvas-header button.close {
+    width: 2.6rem;
+    height: 2.6rem;
+    margin-right: 4vh;
+    border: 1px solid white;
+    border-radius: 1.3rem;
+    color: var(--navy-blue);
+    background-color: var(--november-skies);
+  }
+  div.artifact .about-thoreau .offcanvas-header button.close svg {
+    stroke-width: 3;
+    width: 1rem;
+    height: 1rem;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  div.artifact .about-thoreau .offcanvas-header button.close {
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 1.4rem;
+  }
+  div.artifact .about-thoreau .offcanvas-header button.close svg {
+    display: block;
+    stroke-width: 3;
+    width: 0.7rem;
+    height: 0.7rem;
+  }
+}
+div.artifact .about-thoreau .offcanvas-body {
+  margin: 0;
+  padding: 4.5vh 2vw 0 2vw;
+  display: flex;
+  flex-direction: column;
+}
+div.artifact .about-thoreau .offcanvas-body img {
+  width: 84%;
+  height: auto;
+}
+div.artifact .about-thoreau .offcanvas-body .about {
+  display: flex;
+  flex-direction: column;
+}
+div.artifact .about-thoreau .offcanvas-body .about .title {
+  margin: 1.9rem 0 1rem 0;
+  font-family: "Libre Caslon Text";
+  font-weight: 700;
+  font-size: var(--about-thoreau-title);
+  color: var(--november-skies);
+}
+div.artifact .about-thoreau .offcanvas-body .about hr.title {
+  width: 12%;
+  border-top: 1px solid var(--white);
+  margin: 0.5rem 0 1rem 0;
+  opacity: 1;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact .about-thoreau .offcanvas-body .about hr.title {
+    width: 30%;
+  }
+}
+div.artifact .about-thoreau .offcanvas-body .about .description {
+  width: 96%;
+  color: var(--white);
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: var(--about-thoreau-description);
+  line-height: var(--about-thoreau-description-line-height);
+}
+div.artifact .about-thoreau .offcanvas-body .about .description p:first-of-type {
+  margin-bottom: 1.5rem;
+}
+div.artifact .about-thoreau .offcanvas-body .about .description p:last-of-type {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact .about-thoreau .offcanvas-body {
+    margin: 0;
+    padding: 4vh 8vw;
+    display: flex;
+    flex-direction: column;
+    overflow-y: visible !important;
+  }
+  div.artifact .about-thoreau .offcanvas-body .about .title {
+    margin: 2.2rem 0 0.8rem 0;
+    font-family: "Libre Caslon Text";
+    font-weight: 700;
+    font-size: var(--about-thoreau-title);
+    color: var(--november-skies);
+  }
+  div.artifact .about-thoreau .offcanvas-body .about hr.title {
+    width: 14%;
+    margin: 0.8rem 0 1.4rem 0;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  div.artifact .about-thoreau .offcanvas-body {
+    margin: 0;
+    padding: 2vh 4vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  div.artifact .about-thoreau .offcanvas-body img {
+    height: 80%;
+    width: auto;
+  }
+  div.artifact .about-thoreau .offcanvas-body .about {
+    margin-left: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  div.artifact .about-thoreau .offcanvas-body .about .title {
+    margin: 1rem 0 0.6rem 0;
+    font-family: "Libre Caslon Text";
+    font-weight: 700;
+    font-size: var(--about-thoreau-title);
+    color: var(--november-skies);
+  }
+  div.artifact .about-thoreau .offcanvas-body .about hr.title {
+    width: 60%;
+    margin: 0.6rem 0 1.2rem 0;
   }
 }
 div.artifact .fixed-video-container {
@@ -1377,19 +1674,14 @@ div.artifact .fixed-video-container .video-wrapper .tint {
   visibility: visible;
   opacity: 1;
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: var(--white-rgba-00);
   transition: opacity var(--explore-images-timing), visibility var(--explore-images-timing), background-color var(--explore-video-tint-timing);
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact .fixed-video-container .video-wrapper {
     width: 100%;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
-  div.artifact .fixed-video-container .video-wrapper {
-    height: 85vh;
   }
 }
 div.artifact .fixed-video-container .video-wrapper .mute-button {
@@ -1457,6 +1749,9 @@ div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.sta
   width: 100%;
   max-width: 100vw;
 }
+div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.start .content .title {
+  color: var(--thoreau-blue);
+}
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.start {
     flex-direction: column;
@@ -1489,8 +1784,10 @@ div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.cur
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.curious {
-    top: 38vh;
-    left: 72vw;
+    top: 40vh;
+    left: 7vw;
+    width: 29vw;
+    max-width: 29vw;
   }
 }
 div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.his-experiments {
@@ -1514,8 +1811,10 @@ div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.his
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.his-experiments {
+    top: 6vh;
     left: 3vw;
-    max-width: 30vw;
+    width: 45vw;
+    max-width: 45vw;
   }
 }
 div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.would-it-not {
@@ -1550,12 +1849,6 @@ div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.wou
     left: 20vw;
     width: 58vw;
     max-width: 58vw;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
-  div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.would-it-not {
-    left: 3vw;
-    max-width: 30vw;
   }
 }
 div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.walden-sunset {
@@ -1655,6 +1948,12 @@ div.artifact.spyglass .background-image-container.spyglass:before {
   bottom: 5.5vh;
   visibility: visible;
   opacity: 1;
+  color: var(--navy-blue);
+}
+@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  #spyglass[data-content-scroll="0"] .arrow-scroll-down {
+    bottom: 6.5vh;
+  }
 }
 
 #spyglass[data-content-scroll="1"] .background-image-container.spyglass:before {
@@ -1808,6 +2107,7 @@ div.artifact.spyglass .background-image-container.spyglass:before {
 #spyglass[data-content-scroll="13"] .mute-button,
 #spyglass[data-content-scroll="14"] .mute-button {
   bottom: 11.5vh;
+  color: var(--white);
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   #spyglass[data-content-scroll="13"] .mute-button,
@@ -1884,12 +2184,6 @@ div.artifact.walking-stick .content.walking-stick .absolute-content-container.wa
     left: 20vw;
     width: 58vw;
     max-width: 58vw;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
-  div.artifact.walking-stick .content.walking-stick .absolute-content-container.walking-stick.i-have-met {
-    left: 3vw;
-    max-width: 30vw;
   }
 }
 div.artifact.walking-stick .content.walking-stick .absolute-content-container.walking-stick.forest-path {
@@ -1989,9 +2283,12 @@ div.artifact.walking-stick .background-image-container.walking-stick:before {
   bottom: 5.25vh;
   visibility: visible;
   opacity: 1;
+  color: var(--navy-blue);
 }
-#walking-stick[data-content-scroll="0"] .arrow-scroll-down svg {
-  color: black;
+@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  #walking-stick[data-content-scroll="0"] .arrow-scroll-down {
+    bottom: 6.5vh;
+  }
 }
 
 #walking-stick[data-content-scroll="1"] .background-image-container.walking-stick:before {
@@ -2067,6 +2364,7 @@ div.artifact.walking-stick .background-image-container.walking-stick:before {
 }
 #walking-stick[data-content-scroll="4"] .mute-button {
   bottom: 11.5vh;
+  color: var(--white);
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   #walking-stick[data-content-scroll="4"] .mute-button {
@@ -2095,7 +2393,7 @@ div.artifact.flute .content.flute .absolute-content-container.flute.start {
   width: 100%;
   max-width: 100vw;
 }
-div.artifact.flute .content.flute .absolute-content-container.flute.start .title {
+div.artifact.flute .content.flute .absolute-content-container.flute.start .content .title {
   color: var(--thoreau-green);
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
@@ -2142,12 +2440,6 @@ div.artifact.flute .content.flute .absolute-content-container.flute.my-music .au
     left: 20vw;
     width: 58vw;
     max-width: 58vw;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
-  div.artifact.flute .content.flute .absolute-content-container.flute.my-music {
-    left: 3vw;
-    max-width: 30vw;
   }
 }
 div.artifact.flute .content.flute .absolute-content-container.flute.stream-path {
@@ -2248,7 +2540,13 @@ div.artifact.flute .background-image-container.flute:before {
 #flute[data-content-scroll="0"] .arrow-scroll-down {
   bottom: 5.5vh;
   visibility: visible;
+  color: var(--navy-blue);
   opacity: 1;
+}
+@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  #flute[data-content-scroll="0"] .arrow-scroll-down {
+    bottom: 6.5vh;
+  }
 }
 
 #flute[data-content-scroll="1"] .background-image-container.flute:before {
@@ -2322,6 +2620,7 @@ div.artifact.flute .background-image-container.flute:before {
 }
 #flute[data-content-scroll="4"] .mute-button {
   bottom: 11.5vh;
+  color: var(--white);
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   #flute[data-content-scroll="4"] .mute-button {
@@ -2350,7 +2649,7 @@ div.artifact.snowshoes .content.snowshoes .absolute-content-container.snowshoes.
   width: 100%;
   max-width: 100vw;
 }
-div.artifact.snowshoes .content.snowshoes .absolute-content-container.snowshoes.start .title {
+div.artifact.snowshoes .content.snowshoes .absolute-content-container.snowshoes.start .content .title {
   color: var(--snowshoe-brown);
 }
 div.artifact.snowshoes .content.snowshoes .absolute-content-container.snowshoes.start img.artifact {
@@ -2408,12 +2707,6 @@ div.artifact.snowshoes .content.snowshoes .absolute-content-container.snowshoes.
     left: 20vw;
     width: 58vw;
     max-width: 58vw;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
-  div.artifact.snowshoes .content.snowshoes .absolute-content-container.snowshoes.perhaps-the-best {
-    left: 3vw;
-    max-width: 30vw;
   }
 }
 div.artifact.snowshoes .content.snowshoes .absolute-content-container.snowshoes.snowy-leaves {
@@ -2511,6 +2804,12 @@ div.artifact.snowshoes .fixed-image-container.snowshoes img.snowshoes-detail {
   bottom: 5.5vh;
   visibility: visible;
   opacity: 1;
+  color: var(--navy-blue);
+}
+@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  #snowshoes[data-content-scroll="0"] .arrow-scroll-down {
+    bottom: 6.5vh;
+  }
 }
 
 #snowshoes[data-content-scroll="1"] .background-image-container.snowshoes:before {
@@ -2584,10 +2883,552 @@ div.artifact.snowshoes .fixed-image-container.snowshoes img.snowshoes-detail {
 }
 #snowshoes[data-content-scroll="4"] .mute-button {
   bottom: 11.5vh;
+  color: var(--white);
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   #snowshoes[data-content-scroll="4"] .mute-button {
     bottom: 6.5vh;
+  }
+}
+
+.unmute-footer {
+  display: flex;
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: auto;
+  position: fixed;
+  z-index: 3;
+  opacity: 0.9;
+  background-color: var(--medium-gray);
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: var(--unmute-footer-height);
+  padding: 0;
+  font-size: var(--unmute-footer);
+  font-family: "Nunito Sans", sans-serif;
+  font-style: italic;
+}
+.unmute-footer .label {
+  margin-right: 18vw;
+  margin-left: auto;
+  margin-bottom: -0.3rem;
+  color: var(--navy-blue);
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  .unmute-footer .label {
+    margin-bottom: 0;
+  }
+}
+.unmute-footer.on .label {
+  display: none;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  .unmute-footer {
+    height: 5vh;
+    font-size: var(--unmute-footer);
+  }
+  .unmute-footer .label {
+    margin-right: 42vw;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  .unmute-footer {
+    height: 7vh;
+    font-size: var(--unmute-footer);
+  }
+  .unmute-footer .label {
+    margin-right: 38vw;
+  }
+}
+.unmute-footer .footer-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: var(--unmute-footer-items);
+  font-family: "Nunito Sans", sans-serif;
+  font-style: normal;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  .unmute-footer .footer-items {
+    display: none;
+  }
+}
+.unmute-footer .footer-items .item {
+  margin: 0 0rem 0 1.5rem;
+}
+.unmute-footer .footer-items .item a {
+  color: var(--white);
+}
+.unmute-footer .footer-items .item.popup {
+  margin: 0 0.5rem 0 0;
+  padding: 0.45rem 2.5rem;
+  background-color: var(--navy-blue);
+}
+
+.about-thoreau {
+  width: 30vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+  bottom: calc(var(--unmute-footer-height) + 2px);
+  background-color: var(--navy-blue);
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  .about-thoreau {
+    width: 100vw;
+    min-height: 100vh;
+  }
+}
+.about-thoreau .offcanvas-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30vw;
+  height: 8vh;
+  min-height: 8vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-right: 1.5rem;
+}
+.about-thoreau .offcanvas-header button.close {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid white;
+  color: var(--navy-blue);
+  background-color: var(--november-skies);
+  border-radius: 1rem;
+}
+.about-thoreau .offcanvas-header button.close svg {
+  display: block;
+  stroke-width: 3;
+  width: 0.8rem;
+  height: 0.8rem;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  .about-thoreau .offcanvas-header {
+    position: sticky;
+    width: 100vw;
+    height: 8vh;
+    padding: 0;
+    border-bottom: 1px solid var(--white);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  .about-thoreau .offcanvas-header button.close {
+    width: 2.6rem;
+    height: 2.6rem;
+    margin-right: 4vh;
+    border: 1px solid white;
+    border-radius: 1.3rem;
+    color: var(--navy-blue);
+    background-color: var(--november-skies);
+  }
+  .about-thoreau .offcanvas-header button.close svg {
+    stroke-width: 3;
+    width: 1rem;
+    height: 1rem;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  .about-thoreau .offcanvas-header button.close {
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 1.4rem;
+  }
+  .about-thoreau .offcanvas-header button.close svg {
+    display: block;
+    stroke-width: 3;
+    width: 0.7rem;
+    height: 0.7rem;
+  }
+}
+.about-thoreau .offcanvas-body {
+  margin: 0;
+  padding: 4.5vh 2vw 0 2vw;
+  display: flex;
+  flex-direction: column;
+}
+.about-thoreau .offcanvas-body img {
+  width: 84%;
+  height: auto;
+}
+.about-thoreau .offcanvas-body .about {
+  display: flex;
+  flex-direction: column;
+}
+.about-thoreau .offcanvas-body .about .title {
+  margin: 1.9rem 0 1rem 0;
+  font-family: "Libre Caslon Text";
+  font-weight: 700;
+  font-size: var(--about-thoreau-title);
+  color: var(--november-skies);
+}
+.about-thoreau .offcanvas-body .about hr.title {
+  width: 12%;
+  border-top: 1px solid var(--white);
+  margin: 0.5rem 0 1rem 0;
+  opacity: 1;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  .about-thoreau .offcanvas-body .about hr.title {
+    width: 30%;
+  }
+}
+.about-thoreau .offcanvas-body .about .description {
+  width: 96%;
+  color: var(--white);
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: var(--about-thoreau-description);
+  line-height: var(--about-thoreau-description-line-height);
+}
+.about-thoreau .offcanvas-body .about .description p:first-of-type {
+  margin-bottom: 1.5rem;
+}
+.about-thoreau .offcanvas-body .about .description p:last-of-type {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  .about-thoreau .offcanvas-body {
+    margin: 0;
+    padding: 4vh 8vw;
+    display: flex;
+    flex-direction: column;
+    overflow-y: visible !important;
+  }
+  .about-thoreau .offcanvas-body .about .title {
+    margin: 2.2rem 0 0.8rem 0;
+    font-family: "Libre Caslon Text";
+    font-weight: 700;
+    font-size: var(--about-thoreau-title);
+    color: var(--november-skies);
+  }
+  .about-thoreau .offcanvas-body .about hr.title {
+    width: 14%;
+    margin: 0.8rem 0 1.4rem 0;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  .about-thoreau .offcanvas-body {
+    margin: 0;
+    padding: 2vh 4vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .about-thoreau .offcanvas-body img {
+    height: 80%;
+    width: auto;
+  }
+  .about-thoreau .offcanvas-body .about {
+    margin-left: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .about-thoreau .offcanvas-body .about .title {
+    margin: 1rem 0 0.6rem 0;
+    font-family: "Libre Caslon Text";
+    font-weight: 700;
+    font-size: var(--about-thoreau-title);
+    color: var(--november-skies);
+  }
+  .about-thoreau .offcanvas-body .about hr.title {
+    width: 60%;
+    margin: 0.6rem 0 1.2rem 0;
+  }
+}
+
+.dropdown.explore-another-object {
+  pointer-events: auto;
+  z-index: initial;
+  transform-style: preserve-3d;
+  align-self: center;
+  margin-top: 5vh;
+  background-color: transparent;
+  transition: opacity var(--explore-images-timing), visibility var(--explore-images-timing);
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  .dropdown.explore-another-object {
+    margin: 0 4vw 0 0;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  .dropdown.explore-another-object {
+    margin: 0 4vw 0 0;
+  }
+}
+.dropdown.explore-another-object button {
+  padding: 0.35rem 1.5rem 0.33rem 1.5rem;
+  border: none;
+  border-radius: 1.25rem;
+  background-color: var(--navy-blue);
+  font-size: var(--explore-button);
+  color: var(--almost-white);
+  font-weight: 300;
+}
+.dropdown.explore-another-object button:focus {
+  box-shadow: none;
+}
+.dropdown.explore-another-object button span.name {
+  display: inline-block;
+}
+.dropdown.explore-another-object button span.toggler-icon {
+  display: none;
+}
+.dropdown.explore-another-object button svg.toggler-svg {
+  display: inline-block;
+  margin-left: 0.7rem;
+  margin-bottom: -0.2rem;
+  width: 1.5rem;
+  height: auto;
+  stroke-width: 1.5;
+  color: white;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  .dropdown.explore-another-object button svg.toggler-svg {
+    display: none;
+  }
+}
+.dropdown.explore-another-object button::after {
+  display: none;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  .dropdown.explore-another-object button {
+    padding: 0.35rem 0;
+    border: none;
+    border-radius: 1.25rem;
+    background-color: var(--navy-blue);
+    font-size: var(--explore-button);
+    color: transparent;
+    background-color: transparent;
+    font-weight: 300;
+  }
+  .dropdown.explore-another-object button:focus {
+    box-shadow: none;
+  }
+  .dropdown.explore-another-object button span.name {
+    display: none;
+  }
+  .dropdown.explore-another-object button span.toggler-icon {
+    display: inline-block;
+    width: 4vh;
+    height: 4vh;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+  .dropdown.explore-another-object button span.toggler-icon.light {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+  .dropdown.explore-another-object button::after {
+    display: none;
+  }
+}
+.dropdown.explore-another-object ul.dropdown-menu {
+  z-index: -1;
+  top: 1rem;
+  padding-top: 2rem;
+  background-color: transparent;
+  display: block;
+  transform: translateZ(-10px);
+  visibility: hidden;
+  display: none;
+  opacity: 0;
+  background-color: var(--mobile-header-gray);
+  transition: opacity var(--explore-menu-timing), visibility var(--explore-menu-timing);
+}
+.dropdown.explore-another-object ul.dropdown-menu li a.dropdown-item {
+  visibility: hidden;
+  opacity: 0;
+}
+.dropdown.explore-another-object ul.dropdown-menu.show {
+  visibility: visible;
+  display: block;
+  width: 100%;
+  opacity: 1;
+  transition: opacity var(--explore-menu-timing), visibility var(--explore-menu-timing);
+  padding-top: 1.75em;
+  border-radius: 0.5rem;
+  background-color: var(--mobile-header-gray);
+  border: none;
+}
+.dropdown.explore-another-object ul.dropdown-menu.show .close {
+  display: none;
+}
+.dropdown.explore-another-object ul.dropdown-menu.show li {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--mobile-header-gray);
+}
+.dropdown.explore-another-object ul.dropdown-menu.show li.mobile-only {
+  display: none;
+}
+.dropdown.explore-another-object ul.dropdown-menu.show li a.dropdown-item {
+  display: inline-block;
+  visibility: visible;
+  opacity: 1;
+  padding: 0.1rem 1rem;
+  border-radius: 0;
+  color: var(--navy-blue);
+  background-color: var(--mobile-header-gray);
+  border: none;
+  font-size: var(--explore-button);
+  text-decoration: none;
+}
+.dropdown.explore-another-object ul.dropdown-menu.show li a.dropdown-item.disabled {
+  color: gray;
+}
+.dropdown.explore-another-object ul.dropdown-menu.show li a.dropdown-item.selected {
+  font-weight: 700;
+}
+.dropdown.explore-another-object ul.dropdown-menu.show li a.dropdown-item:hover {
+  background-color: var(--navy-blue);
+  color: white;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  .dropdown.explore-another-object ul.dropdown-menu.show {
+    position: absolute !important;
+    top: 0;
+    left: -90vw;
+    width: 102vw;
+    height: 100vh;
+    z-index: 5;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 3vh 0 0 0 !important;
+    background-color: var(--mobile-header-gray);
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  .dropdown.explore-another-object ul.dropdown-menu.show {
+    left: -94vw;
+    width: 105vw;
+    height: 100vh;
+    padding: 5vh 0 0 0 !important;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  .dropdown.explore-another-object ul.dropdown-menu.show .close {
+    display: block;
+    position: absolute;
+    top: 0.5vh;
+    left: 86vw;
+    color: var(--navy-blue);
+    border: 1px solid white;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 1.3rem;
+    padding-left: 0.7rem;
+    padding-top: 0rem;
+  }
+  .dropdown.explore-another-object ul.dropdown-menu.show .close svg {
+    stroke-width: 2;
+    width: 1rem;
+    height: 1rem;
+    vertical-align: middle;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  .dropdown.explore-another-object ul.dropdown-menu.show .close {
+    top: 0.5vh;
+    left: 94vw;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 1.2rem;
+  }
+  .dropdown.explore-another-object ul.dropdown-menu.show .close svg {
+    margin-bottom: -0.5rem;
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  .dropdown.explore-another-object ul.dropdown-menu.show li {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--mobile-header-gray);
+  }
+  .dropdown.explore-another-object ul.dropdown-menu.show li:first-child {
+    padding-top: 4rem;
+  }
+  .dropdown.explore-another-object ul.dropdown-menu.show li:last-child {
+    padding-bottom: 4rem;
+  }
+  .dropdown.explore-another-object ul.dropdown-menu.show li.desktop-only {
+    display: none;
+  }
+  .dropdown.explore-another-object ul.dropdown-menu.show li.mobile-only {
+    display: flex;
+  }
+  .dropdown.explore-another-object ul.dropdown-menu.show li .item.popup {
+    font-size: 160%;
+  }
+  .dropdown.explore-another-object ul.dropdown-menu.show li .item a.dropdown-item {
+    display: inline-block;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 160%;
+    padding: 0.5em 1em;
+    border-radius: 0;
+    color: var(--navy-blue);
+    background-color: var(--mobile-header-gray);
+    border: none;
+  }
+  .dropdown.explore-another-object ul.dropdown-menu.show li .item a.dropdown-item.small {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 140%;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  .dropdown.explore-another-object ul.dropdown-menu.show li .item a.dropdown-item {
+    font-size: 140%;
+  }
+  .dropdown.explore-another-object ul.dropdown-menu.show li .item a.dropdown-item.small {
+    font-size: 120%;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  .dropdown.explore-another-object ul.dropdown-menu.show li .item a.dropdown-item.disabled {
+    color: gray;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  .dropdown.explore-another-object ul.dropdown-menu.show li .item.dropdown-divider {
+    width: 20%;
+    margin: 2rem 0;
+    border: 1px solid white;
+    opacity: 1;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  .dropdown.explore-another-object ul.dropdown-menu.show li .item.dropdown-divider {
+    margin: 1.2rem 0;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  .dropdown.explore-another-object ul.dropdown-menu.show li .item.dropdown-divider.wide {
+    width: 100%;
   }
 }
 
@@ -2610,17 +3451,6 @@ body.index {
   background-position: center;
   background-size: cover;
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  body.index {
-    margin: 10px 0px;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
-  body.index {
-    margin: px 10px;
-  }
-}
-
 .content.index {
   margin: 0;
   padding: 0;
@@ -2642,12 +3472,84 @@ body.index {
     height: 100vh;
   }
 }
+.content.index .main .menu {
+  z-index: 3;
+  display: none;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  .content.index .main .menu {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    height: 10vh;
+    min-height: 10vh;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: var(--mobile-header-gray);
+    line-height: var(--explore-content-line-height);
+    letter-spacing: var(--explore-content-letter-spacing);
+    font-size: var(--explore-content);
+  }
+}
+@media only screen and (max-width: 320px) and (max-height: 570px) and (orientation: portrait) {
+  .content.index .main .menu {
+    display: flex;
+    margin: 0;
+    height: 7.5vh;
+    background-color: var(--mobile-header-gray);
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  .content.index .main .menu {
+    margin: 0;
+    padding: 0;
+    height: 8vh;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--mobile-header-gray);
+    line-height: var(--explore-content-line-height);
+    letter-spacing: var(--explore-content-letter-spacing);
+    font-size: var(--explore-content);
+  }
+}
+@media only screen and (min-aspect-ratio: 5/2) and (min-width: 1280px) {
+  .content.index .main .menu {
+    display: flex;
+    align-items: center;
+  }
+}
+.content.index .main img.pinetree {
+  display: none;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  .content.index .main img.pinetree {
+    z-index: 10;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -2rem;
+    width: 8.5rem;
+    height: 8.5rem;
+  }
+  .content.index .main img.pinetree.hide {
+    display: none;
+  }
+}
+.content.index .main img.pinetree.noborder {
+  margin: 0 1vw 2vh 0.25vw;
+  height: 14vh;
+  width: auto;
+}
 .content.index .main .header {
   display: flex;
   flex-direction: row;
   align-self: center;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   padding: 0 0;
   line-height: normal;
   width: 90vw;
@@ -2658,17 +3560,16 @@ body.index {
   .content.index .main .header {
     width: 100%;
     height: auto;
-    margin: 1vh 2vw 1vh 2vw;
+    margin: 0vh 2vw 1vh 2vw;
     flex-direction: column;
   }
 }
 .content.index .main .header .title {
-  flex: none;
   margin: 0vh 0.4vw;
   padding-bottom: 2vh;
   font-family: "Libre Caslon Text", serif;
   font-size: var(--main-title);
-  font-weight: 600;
+  font-weight: 700;
   color: var(--navy-blue);
 }
 .content.index .main .header .title .world {
@@ -2682,7 +3583,7 @@ body.index {
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   .content.index .main .header .title {
-    margin: 3vh 0 3vh 0;
+    margin: 1.5vh 0 3vh 0;
     padding-bottom: 0;
   }
 }
@@ -2701,7 +3602,7 @@ body.index {
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   .content.index .main .header .separator {
-    width: 50%;
+    width: 35%;
     height: 1vh;
     color: var(--medium-gray);
     border-left: none;
@@ -2715,36 +3616,38 @@ body.index {
     height: 50%;
   }
 }
-.content.index .main .header img.pinetree {
-  width: 5.8em;
-  height: 5.8em;
+.content.index .main .header img.pinetree.noborder {
+  display: block;
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  .content.index .main .header img.pinetree {
+  .content.index .main .header img.pinetree.noborder {
     display: none;
-    width: 6vmax;
-    height: 6vmax;
-    padding: 0.6vmax;
   }
 }
-.content.index .main .header img.pinetree.noborder {
-  margin: 0 1vw 2vh 0.25vw;
-  height: 14vh;
-  width: auto;
-}
 .content.index .main .header .description {
-  width: 40vw;
+  width: 30vw;
   font-weight: 300;
   font-size: var(--main-description);
-  color: black;
+  line-height: var(--main-description-line-height);
+  color: var(--navy-blue);
 }
 .content.index .main .header .description .heading {
   font-weight: 600;
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  .content.index .main .header .description .heading {
+    font-weight: 300;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   .content.index .main .header .description {
-    width: 30rem;
+    width: 26rem;
     margin: 2vh 0;
+    letter-spacing: var(--main-description-letter-spacing);
+    text-align: center;
+  }
+  .content.index .main .header .description br {
+    display: none;
   }
   .content.index .main .header .description div {
     display: contents;
@@ -2818,7 +3721,7 @@ body.index {
   opacity: 1;
 }
 .content.index .main .gallery .select {
-  margin: 0;
+  margin: -1rem 0 0 0;
   width: 12vw;
   height: 20vh;
   display: flex;
@@ -2831,12 +3734,18 @@ body.index {
   height: 7vw;
   border: 1px solid var(--medium-gray);
   border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.content.index .main .gallery .select .circle img {
-  margin-top: 1.25vw;
-  margin-left: 1.75vw;
-  width: 2.5vw;
+.content.index .main .gallery .select .circle svg {
+  display: block;
+  width: 2.8rem;
+  margin: 0 0 0 -0.2rem;
   height: auto;
+  stroke-width: 0.08rem;
+  transform: rotate(0.25turn);
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   .content.index .main .gallery .select {
@@ -2847,9 +3756,10 @@ body.index {
     height: 14vw;
     margin-left: -10vw;
   }
-  .content.index .main .gallery .select .circle img {
-    margin-top: 4.5vw;
-    margin-left: 8vw;
+  .content.index .main .gallery .select .circle svg {
+    width: 1.6rem;
+    margin: 0 0 0 1.7rem;
+    stroke-width: 0.15rem;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
@@ -2860,17 +3770,33 @@ body.index {
 .content.index .main .gallery .select.right {
   justify-content: flex-end;
 }
-.content.index .main .gallery .select.right .circle img {
-  margin-left: 2.25vw;
-  transform: rotate(180deg);
+.content.index .main .gallery .select.right .circle svg {
+  transform: rotate(-0.25turn);
+  margin: 0 -0.2rem 0 0;
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   .content.index .main .gallery .select.right .circle {
     margin-right: -10vw;
   }
-  .content.index .main .gallery .select.right .circle img {
-    margin-left: 3vw;
-    transform: rotate(180deg);
+  .content.index .main .gallery .select.right .circle svg {
+    margin: 0 1.7rem 0 0;
+  }
+}
+.content.index .unmute-footer {
+  display: flex;
+  align-items: center;
+}
+.content.index .unmute-footer .footer-items {
+  height: 100%;
+}
+.content.index .unmute-footer .footer-items .item.popup {
+  height: 100%;
+  line-height: 2.2rem;
+  color: var(--white);
+}
+@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  .content.index .unmute-footer .footer-items .item.popup {
+    line-height: 1.75rem;
   }
 }
 
@@ -2912,4 +3838,10 @@ div.viewport {
       font-size: 12px;
     }
   }
+}
+.offcanvas-backdrop {
+  background-color: var(--navy-blue);
+}
+.offcanvas-backdrop.show {
+  opacity: 0.6;
 }

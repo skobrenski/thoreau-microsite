@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>favicon 32x32 ico</title>
+    <g id="favicon-32x32-ico" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="32x32">
+            <rect id="Rectangle" fill="#A7BBCA" x="0" y="0" width="32" height="32" rx="4"></rect>
+            <g id="T" transform="translate(6.550000, 6.750000)" fill="#25334B" fill-rule="nonzero">
+                <path d="M7.35,17.775 L7.35,1.375 L3.275,1.375 C2.39166667,2.50833333 1.625,3.96666667 0.975,5.75 L0,5.75 L0.925,0 L17.975,0 L18.9,5.75 L17.925,5.75 C17.6083333,4.88333333 17.2791667,4.09166667 16.9375,3.375 C16.5958333,2.65833333 16.1833333,1.99166667 15.7,1.375 L11.625,1.375 L11.625,17.775 L14.6,18.325 L14.6,19.25 L4.35,19.25 L4.35,18.325 L7.35,17.775 Z" id="Path"></path>
+            </g>
+        </g>
+    </g>
+</svg>
