@@ -85,6 +85,7 @@
   --back-to-top: 0.87em;
   --unmute-right-distance: 5.5vw;
   --next-object-right-margin: 7vw;
+  --scroll-down-label: 0.9rem;
 }
 @media only screen and (min-aspect-ratio: 5/2) and (min-width: 1280px) {
   :root {
@@ -1196,17 +1197,28 @@ div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li a.dropdow
   }
 }
 div.artifact .arrow-scroll-down {
-  pointer-events: none;
+  pointer-events: all;
   position: fixed;
   bottom: 2.5vh;
   z-index: 3;
   visibility: visible;
   opacity: 1;
+  height: 3.75rem;
   width: 100%;
   display: flex;
+  align-items: flex-start;
   justify-content: center;
+  color: var(--white);
   background-color: transparent;
   transition: opacity var(--explore-images-timing), visibility var(--explore-images-timing), bottom var(--arrow-scroll-timing);
+}
+div.artifact .arrow-scroll-down .label {
+  font-size: var(--scroll-down-label);
+  opacity: 0;
+  transition: opacity var(--explore-content-timing);
+}
+div.artifact .arrow-scroll-down:hover .label {
+  opacity: 1;
 }
 div.artifact .arrow-scroll-down svg.arrow-scroll-down {
   display: block;
