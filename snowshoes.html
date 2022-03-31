@@ -107,32 +107,8 @@
             <div class="name">
               Henry David Thoreau
             </div>
-            <div class="audio player" id="6-would-it-not">
+            <div class="audio player dark" id="6-would-it-not">
               <audio src="./media/audio/snowshoes/quote-snowshoes.mp3"></audio>
-              <div class='playpause'>
-                <div class="play">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" stroke="currentColor" viewBox="0 0 16 16">
-                    <path d="M 1 16 L 14 8 L 1 0 Z" />
-                  </svg>
-                </div>
-                <div class="pause">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100pt" height="100pt" fill="currentColor" stroke="currentColor" viewBox="0 0 100 100">
-                    <g fill-rule="evenodd">
-                      <path d="m7.4062 0h28.281v100h-28.281z" />
-                      <path d="m64.141 0h28.281v100h-28.281z" />
-                    </g>
-                  </svg>
-                </div>
-              </div>
-              <div class='time-display'>
-                <div class='span current'></div>
-                <div class='span divider'>/</div>
-                <div class='span duration'></div>
-              </div>
-              <div class='progress-indicator'>
-                <div class='elapsed'></div>
-                <div class='remaining'></div>
-              </div>
             </div>
           </div>
         </div>
@@ -163,26 +139,6 @@
 
     <div id="background-track" class='audio background mute-button secondary'>
       <audio src="./media/audio/snowshoes/background-snowshoes.mp3"></audio>
-      <div class="off">Click to unmute</div>
-      <svg class='off' xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="bi bi-volume-off-fill" viewBox="0 0 16 16">
-        <g>
-          <path d="M10.717 3.55A.5.5 0 0 1 11 4v8a.5.5 0 0 1-.812.39L7.825 10.5H5.5A.5.5 0 0 1 5 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z" />
-        </g>
-      </svg>
-      <div class='off x'>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" stroke="currentColor" stroke-width="4" stroke-linecap="round" viewBox="0 0 16 16">
-          <path class="outline" d="M0 0 L16 16 M0 16 L16 0" </path>
-        </svg>
-      </div>
-      <div class="on">Click to mute</div>
-      <svg class="on" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="bi bi-volume-up-fill">
-        <g>
-          <path d=" M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z" />
-          <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z" />
-          <path
-            d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z" />
-        </g>
-      </svg>
     </div>
 
 
@@ -193,10 +149,12 @@
     </div>
 
     <div class='arrow-scroll-down'>
-      <div class='label'>Scroll down to explore</div>
-      <svg xmlns="http://www.w3.org/2000/svg" class="arrow-scroll-down" width="12" height="8" fill="transparent" stroke="currentColor" stroke-linecap="square" viewBox="0 0 12 8">
-        <path d="M2 1 L6 5 L10 1" />
-      </svg>
+      <div class='label'>Scroll</div>
+      <div class='arrow'>
+        <svg xmlns="http://www.w3.org/2000/svg" class="arrow-scroll-down" width="10" height="6" fill="transparent" stroke="currentColor" stroke-linecap="square" viewBox="0 0 10 6">
+          <path d="M1 1 L5 5 L9 1" />
+        </svg>
+      </div>
     </div>
 
     <div class="offcanvas offcanvas-start about-thoreau" tabindex="-1" id="aboutThoreau" aria-labelledby="aboutThoreauLabel">

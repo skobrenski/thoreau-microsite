@@ -205,37 +205,68 @@ class MediaItem {
 class AudioPlayerItem extends MediaItem {
   constructor(audioWrapper) {
     super(audioWrapper);
-    this.playpause = this.wrapper.querySelector('.playpause');
-    this.playBtn = this.wrapper.querySelector('.play');
-    this.pauseBtn = this.wrapper.querySelector('.pause');
-    this.timeDisplay = this.wrapper.querySelector('.time-display');
-    this.currentTimeEl = this.timeDisplay.querySelector('.current')
-    this.durationEl = this.timeDisplay.querySelector('.duration')
-    this.progressDisplay = this.wrapper.querySelector('.progress-indicator');
-    this.elapsedBar = this.progressDisplay.querySelector('.elapsed');
-    this.remainingBar = this.progressDisplay.querySelector('.remaining');
-    this.playBtn.addEventListener('click', () => {
-      this.playpause.classList.add('playing');
-      this.play();
-    });
-    this.pauseBtn.addEventListener('click', () => {
-      this.playpause.classList.remove('playing');
-      this.stop();
-    });
-    this.media.addEventListener('timeupdate', () => {
+    audioWrapper
+      .insertAdjacentHTML('beforeend', `
+      <div class='playpause'>
+        <div class="play">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" stroke="currentColor" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="11"/>
+            <path d="M 9.75 16.75 L 16.75 12 L 9.75 7.25 Z" />
+          </svg>
+        </div>
+        <div class="pause">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" stroke="currentColor" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="11"/>
+            <g fill-rule="evenodd" fill="currentColor" stroke-width="3.5px">
+              <path fill="currentColor" d="M 9 6.5 L 9 17.5" />
+              <path fill="currentColor" d="M 15.5 6.5 L 15.5 17.5" />
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class='time-display'>
+        <div class='span current'></div>
+        <div class='span divider'>/</div>
+        <div class='span duration'></div>
+      </div>
+      <div class='progress-indicator'>
+        <div class='elapsed'></div>
+        <div class='remaining'></div>
+      </div>
+    `);
+    setTimeout(() => {
+      this.playpause = this.wrapper.querySelector('.playpause');
+      this.playBtn = this.wrapper.querySelector('.play');
+      this.pauseBtn = this.wrapper.querySelector('.pause');
+      this.timeDisplay = this.wrapper.querySelector('.time-display');
+      this.currentTimeEl = this.timeDisplay.querySelector('.current')
+      this.durationEl = this.timeDisplay.querySelector('.duration')
+      this.progressDisplay = this.wrapper.querySelector('.progress-indicator');
+      this.elapsedBar = this.progressDisplay.querySelector('.elapsed');
+      this.remainingBar = this.progressDisplay.querySelector('.remaining');
+      this.playBtn.addEventListener('click', () => {
+        this.playpause.classList.add('playing');
+        this.play();
+      });
+      this.pauseBtn.addEventListener('click', () => {
+        this.playpause.classList.remove('playing');
+        this.stop();
+      });
+      this.media.addEventListener('timeupdate', () => {
+        this.updateCurrentTime();
+      })
+      this.media.addEventListener('durationchange', () => {
+        this.updateDuration();
+      })
+      this.media.addEventListener('ended', () => {
+        this.playpause.classList.remove('playing');
+        this.media.currentTime = 0;
+        this.updateDuration();
+        this.restoreBackgroundVolume();
+      })
       this.updateCurrentTime();
-    })
-    this.media.addEventListener('durationchange', () => {
       this.updateDuration();
-    })
-    this.media.addEventListener('ended', () => {
-      this.playpause.classList.remove('playing');
-      this.media.currentTime = 0;
-      this.updateDuration();
-      this.restoreBackgroundVolume();
-    })
-    this.updateCurrentTime();
-    this.updateDuration();
+    }, 0);
   }
 
   lowerBackgroundVolume() {
@@ -324,26 +355,50 @@ class AudioPlayerItem extends MediaItem {
 class AudioBackgroundItem extends MediaItem {
   constructor(audioWrapper) {
     super(audioWrapper);
-    this.unmuteFooter = document.getElementById('unmute-footer');
-    this.media.loop = true;
-    this.mutedState = true;
-    this.onChildren = this.wrapper.querySelectorAll('*.on');
-    this.offChildren = this.wrapper.querySelectorAll('*.off');
-    this.volume = 1;
-    this.fadein = 1000;
-    this.fadeout = 400;
 
-    this.wrapper.addEventListener('click', () => {
-      if (this.mutedState) {
-        this.mutedState = false;
-        this.updateMuteBtnView();
-        this.play();
-      } else {
-        this.mutedState = true;
-        this.updateMuteBtnView();
-        this.stop();
-      }
-    })
+    audioWrapper
+      .insertAdjacentHTML('beforeend', `
+      <div class="off">Click to unmute</div>
+      <svg class='off' xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-volume-off-fill" viewBox="0 0 26 26">
+        <circle cx="13" cy="13" r="12.5" />
+        <g>
+          <path d="M10.717 3.55A.5.5 0 0 1 11 4v8a.5.5 0 0 1-.812.39L7.825 10.5H5.5A.5.5 0 0 1 5 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z" />
+          <path class="outline" d="M15 5.75 L19.25 10.25 M15 10.25 L19.25 5.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+        </g>
+      </svg>
+      <div class="on">Click to mute</div>
+      <svg class="on" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="bi bi-volume-up-fill">
+        <circle cx="8" cy="8" r="7.75" />
+        <g>
+          <path d=" M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z" />
+          <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z" />
+          <path
+            d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z" />
+        </g>
+      </svg>
+    `);
+    setTimeout(() => {
+      this.unmuteFooter = document.getElementById('unmute-footer');
+      this.media.loop = true;
+      this.mutedState = true;
+      this.onChildren = this.wrapper.querySelectorAll('*.on');
+      this.offChildren = this.wrapper.querySelectorAll('*.off');
+      this.volume = 1;
+      this.fadein = 1000;
+      this.fadeout = 400;
+
+      this.wrapper.addEventListener('click', () => {
+        if (this.mutedState) {
+          this.mutedState = false;
+          this.updateMuteBtnView();
+          this.play();
+        } else {
+          this.mutedState = true;
+          this.updateMuteBtnView();
+          this.stop();
+        }
+      })
+    }, 0);
   }
 
   play() {

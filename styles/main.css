@@ -61,10 +61,12 @@
   --about-thoreau-close: 2rem;
   --about-thoreau-close-radius: 1rem;
   --about-thoreau-close-svg: 1.2rem;
+  --arrow-scroll-down-bottom: 1.8vh;
+  --arrow-scroll-down-bottom-first-screen: 9.2vh;
   --zoom-button-size: 1.1rem;
-  --zoom-button-top: 89.5vh;
-  --zoom-button-right: 7vw;
-  --zoom-button-height: 2rem;
+  --zoom-button-top: 86.7vh;
+  --zoom-button-right: 7.1vw;
+  --zoom-button-height: 1.9rem;
   --zoom-button-width: 2.65rem;
   --zoom-icon-width: 0.9rem;
   --zoom-divide-width: 0.1rem;
@@ -83,7 +85,8 @@
   --back-button-size: 2em;
   --next-object: 0.875em;
   --back-to-top: 0.87em;
-  --unmute-right-distance: 5.5vw;
+  --unmute-footer-control-bottom: 0.9vh;
+  --unmute-right-distance: 6vw;
   --next-object-right-margin: 7vw;
   --scroll-down-label: 0.9rem;
 }
@@ -117,12 +120,14 @@
     --explore-content-heading-weight: 600;
     --back-button-size: 1.4em;
     --unmute-footer: 0.8em;
+    --arrow-scroll-down-bottom-first-screen: 5.2vh;
     --zoom-button-top: 48.5vh;
     --zoom-button-right: 4vw;
     --zoom-button-height: 2.6rem;
     --zoom-button-width: 3.2rem;
     --zoom-icon-width: 1.3rem;
     --zoom-divide-width: 0.3rem;
+    --unmute-footer-control-bottom: 0.9vh;
   }
 }
 @media only screen and (max-width: 320px) and (max-height: 570px) and (orientation: portrait) {
@@ -209,12 +214,15 @@
 }
 
 :root {
-  --explore-images-timing: 0.75s 0s ease-in-out;
-  --explore-content-timing: 0.5s 0s ease-in-out;
-  --arrow-scroll-timing: 0.1s 0s ease-in-out;
-  --explore-video-tint-timing: 0.5s 0s ease-in-out;
-  --gallery-carousel-timing: 0.2s;
-  --explore-menu-timing: 0.2s 0s ease-in-out;
+  --explore-images-timing: 0.75s ease-in-out;
+  --explore-content-timing: 0.5s ease-in-out;
+  --next-object-footer-timing-out: 2s cubic-bezier(0, 0, 1, 1);
+  --next-object-footer-timing-in: 0.5s cubic-bezier(0, 0, 1, 1);
+  --arrow-scroll-timing: 0.1s ease-in-out;
+  --mute-button-timing: 0.25s ease-in-out;
+  --explore-video-tint-timing: 0.5s ease-in-out;
+  --gallery-carousel-timing: 0.2s ease-in-out;
+  --explore-menu-timing: 0.2s ease-in-out;
 }
 
 body {
@@ -560,7 +568,7 @@ div.artifact .content .absolute-content-container.start .content .about-containe
 div.artifact .content .absolute-content-container.start .content .image-container {
   position: relative;
   margin: 5vh 4vw 0 0.5vw;
-  height: 77vh;
+  height: 74vh;
   width: 75%;
   display: flex;
   flex-direction: column;
@@ -671,6 +679,12 @@ div.artifact .content .absolute-content-container.start .content .zoom-controls 
 }
 div.artifact .content .absolute-content-container.start .content .zoom-controls button.zoom-minus i {
   margin-right: -0.4rem;
+  margin-bottom: -0.25rem;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact .content .absolute-content-container.start .content .zoom-controls button.zoom-minus i {
+    margin-bottom: 0;
+  }
 }
 div.artifact .content .absolute-content-container.start .content .zoom-controls button.zoom-plus {
   border-top-right-radius: var(--zoom-button-height);
@@ -678,6 +692,12 @@ div.artifact .content .absolute-content-container.start .content .zoom-controls 
 }
 div.artifact .content .absolute-content-container.start .content .zoom-controls button.zoom-plus i {
   margin-left: -0.4rem;
+  margin-bottom: -0.25rem;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact .content .absolute-content-container.start .content .zoom-controls button.zoom-plus i {
+    margin-bottom: 0;
+  }
 }
 div.artifact .content .absolute-content-container.start .content .zoom-controls .v-divide {
   width: var(--zoom-divide-width);
@@ -689,10 +709,14 @@ div.artifact .content .absolute-content-container .quote-wrapper {
   display: flex;
   flex-direction: column;
 }
+div.artifact .content .absolute-content-container .quote-wrapper p,
+div.artifact .content .absolute-content-container .quote-wrapper q {
+  margin: 0 0 0.5rem 0;
+}
 div.artifact .content .absolute-content-container hr {
   width: 20%;
   border-top: 1px solid var(--navy-blue);
-  margin: 1.75rem 0 1rem 0;
+  margin: 2.25vh 0 2vh 0;
   opacity: 1;
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
@@ -712,9 +736,19 @@ div.artifact .content .absolute-content-container .author {
 div.artifact .content .absolute-content-container .author .name {
   text-transform: uppercase;
   font-weight: 600;
+  margin-top: 1.5vh;
+  height: 2vh;
+  margin-bottom: 4.25vh;
 }
-div.artifact .content .absolute-content-container .author .name.thoreau {
-  color: black;
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact .content .absolute-content-container .author .name {
+    margin-top: 1vh;
+    height: 2vh;
+    margin-bottom: 3.5vh;
+  }
+}
+div.artifact .content .absolute-content-container .author.thoreau .name {
+  margin-top: 0;
 }
 div.artifact .content .absolute-content-container .author .audio.player {
   display: flex;
@@ -728,14 +762,31 @@ div.artifact .content .absolute-content-container .author .audio.player .playpau
 }
 div.artifact .content .absolute-content-container .author .audio.player .playpause .play,
 div.artifact .content .absolute-content-container .author .audio.player .playpause .pause {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -0.2rem;
   cursor: pointer;
 }
 div.artifact .content .absolute-content-container .author .audio.player .playpause .play svg,
 div.artifact .content .absolute-content-container .author .audio.player .playpause .pause svg {
-  width: 1.45rem;
+  width: 2.7rem;
   height: auto;
   vertical-align: unset;
-  margin: 0 0.5rem;
+  margin: 0;
+  color: white;
+}
+div.artifact .content .absolute-content-container .author .audio.player .playpause .play svg circle,
+div.artifact .content .absolute-content-container .author .audio.player .playpause .pause svg circle {
+  stroke-width: 0.75px;
+  stroke: white;
+  fill: var(--navy-blue);
+}
+div.artifact .content .absolute-content-container .author .audio.player .playpause .play svg path,
+div.artifact .content .absolute-content-container .author .audio.player .playpause .pause svg path {
+  stroke: white;
+  fill: white;
 }
 div.artifact .content .absolute-content-container .author .audio.player .playpause .pause {
   display: none;
@@ -744,7 +795,7 @@ div.artifact .content .absolute-content-container .author .audio.player .playpau
   display: none;
 }
 div.artifact .content .absolute-content-container .author .audio.player .playpause.playing .pause {
-  display: block;
+  display: flex;
 }
 div.artifact .content .absolute-content-container .author .audio.player .time-display {
   display: flex;
@@ -775,6 +826,30 @@ div.artifact .content .absolute-content-container .author .audio.player .progres
   width: 100%;
   height: 100%;
   background-color: var(--progress-indicator-remaining);
+}
+div.artifact .content .absolute-content-container .author .audio.player.dark .playpause .play svg,
+div.artifact .content .absolute-content-container .author .audio.player.dark .playpause .pause svg {
+  fill: var(--navy-blue);
+}
+div.artifact .content .absolute-content-container .author .audio.player.dark .playpause .play svg circle,
+div.artifact .content .absolute-content-container .author .audio.player.dark .playpause .pause svg circle {
+  stroke-width: 0.75px;
+  stroke: var(--navy-blue);
+  fill: white;
+}
+div.artifact .content .absolute-content-container .author .audio.player.dark .playpause .play svg path,
+div.artifact .content .absolute-content-container .author .audio.player.dark .playpause .pause svg path {
+  stroke: var(--navy-blue);
+  fill: var(--navy-blue);
+}
+div.artifact .content .absolute-content-container .author .audio.player.dark .time-display {
+  color: var(--navy-blue);
+}
+div.artifact .content .absolute-content-container .author .audio.player.dark .progress-indicator .elapsed {
+  background-color: var(--progress-indicator-remaining);
+}
+div.artifact .content .absolute-content-container .author .audio.player.dark .progress-indicator .remaining {
+  background-color: var(--progress-indicator-elapsed);
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact .content .absolute-content-container .author .audio.player .playpause {
@@ -1196,52 +1271,82 @@ div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li a.dropdow
     width: 100%;
   }
 }
-div.artifact .arrow-scroll-down {
+div.artifact div.arrow-scroll-down {
   pointer-events: all;
   position: fixed;
-  bottom: 2.5vh;
+  bottom: var(--arrow-scroll-down-bottom);
   z-index: 3;
   visibility: visible;
   opacity: 1;
   height: 3.75rem;
-  width: 100%;
+  left: 50%;
+  width: 20rem;
+  margin-left: -10rem;
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   color: var(--white);
   background-color: transparent;
   transition: opacity var(--explore-images-timing), visibility var(--explore-images-timing), bottom var(--arrow-scroll-timing);
 }
-div.artifact .arrow-scroll-down .label {
+div.artifact div.arrow-scroll-down .label {
   font-size: var(--scroll-down-label);
   opacity: 0;
   transition: opacity var(--explore-content-timing);
 }
-div.artifact .arrow-scroll-down:hover .label {
+div.artifact div.arrow-scroll-down:hover .label {
   opacity: 1;
 }
-div.artifact .arrow-scroll-down svg.arrow-scroll-down {
+div.artifact div.arrow-scroll-down:hover .arrow svg {
+  animation-play-state: paused;
+}
+div.artifact div.arrow-scroll-down .arrow {
+  width: 5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div.artifact div.arrow-scroll-down .arrow svg {
   display: block;
   transform: rotate(0turn);
   margin: 0;
   color: var(--white);
   stroke-width: 1.5px;
-  height: 2rem;
+  height: 1.9rem;
   width: auto;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-name: pulse;
+}
+@keyframes pulse {
+  0% {
+    height: 1.7rem;
+    margin-bottom: 0.2rem;
+  }
+  50% {
+    height: 2.15rem;
+    margin-bottom: 0rem;
+  }
+  100% {
+    height: 1.7rem;
+    margin-bottom: 0.2rem;
+  }
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
-  div.artifact .arrow-scroll-down {
+  div.artifact div.arrow-scroll-down {
     bottom: 3vh;
   }
-  div.artifact .arrow-scroll-down img {
+  div.artifact div.arrow-scroll-down svg {
     transform: scale(0.8);
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 320px) and (orientation: landscape) {
-  div.artifact .arrow-scroll-down {
+  div.artifact div.arrow-scroll-down {
     bottom: 2vh;
   }
-  div.artifact .arrow-scroll-down img {
+  div.artifact div.arrow-scroll-down svg {
     transform: scale(0.7);
   }
 }
@@ -1250,7 +1355,7 @@ div.artifact .mute-button {
   color: var(--mute-button-color);
   text-transform: uppercase;
   pointer-events: auto;
-  height: 2em;
+  height: 2rem;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -1258,12 +1363,12 @@ div.artifact .mute-button {
 }
 div.artifact .mute-button.secondary {
   position: fixed;
-  bottom: 2.5vh;
+  bottom: 2vh;
+  transition: bottom var(--mute-button-timing);
   right: var(--unmute-right-distance);
   cursor: pointer;
   font-weight: 600;
   letter-spacing: 0.02rem;
-  filter: drop-shadow(0 0 0.5rem var(--navy-blue));
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact .mute-button.secondary {
@@ -1271,42 +1376,54 @@ div.artifact .mute-button.secondary {
   }
 }
 div.artifact .mute-button div {
-  margin-right: 0.1em;
-  margin-bottom: -0.05em;
+  margin-right: 0.3rem;
   font-size: var(--explore-content-mute-button);
 }
 div.artifact .mute-button div.off {
   display: block;
 }
-div.artifact .mute-button div.off.x {
-  margin-left: -0.5em;
-  margin-bottom: 0.05em;
-  font-size: 52%;
-  font-weight: bold;
-}
-div.artifact .mute-button div.off.x svg {
-  height: 1em;
-  width: auto;
-}
 div.artifact .mute-button div.on {
   display: none;
 }
 div.artifact .mute-button svg {
-  height: 1.8em;
-  width: auto;
+  width: 1.95rem;
+  height: auto;
+  margin-left: 0rem;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact .mute-button svg {
+    width: 2.25rem;
+  }
+}
+div.artifact .mute-button svg circle {
+  stroke-width: 0.75px;
+  stroke: white;
+  fill: var(--navy-blue);
+}
+div.artifact .mute-button svg path {
+  stroke: white;
+  fill: white;
+  transform: scale(0.82) translate(4px, 7px);
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact .mute-button svg path {
+    transform: scale(0.9) translate(3px, 6px);
+  }
 }
 div.artifact .mute-button svg.off {
   display: block;
 }
 div.artifact .mute-button svg.on {
-  margin-left: 0.4em;
   display: none;
 }
-div.artifact .mute-button svg + div {
-  display: block;
-  margin-left: -0.2em;
-  padding-bottom: 0.2em;
-  text-transform: none;
+div.artifact .mute-button svg.on path {
+  transform: scale(0.55) translate(7px, 6px);
+  stroke-width: 0.1px;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact .mute-button svg.on path {
+    transform: scale(0.55) translate(7px, 6px);
+  }
 }
 div.artifact .mute-button > * {
   pointer-events: none;
@@ -1314,6 +1431,7 @@ div.artifact .mute-button > * {
 div.artifact .next-object-footer {
   display: flex;
   visibility: hidden;
+  opacity: 0;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
@@ -1321,6 +1439,7 @@ div.artifact .next-object-footer {
   position: fixed;
   z-index: 3;
   background-color: var(--medium-gray-rgba-90);
+  transition: opacity var(--next-object-footer-timing-in), visibility var(--next-object-footer-timing-in);
   bottom: 0;
   left: 0;
   width: 100vw;
@@ -1347,6 +1466,12 @@ div.artifact .next-object-footer .back-to-top .label {
   text-transform: uppercase;
   margin-right: 0.5em;
   margin-top: -0.1rem;
+  width: 5rem;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact .next-object-footer .back-to-top .label {
+    width: 5.5rem;
+  }
 }
 div.artifact .next-object-footer .back-to-top svg.back-to-top-svg {
   display: inline-block;
@@ -1413,9 +1538,9 @@ div.artifact .unmute-footer {
   font-style: italic;
 }
 div.artifact .unmute-footer .label {
-  margin-right: 18vw;
+  margin-right: 19vw;
   margin-left: auto;
-  margin-bottom: -0.3rem;
+  margin-top: -0.05rem;
   color: var(--navy-blue);
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
@@ -1745,7 +1870,7 @@ div.artifact .fixed-video-container.fullscreen .video-wrapper video {
 }
 
 body#spyglass {
-  height: 1400vh;
+  height: 1200vh;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -1781,14 +1906,14 @@ div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.cur
   position: -webkit-sticky;
   position: sticky;
   visibility: hidden;
-  top: 61vh;
+  top: 57vh;
   left: 7vw;
   width: 29vw;
   max-width: 29vw;
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.curious {
-    top: 55vh;
+    top: 48vh;
     left: 10vw;
     width: 80vw;
     max-width: 80vw;
@@ -1803,7 +1928,7 @@ div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.cur
   }
 }
 div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.his-experiments {
-  height: 400vh;
+  height: 200vh;
   position: -webkit-sticky;
   position: sticky;
   visibility: hidden;
@@ -1815,7 +1940,7 @@ div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.his
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.his-experiments {
-    top: 48vh;
+    top: 46vh;
     left: 10vw;
     width: 80vw;
     max-width: 80vw;
@@ -1905,21 +2030,12 @@ div.artifact.spyglass .background-image-container.spyglass:before {
   background-color: var(--thoreau-blue);
 }
 
-#spyglass[data-content-scroll="0"] .arrow-scroll-down img {
-  content: url("../media/images/arrow-scroll-down.png");
-}
 #spyglass[data-content-scroll="0"] .unmute-footer {
   display: flex;
 }
 #spyglass[data-content-scroll="0"] .mute-button {
   z-index: 1;
-  color: var(--navy-blue);
-  bottom: 1.1vh;
-}
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  #spyglass[data-content-scroll="0"] .mute-button {
-    bottom: 0.9vh;
-  }
+  bottom: var(--unmute-footer-control-bottom);
 }
 #spyglass[data-content-scroll="0"] .animation-frame-container.spyglass {
   visibility: hidden;
@@ -1956,16 +2072,19 @@ div.artifact.spyglass .background-image-container.spyglass:before {
   visibility: visible;
   opacity: 1;
 }
-#spyglass[data-content-scroll="0"] .arrow-scroll-down {
-  bottom: 5.5vh;
+#spyglass[data-content-scroll="0"] div.arrow-scroll-down {
+  bottom: var(--arrow-scroll-down-bottom-first-screen);
   visibility: visible;
   opacity: 1;
   color: var(--navy-blue);
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
-  #spyglass[data-content-scroll="0"] .arrow-scroll-down {
-    bottom: 6.5vh;
+  #spyglass[data-content-scroll="0"] div.arrow-scroll-down {
+    bottom: var(--arrow-scroll-down-bottom-first-screen);
   }
+}
+#spyglass[data-content-scroll="0"] div.arrow-scroll-down svg {
+  color: var(--navy-blue);
 }
 
 #spyglass[data-content-scroll="1"] .background-image-container.spyglass:before {
@@ -2027,25 +2146,19 @@ div.artifact.spyglass .background-image-container.spyglass:before {
 }
 
 #spyglass[data-content-scroll="7"] .absolute-content-container.spyglass.his-experiments,
-#spyglass[data-content-scroll="8"] .absolute-content-container.spyglass.his-experiments,
-#spyglass[data-content-scroll="9"] .absolute-content-container.spyglass.his-experiments,
-#spyglass[data-content-scroll="10"] .absolute-content-container.spyglass.his-experiments {
+#spyglass[data-content-scroll="8"] .absolute-content-container.spyglass.his-experiments {
   visibility: visible;
   opacity: 1;
   position: fixed;
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   #spyglass[data-content-scroll="7"] .animation-frame-container.spyglass,
-#spyglass[data-content-scroll="8"] .animation-frame-container.spyglass,
-#spyglass[data-content-scroll="9"] .animation-frame-container.spyglass,
-#spyglass[data-content-scroll="10"] .animation-frame-container.spyglass {
+#spyglass[data-content-scroll="8"] .animation-frame-container.spyglass {
     top: -10vh;
   }
 }
 #spyglass[data-content-scroll="7"] .animation-frame-container.spyglass img,
-#spyglass[data-content-scroll="8"] .animation-frame-container.spyglass img,
-#spyglass[data-content-scroll="9"] .animation-frame-container.spyglass img,
-#spyglass[data-content-scroll="10"] .animation-frame-container.spyglass img {
+#spyglass[data-content-scroll="8"] .animation-frame-container.spyglass img {
   margin: 20vh 30vw 10vh 30vw;
 }
 
@@ -2053,11 +2166,39 @@ div.artifact.spyglass .background-image-container.spyglass:before {
   position: sticky;
 }
 
-#spyglass[data-content-scroll="11"] .absolute-content-container.spyglass.would-it-not,
-#spyglass[data-content-scroll="12"] .absolute-content-container.spyglass.would-it-not {
+#spyglass[data-content-scroll="9"] .absolute-content-container.spyglass.would-it-not,
+#spyglass[data-content-scroll="10"] .absolute-content-container.spyglass.would-it-not {
   visibility: visible;
   opacity: 1;
   position: sticky;
+}
+#spyglass[data-content-scroll="9"] .fixed-video-container.spyglass.walden-sunset,
+#spyglass[data-content-scroll="10"] .fixed-video-container.spyglass.walden-sunset {
+  visibility: visible;
+  opacity: 1;
+}
+#spyglass[data-content-scroll="9"] .fixed-video-container.spyglass.walden-sunset .tint,
+#spyglass[data-content-scroll="10"] .fixed-video-container.spyglass.walden-sunset .tint {
+  visibility: visible;
+  opacity: 1;
+  background-color: var(--thoreau-blue-rgba-80);
+}
+#spyglass[data-content-scroll="9"] .animation-frame-container.spyglass,
+#spyglass[data-content-scroll="10"] .animation-frame-container.spyglass {
+  visibility: hidden;
+  opacity: 0;
+}
+
+#spyglass[data-content-scroll="10"] .absolute-content-container.spyglass.would-it-not {
+  visibility: visible;
+  opacity: 1;
+  position: fixed;
+}
+
+#spyglass[data-content-scroll="11"] .absolute-content-container.spyglass.walden-sunset,
+#spyglass[data-content-scroll="12"] .absolute-content-container.spyglass.walden-sunset {
+  visibility: visible;
+  opacity: 1;
 }
 #spyglass[data-content-scroll="11"] .fixed-video-container.spyglass.walden-sunset,
 #spyglass[data-content-scroll="12"] .fixed-video-container.spyglass.walden-sunset {
@@ -2066,64 +2207,38 @@ div.artifact.spyglass .background-image-container.spyglass:before {
 }
 #spyglass[data-content-scroll="11"] .fixed-video-container.spyglass.walden-sunset .tint,
 #spyglass[data-content-scroll="12"] .fixed-video-container.spyglass.walden-sunset .tint {
-  visibility: visible;
-  opacity: 1;
-  background-color: var(--thoreau-blue-rgba-80);
-}
-#spyglass[data-content-scroll="11"] .animation-frame-container.spyglass,
-#spyglass[data-content-scroll="12"] .animation-frame-container.spyglass {
-  visibility: hidden;
-  opacity: 0;
-}
-
-#spyglass[data-content-scroll="12"] .absolute-content-container.spyglass.would-it-not {
-  visibility: visible;
-  opacity: 1;
-  position: fixed;
-}
-
-#spyglass[data-content-scroll="13"] .absolute-content-container.spyglass.walden-sunset,
-#spyglass[data-content-scroll="14"] .absolute-content-container.spyglass.walden-sunset {
-  visibility: visible;
-  opacity: 1;
-}
-#spyglass[data-content-scroll="13"] .fixed-video-container.spyglass.walden-sunset,
-#spyglass[data-content-scroll="14"] .fixed-video-container.spyglass.walden-sunset {
-  visibility: visible;
-  opacity: 1;
-}
-#spyglass[data-content-scroll="13"] .fixed-video-container.spyglass.walden-sunset .tint,
-#spyglass[data-content-scroll="14"] .fixed-video-container.spyglass.walden-sunset .tint {
   visibility: hidden;
   opacity: 0;
   background-color: transparent;
 }
-#spyglass[data-content-scroll="13"] .animation-frame-container.spyglass,
-#spyglass[data-content-scroll="13"] .arrow-scroll-down,
-#spyglass[data-content-scroll="14"] .animation-frame-container.spyglass,
-#spyglass[data-content-scroll="14"] .arrow-scroll-down {
+#spyglass[data-content-scroll="11"] .animation-frame-container.spyglass,
+#spyglass[data-content-scroll="11"] .arrow-scroll-down,
+#spyglass[data-content-scroll="12"] .animation-frame-container.spyglass,
+#spyglass[data-content-scroll="12"] .arrow-scroll-down {
   visibility: hidden;
   opacity: 0;
 }
-#spyglass[data-content-scroll="13"] .next-object-footer,
-#spyglass[data-content-scroll="13"] .back-to-top,
-#spyglass[data-content-scroll="14"] .next-object-footer,
-#spyglass[data-content-scroll="14"] .back-to-top {
+#spyglass[data-content-scroll="11"] .next-object-footer,
+#spyglass[data-content-scroll="11"] .back-to-top,
+#spyglass[data-content-scroll="12"] .next-object-footer,
+#spyglass[data-content-scroll="12"] .back-to-top {
   visibility: visible;
   opacity: 1;
 }
-#spyglass[data-content-scroll="13"] .next-object-footer,
-#spyglass[data-content-scroll="14"] .next-object-footer {
+#spyglass[data-content-scroll="11"] .next-object-footer,
+#spyglass[data-content-scroll="12"] .next-object-footer {
   visibility: visible;
+  transition: opacity var(--next-object-footer-timing-out), visibility var(--next-object-footer-timing-out);
 }
-#spyglass[data-content-scroll="13"] .mute-button,
-#spyglass[data-content-scroll="14"] .mute-button {
+#spyglass[data-content-scroll="11"] .mute-button,
+#spyglass[data-content-scroll="12"] .mute-button {
   bottom: 11.5vh;
   color: var(--white);
+  filter: drop-shadow(0 0 0.5rem var(--navy-blue));
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  #spyglass[data-content-scroll="13"] .mute-button,
-#spyglass[data-content-scroll="14"] .mute-button {
+  #spyglass[data-content-scroll="11"] .mute-button,
+#spyglass[data-content-scroll="12"] .mute-button {
     bottom: 6.5vh;
   }
 }
@@ -2252,13 +2367,7 @@ div.artifact.walking-stick .background-image-container.walking-stick:before {
 }
 #walking-stick[data-content-scroll="0"] .mute-button {
   z-index: 1;
-  color: var(--navy-blue);
-  bottom: 1.1vh;
-}
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  #walking-stick[data-content-scroll="0"] .mute-button {
-    bottom: 0.9vh;
-  }
+  bottom: var(--unmute-footer-control-bottom);
 }
 #walking-stick[data-content-scroll="0"] .background-image-container.walking-stick:before {
   background-color: white;
@@ -2291,16 +2400,19 @@ div.artifact.walking-stick .background-image-container.walking-stick:before {
   visibility: visible;
   opacity: 1;
 }
-#walking-stick[data-content-scroll="0"] .arrow-scroll-down {
-  bottom: 5.25vh;
+#walking-stick[data-content-scroll="0"] div.arrow-scroll-down {
+  bottom: var(--arrow-scroll-down-bottom-first-screen);
   visibility: visible;
   opacity: 1;
   color: var(--navy-blue);
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
-  #walking-stick[data-content-scroll="0"] .arrow-scroll-down {
-    bottom: 6.5vh;
+  #walking-stick[data-content-scroll="0"] div.arrow-scroll-down {
+    bottom: var(--arrow-scroll-down-bottom-first-screen);
   }
+}
+#walking-stick[data-content-scroll="0"] div.arrow-scroll-down svg {
+  color: var(--navy-blue);
 }
 
 #walking-stick[data-content-scroll="1"] .background-image-container.walking-stick:before {
@@ -2373,10 +2485,12 @@ div.artifact.walking-stick .background-image-container.walking-stick:before {
 }
 #walking-stick[data-content-scroll="4"] .next-object-footer {
   visibility: visible;
+  transition: opacity var(--next-object-footer-timing-out), visibility var(--next-object-footer-timing-out);
 }
 #walking-stick[data-content-scroll="4"] .mute-button {
   bottom: 11.5vh;
   color: var(--white);
+  filter: drop-shadow(0 0 0.5rem var(--navy-blue));
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   #walking-stick[data-content-scroll="4"] .mute-button {
@@ -2502,21 +2616,12 @@ div.artifact.flute .background-image-container.flute:before {
   background-color: var(--thoreau-green);
 }
 
-#flute[data-content-scroll="0"] .arrow-scroll-down img {
-  content: url("../media/images/arrow-scroll-down.png");
-}
 #flute[data-content-scroll="0"] .unmute-footer {
   display: flex;
 }
 #flute[data-content-scroll="0"] .mute-button {
   z-index: 1;
-  color: var(--navy-blue);
-  bottom: 1.1vh;
-}
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  #flute[data-content-scroll="0"] .mute-button {
-    bottom: 0.9vh;
-  }
+  bottom: var(--unmute-footer-control-bottom);
 }
 #flute[data-content-scroll="0"] .background-image-container.flute:before {
   background-color: white;
@@ -2549,16 +2654,19 @@ div.artifact.flute .background-image-container.flute:before {
   visibility: visible;
   opacity: 1;
 }
-#flute[data-content-scroll="0"] .arrow-scroll-down {
-  bottom: 5.5vh;
+#flute[data-content-scroll="0"] div.arrow-scroll-down {
+  bottom: var(--arrow-scroll-down-bottom-first-screen);
   visibility: visible;
-  color: var(--navy-blue);
   opacity: 1;
+  color: var(--navy-blue);
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
-  #flute[data-content-scroll="0"] .arrow-scroll-down {
-    bottom: 6.5vh;
+  #flute[data-content-scroll="0"] div.arrow-scroll-down {
+    bottom: var(--arrow-scroll-down-bottom-first-screen);
   }
+}
+#flute[data-content-scroll="0"] div.arrow-scroll-down svg {
+  color: var(--navy-blue);
 }
 
 #flute[data-content-scroll="1"] .background-image-container.flute:before {
@@ -2629,10 +2737,12 @@ div.artifact.flute .background-image-container.flute:before {
 }
 #flute[data-content-scroll="4"] .next-object-footer {
   visibility: visible;
+  transition: opacity var(--next-object-footer-timing-out), visibility var(--next-object-footer-timing-out);
 }
 #flute[data-content-scroll="4"] .mute-button {
   bottom: 11.5vh;
   color: var(--white);
+  filter: drop-shadow(0 0 0.5rem var(--navy-blue));
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   #flute[data-content-scroll="4"] .mute-button {
@@ -2695,12 +2805,6 @@ div.artifact.snowshoes .content.snowshoes .absolute-content-container.snowshoes.
   font-size: var(--explore-content-heading);
   font-family: "Libre Caslon Text", serif;
   text-indent: -1rem;
-}
-div.artifact.snowshoes .content.snowshoes .absolute-content-container.snowshoes.perhaps-the-best .elapsed {
-  background-color: var(--progress-indicator-remaining);
-}
-div.artifact.snowshoes .content.snowshoes .absolute-content-container.snowshoes.perhaps-the-best .remaining {
-  background-color: var(--progress-indicator-elapsed);
 }
 div.artifact.snowshoes .content.snowshoes .absolute-content-container.snowshoes.perhaps-the-best hr {
   border-color: var(--white);
@@ -2765,21 +2869,12 @@ div.artifact.snowshoes .fixed-image-container.snowshoes img.snowshoes-detail {
     height: auto;
   }
 }
-#snowshoes[data-content-scroll="0"] .arrow-scroll-down img {
-  content: url("../media/images/arrow-scroll-down.png");
-}
 #snowshoes[data-content-scroll="0"] .unmute-footer {
   display: flex;
 }
 #snowshoes[data-content-scroll="0"] .mute-button {
   z-index: 1;
-  color: var(--navy-blue);
-  bottom: 1.1vh;
-}
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  #snowshoes[data-content-scroll="0"] .mute-button {
-    bottom: 0.9vh;
-  }
+  bottom: var(--unmute-footer-control-bottom);
 }
 #snowshoes[data-content-scroll="0"] .background-image-container.snowshoes:before {
   background-color: white;
@@ -2812,16 +2907,19 @@ div.artifact.snowshoes .fixed-image-container.snowshoes img.snowshoes-detail {
   visibility: visible;
   opacity: 1;
 }
-#snowshoes[data-content-scroll="0"] .arrow-scroll-down {
-  bottom: 5.5vh;
+#snowshoes[data-content-scroll="0"] div.arrow-scroll-down {
+  bottom: var(--arrow-scroll-down-bottom-first-screen);
   visibility: visible;
   opacity: 1;
   color: var(--navy-blue);
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
-  #snowshoes[data-content-scroll="0"] .arrow-scroll-down {
-    bottom: 6.5vh;
+  #snowshoes[data-content-scroll="0"] div.arrow-scroll-down {
+    bottom: var(--arrow-scroll-down-bottom-first-screen);
   }
+}
+#snowshoes[data-content-scroll="0"] div.arrow-scroll-down svg {
+  color: var(--navy-blue);
 }
 
 #snowshoes[data-content-scroll="1"] .background-image-container.snowshoes:before {
@@ -2892,10 +2990,12 @@ div.artifact.snowshoes .fixed-image-container.snowshoes img.snowshoes-detail {
 }
 #snowshoes[data-content-scroll="4"] .next-object-footer {
   visibility: visible;
+  transition: opacity var(--next-object-footer-timing-out), visibility var(--next-object-footer-timing-out);
 }
 #snowshoes[data-content-scroll="4"] .mute-button {
   bottom: 11.5vh;
   color: var(--white);
+  filter: drop-shadow(0 0 0.5rem var(--navy-blue));
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   #snowshoes[data-content-scroll="4"] .mute-button {
@@ -2924,9 +3024,9 @@ div.artifact.snowshoes .fixed-image-container.snowshoes img.snowshoes-detail {
   font-style: italic;
 }
 .unmute-footer .label {
-  margin-right: 18vw;
+  margin-right: 19vw;
   margin-left: auto;
-  margin-bottom: -0.3rem;
+  margin-top: -0.05rem;
   color: var(--navy-blue);
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
@@ -3697,6 +3797,7 @@ body.index {
   flex-direction: row;
   align-items: center;
   object-fit: contain;
+  cursor: pointer;
   background-image: url("../media/images/main-menu-texture.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -3722,6 +3823,7 @@ body.index {
   object-fit: contain;
   visibility: hidden;
   opacity: 0;
+  cursor: pointer;
   transition: all var(--gallery-carousel-timing);
   filter: grayscale(100%) brightness(150%) contrast(125%) opacity(75%);
 }
