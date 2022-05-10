@@ -1,4 +1,5 @@
 import { app } from "./globals.js"
+import { zoom, resetZoom } from "./zoom.js";
 
 import { MediaCollection, AudioPlayerItem, AudioBackgroundItem, VideoBackgroundItem } from './media.js';
 
@@ -139,7 +140,10 @@ const storeScroll = (animations, animationFrameImg) => {
   if (animation) {
     animation.callback(result.frameNum, animationFrameImg, animation.imgPrefix, result.visible);
     sLogger.animationFrameNum = result.frameNum;
-
+  } else {
+    if (animationFrameImg) {
+      animationFrameImg.src = './media/images/transparent.png';
+    }
   }
   contentScrollFLoat = Math.min(app.maxContentScroll, contentScrollFLoat);
   container.dataset.contentScrollFloat = contentScrollFLoat;
@@ -148,6 +152,10 @@ const storeScroll = (animations, animationFrameImg) => {
   container.dataset.innerHeight = getFullVh();
   container.dataset.innerWidth = window.innerWidth;
   container.dataset.aspectRatio = aspectRatio;
+
+  if (contentScrollFLoat >= 1 && zoom.changed) {
+    resetZoom();
+  }
 
   if (app.dev) {
     if (Math.abs(contentScrollFLoat - previousContentScrollFLoat) >= 0.01) {

@@ -71,7 +71,7 @@ export const generateDropdownUL = (id) => {
 
   const dropdownmenu = document.getElementById('explore-another-object');
 
-  const dropDownUl = `<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+  const dropDownUl = `<ul id="dropdown-menu" class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
     <div class='close mobile-only'>
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" stroke="currentColor" stroke-width="4" stroke-linecap="round" viewBox="0 0 16 16">
         <path class="outline" d="M0 0 L16 16 M0 16 L16 0" </path>

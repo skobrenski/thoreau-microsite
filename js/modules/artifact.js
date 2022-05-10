@@ -6,6 +6,7 @@ import { scrollerSetup } from './scroller.js';
 import { zoom, setupDragHandling } from "./zoom.js";
 import { generateDropdownUL } from "./menu.js";
 import { pages } from "./pages.js";
+import { addDropdownMenuListeners } from "./dropdown-menu.js";
 
 app.logger(zoom);
 
@@ -18,6 +19,8 @@ export const startup = (id, animations) => {
   const container = document.getElementById(id);
   generateDropdownUL(id);
   // generateFooterItems();
+
+  addDropdownMenuListeners();
 
   scrollerSetup(container, animations);
   setupDragHandling();

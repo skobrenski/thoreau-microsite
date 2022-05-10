@@ -8,15 +8,20 @@
   --thoreau-green: rgb(132, 167, 69);
   --thoreau-green-rgba-90: rgb(132, 167, 69, 0.9);
   --snowshoe-brown: #704b46;
+  --desk-brown: rgb(175, 108, 52);
+  --desk-brown-rgba-80: rgba(175, 108, 52, 0.8);
+  --lock-and-key-yellow: rgb(202, 186, 70);
+  --lock-and-key-yellow-rgba-80: rgba(202, 186, 70, 0.8);
   --snowshoe-gray: rgb(205, 215, 224);
   --snowshoe-gray-rgba-90: rgba(205, 215, 224, 0.9);
+  --walking-stick-slate: #4b5a74;
   --white-rgba-00: rgba(255, 255, 255, 0);
   --november-skies: #a7bbca;
   --writing-mask: #cdd7e0;
   --about-thoreau-close-background: #cdd7e0;
   --border-gray: gray;
   --border-light-gray: #ddd;
-  --navy-blue: #25334b;
+  --navy-blue: rgb(37, 51, 75);
   --navy-blue-rgba1: rgba(13, 110, 253, 1);
   --navy-blue-rgba0: rgba(13, 110, 253, 0);
   --white: #fff;
@@ -44,6 +49,8 @@
 /* font sizes */
 :root {
   --content: 2rem;
+  --main-menu-title: 3.6rem;
+  --main-menu-title-world: 7.8rem;
   --main-title: 3.6rem;
   --main-title-world: 7.8rem;
   --main-description: 1.2rem;
@@ -61,6 +68,7 @@
   --about-thoreau-close: 2rem;
   --about-thoreau-close-radius: 1rem;
   --about-thoreau-close-svg: 1.2rem;
+  --thoreau-quote-width: 33.5rem;
   --arrow-scroll-down-bottom: 1.8vh;
   --arrow-scroll-down-bottom-first-screen: 9.2vh;
   --zoom-button-size: 1.1rem;
@@ -75,9 +83,6 @@
   --explore-content-line-height: 168%;
   --explore-content-letter-spacing: 0.75px;
   --explore-content-author: 0.88rem;
-  --unmute-footer: 0.76rem;
-  --unmute-footer-height: 5.5vh;
-  --unmute-footer-items: 0.9rem;
   --explore-content-mute-button: 0.76rem;
   --explore-content-weight: 400;
   --explore-content-heading: 2.2rem;
@@ -85,9 +90,15 @@
   --back-button-size: 2em;
   --next-object: 0.875em;
   --back-to-top: 0.87em;
-  --unmute-footer-control-bottom: 0.9vh;
+  --next-object-right-margin: 6vw;
+  --next-object-footer-height: 8vh;
+  --unmute-footer: 0.76rem;
+  --unmute-footer-height: 8vh;
+  --unmute-footer-items: 0.9rem;
   --unmute-right-distance: 6vw;
-  --next-object-right-margin: 7vw;
+  --unmute-bottom-first-page: 0;
+  --unmute-bottom: 1vh;
+  --unmute-bottom-last-page: 9vh;
   --scroll-down-label: 0.9rem;
 }
 @media only screen and (min-aspect-ratio: 5/2) and (min-width: 1280px) {
@@ -99,44 +110,61 @@
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   :root {
-    --main-title: 1.6rem;
-    --main-title-world: 1.9rem;
+    --main-menu-title: 3.2rem;
+    --main-menu-title-world: 3.2rem;
+    --main-title: 1.7rem;
+    --main-title-world: 2.2rem;
     --main-description: 1.4rem;
     --main-description-letter-spacing: 0.25px;
-    --artifact-title: 1.5rem;
-    --artifact-description: 1.25rem;
-    --artifact-description-line-height: 1.9rem;
+    --artifact-title: 1.9rem;
+    --artifact-description: 1.425rem;
+    --artifact-description-line-height: 2.3rem;
+    --artifact-description-letter-spacing: 0.05rem;
     --about-thoreau-title: 2.3rem;
     --about-thoreau-description: 1.5rem;
     --about-thoreau-description-line-height: 2.45rem;
     --about-thoreau-close: 2rem;
     --explore-button: 1rem;
-    --explore-content: 1.5rem;
+    --explore-content: 1.65rem;
     --explore-content-line-height: 160%;
-    --explore-content-author: 1.2rem;
-    --explore-content-mute-button: 1rem;
+    --explore-content-author: 1.35rem;
+    --explore-content-mute-button: 1.1rem;
     --explore-content-weight: 600;
     --explore-content-heading: 2rem;
     --explore-content-heading-weight: 600;
     --back-button-size: 1.4em;
     --unmute-footer: 0.8em;
-    --arrow-scroll-down-bottom-first-screen: 5.2vh;
     --zoom-button-top: 48.5vh;
     --zoom-button-right: 4vw;
     --zoom-button-height: 2.6rem;
     --zoom-button-width: 3.2rem;
     --zoom-icon-width: 1.3rem;
     --zoom-divide-width: 0.3rem;
-    --unmute-footer-control-bottom: 0.9vh;
+    --unmute-footer: 1.15rem;
+    --unmute-footer-height: 7vh;
+    --unmute-footer-items: 1.15rem;
+    --unmute-footer-control-bottom: 1vh;
+    --unmute-right-distance: 7vw;
+    --unmute-bottom-first-page: 0;
+    --unmute-bottom: 1vh;
+    --unmute-bottom-last-page: 8.5vh;
+    --next-object: 1.3rem;
+    --next-object-right-margin: 7vw;
+    --back-to-top: 1.2rem;
+    --next-object-footer-height: 7vh;
+    --arrow-scroll-down-bottom: 2.8vh;
+    --arrow-scroll-down-bottom-first-screen: 8vh;
+    --scroll-down-label: 1.1rem;
   }
 }
 @media only screen and (max-width: 320px) and (max-height: 570px) and (orientation: portrait) {
   :root {
     --explore-button: 1rem;
     --explore-content: 1.1rem;
-    --main-title: 2.2rem;
-    --main-title-world: 4.2rem;
-    --main-description: 1.2rem;
+    --main-title: 1.5rem;
+    --main-title-world: 1.9rem;
+    --main-description: 1.4rem;
+    --main-description-letter-spacing: 0.25px;
     --artifact-title: 1.4rem;
     --artifact-title-line-height: 2rem;
     --artifact-description: 0.95rem;
@@ -147,6 +175,8 @@
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   :root {
+    --main-menu-title: 2rem;
+    --main-menu-title-world: 2.8rem;
     --main-title: 1.4rem;
     --main-title-world: 1.7rem;
     --main-description: 1.2rem;
@@ -177,26 +207,29 @@
     --zoom-button-width: 3.2rem;
     --zoom-icon-width: 1.3rem;
     --zoom-divide-width: 0.3rem;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 320px) and (orientation: landscape) {
-  :root {
-    --main-title: 2rem;
-    --main-title-world: 4.2rem;
-    --main-description: 0.9rem;
-    --explore-content: 1rem;
-    --artifact-title: 1.4rem;
-    --artifact-title-line-height: 2.4rem;
-    --artifact-description: 1rem;
-    --artifact-description-letter-spacing: calc(
-      clamp(0px, (0.4vh - 2.6px), 2px)
-    );
-    --artifact-description-line-height: calc(clamp(20px, (8vh - 20px), 60px));
-    --zoom-button-size: 1.2rem;
+    --unmute-footer: 1.15rem;
+    --unmute-footer-height: 9vh;
+    --unmute-footer-items: 1.15rem;
+    --unmute-footer-control-bottom: 1vh;
+    --unmute-right-distance: 7vw;
+    --unmute-bottom-first-page: 0;
+    --unmute-bottom: 1vh;
+    --unmute-bottom-last-page: 12vh;
+    --next-object: 1.1rem;
+    --next-object-right-margin: 7vw;
+    --back-to-top: 1rem;
+    --next-object-footer-height: 9vh;
+    --arrow-scroll-down-bottom: 2.8vh;
+    --arrow-scroll-down-bottom-first-screen: 11vh;
+    --scroll-down-label: 1.1rem;
   }
 }
 @media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 7/5) and (min-width: 640px) {
   :root {
+    --main-title: 2.6rem;
+    --main-title-world: 4rem;
+    --main-description: 1.1rem;
+    --main-description-line-height: 2rem;
     --artifact-title: 1.9rem;
     --artifact-title-line-height: 2rem;
     --artifact-description: 1.2rem;
@@ -215,13 +248,15 @@
 
 :root {
   --explore-images-timing: 0.75s ease-in-out;
-  --explore-content-timing: 0.5s ease-in-out;
+  --explore-video-timing: 0.5s ease-in-out;
+  --explore-video-tint-timing: 0.5s ease-in-out;
+  --explore-content-timing: 0s ease-in-out;
   --next-object-footer-timing-out: 2s cubic-bezier(0, 0, 1, 1);
   --next-object-footer-timing-in: 0.5s cubic-bezier(0, 0, 1, 1);
   --arrow-scroll-timing: 0.1s ease-in-out;
   --mute-button-timing: 0.25s ease-in-out;
-  --explore-video-tint-timing: 0.5s ease-in-out;
-  --gallery-carousel-timing: 0.2s ease-in-out;
+  --gallery-carousel-timing: 0.5s ease-in-out;
+  --gallery-carousel-shift: 33%;
   --explore-menu-timing: 0.2s ease-in-out;
 }
 
@@ -282,12 +317,12 @@ div.artifact .content {
 }
 div.artifact .content .absolute-content-container {
   pointer-events: none;
-  position: relative;
+  position: sticky;
   visibility: hidden;
   opacity: 0;
   width: 100%;
   max-width: 100vw;
-  transition: opacity var(--explore-content-timing), visibility var(--explore-content-timing);
+  transition: opacity var(--explore-content-timing), visibility var(--explore-content-timing), position var(--explore-content-timing);
   line-height: var(--explore-content-line-height);
   letter-spacing: var(--explore-content-letter-spacing);
   font-size: var(--explore-content);
@@ -349,7 +384,7 @@ div.artifact .content .absolute-content-container.start .menu {
   div.artifact .content .absolute-content-container.start .menu {
     margin: 0;
     padding: 0;
-    height: 8vh;
+    height: var(--unmute-footer-height);
     align-items: center;
     justify-content: space-between;
     background-color: var(--mobile-header-gray);
@@ -387,11 +422,6 @@ div.artifact .content .absolute-content-container.start .menu .home a img {
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
-  div.artifact .content .absolute-content-container.start .menu .home {
-    display: none;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 320px) and (orientation: landscape) {
   div.artifact .content .absolute-content-container.start .menu .home {
     display: none;
   }
@@ -439,7 +469,9 @@ div.artifact .content .absolute-content-container.start .content {
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact .content .absolute-content-container.start .content {
     width: 100vw;
+    height: 72vh;
     flex-direction: column-reverse;
+    justify-content: space-evenly;
   }
 }
 @media only screen and (max-width: 320px) and (max-height: 570px) and (orientation: portrait) {
@@ -453,15 +485,11 @@ div.artifact .content .absolute-content-container.start .content .about-containe
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact .content .absolute-content-container.start .content .about-container {
-    margin: 0 0 0 5vw;
-    width: 70vw;
-    align-self: center;
-  }
-}
-@media only screen and (max-width: 320px) and (max-height: 570px) and (orientation: portrait) {
-  div.artifact .content .absolute-content-container.start .content .about-container {
-    margin: 0 0 0 5vw;
-    width: 70vw;
+    margin: 0;
+    width: 34rem;
+    max-width: 90vw;
+    height: 24rem;
+    overflow: auto;
     align-self: center;
   }
 }
@@ -474,7 +502,7 @@ div.artifact .content .absolute-content-container.start .content .about-containe
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact .content .absolute-content-container.start .content .about-container .header {
-    margin-top: 0;
+    margin-top: 0.5rem;
     display: flex;
     align-items: center;
   }
@@ -497,7 +525,7 @@ div.artifact .content .absolute-content-container.start .content .about-containe
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact .content .absolute-content-container.start .content .about-container .header .title {
-    margin: 4vh 0 4vh 0;
+    margin: 3vh 0 2vh 0;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
@@ -510,17 +538,17 @@ div.artifact .content .absolute-content-container.start .content .about-containe
   display: block;
   width: 10vw;
   height: 1px;
-  margin: 0.5rem 0;
+  margin: 0.5rem 0 1rem 0;
   color: var(--november-skies);
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact .content .absolute-content-container.start .content .about-container hr {
+    margin: 0.5rem 0 1.25rem 0;
+  }
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact .content .absolute-content-container.start .content .about-container hr {
     display: block;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 320px) and (orientation: landscape) {
-  div.artifact .content .absolute-content-container.start .content .about-container hr {
-    display: none;
   }
 }
 div.artifact .content .absolute-content-container.start .content .about-container .description {
@@ -539,14 +567,10 @@ div.artifact .content .absolute-content-container.start .content .about-containe
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact .content .absolute-content-container.start .content .about-container .description {
     width: 100%;
-    max-width: 25rem;
-    margin: 2vh 0;
+    margin: 0.75rem 0 0.75rem 0;
   }
-}
-@media only screen and (max-width: 320px) and (max-height: 570px) and (orientation: portrait) {
-  div.artifact .content .absolute-content-container.start .content .about-container .description {
-    margin: 1vh 0;
-    max-width: 20rem;
+  div.artifact .content .absolute-content-container.start .content .about-container .description br {
+    display: none;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
@@ -557,18 +581,11 @@ div.artifact .content .absolute-content-container.start .content .about-containe
     letter-spacing: 0.2px;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 320px) and (orientation: landscape) {
-  div.artifact .content .absolute-content-container.start .content .about-container .description {
-    width: 110%;
-    letter-spacing: 0px;
-    max-width: 20rem;
-    margin: 2vh 0;
-  }
-}
 div.artifact .content .absolute-content-container.start .content .image-container {
   position: relative;
-  margin: 5vh 4vw 0 0.5vw;
-  height: 74vh;
+  overflow: hidden;
+  margin: 4vh 4vw 0 0.5vw;
+  height: 75vh;
   width: 75%;
   display: flex;
   flex-direction: column;
@@ -588,9 +605,21 @@ div.artifact .content .absolute-content-container.start .content .image-containe
   width: inherit;
   height: auto;
 }
+div.artifact .content .absolute-content-container.start .content .image-container img.artifact {
+  height: 95%;
+  width: auto;
+  transform: scale(1);
+  max-width: 80%;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact .content .absolute-content-container.start .content .image-container img.artifact {
+    height: 85%;
+  }
+}
 div.artifact .content .absolute-content-container.start .content .image-container div.draglayer {
   position: absolute;
   pointer-events: all;
+  touch-action: none;
   top: 0;
   left: 0;
   width: 100%;
@@ -603,7 +632,7 @@ div.artifact .content .absolute-content-container.start .content .image-containe
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact .content .absolute-content-container.start .content .image-container {
     margin: 0 0 0 0;
-    height: 40vh;
+    height: 39vh;
     width: 90vw;
     padding: 0;
     align-self: center;
@@ -647,6 +676,11 @@ div.artifact .content .absolute-content-container.start .content .zoom-controls 
   flex-direction: row;
   justify-content: center;
   padding: 0em 0em;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  div.artifact .content .absolute-content-container.start .content .zoom-controls {
+    display: none;
+  }
 }
 div.artifact .content .absolute-content-container.start .content .zoom-controls button {
   padding: 0;
@@ -718,6 +752,7 @@ div.artifact .content .absolute-content-container hr {
   border-top: 1px solid var(--navy-blue);
   margin: 2.25vh 0 2vh 0;
   opacity: 1;
+  background: none;
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact .content .absolute-content-container hr {
@@ -827,21 +862,6 @@ div.artifact .content .absolute-content-container .author .audio.player .progres
   height: 100%;
   background-color: var(--progress-indicator-remaining);
 }
-div.artifact .content .absolute-content-container .author .audio.player.dark .playpause .play svg,
-div.artifact .content .absolute-content-container .author .audio.player.dark .playpause .pause svg {
-  fill: var(--navy-blue);
-}
-div.artifact .content .absolute-content-container .author .audio.player.dark .playpause .play svg circle,
-div.artifact .content .absolute-content-container .author .audio.player.dark .playpause .pause svg circle {
-  stroke-width: 0.75px;
-  stroke: var(--navy-blue);
-  fill: white;
-}
-div.artifact .content .absolute-content-container .author .audio.player.dark .playpause .play svg path,
-div.artifact .content .absolute-content-container .author .audio.player.dark .playpause .pause svg path {
-  stroke: var(--navy-blue);
-  fill: var(--navy-blue);
-}
 div.artifact .content .absolute-content-container .author .audio.player.dark .time-display {
   color: var(--navy-blue);
 }
@@ -852,14 +872,15 @@ div.artifact .content .absolute-content-container .author .audio.player.dark .pr
   background-color: var(--progress-indicator-elapsed);
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  div.artifact .content .absolute-content-container .author .audio.player .playpause {
-    font-size: 2.4rem;
+  div.artifact .content .absolute-content-container .author .audio.player .playpause .play svg,
+div.artifact .content .absolute-content-container .author .audio.player .playpause .pause svg {
+    width: 3.2rem;
   }
   div.artifact .content .absolute-content-container .author .audio.player .time-display {
-    margin-left: 0.5rem;
+    margin-left: 1rem;
   }
   div.artifact .content .absolute-content-container .author .audio.player .time-display div.span {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
   div.artifact .content .absolute-content-container .author .audio.player .progress-indicator {
     height: 0.4rem;
@@ -873,7 +894,7 @@ div.artifact body[data-content-scroll="0"] .mute-button {
   display: none;
 }
 div.artifact .animation-frame-container {
-  z-index: 0;
+  z-index: -1;
   position: fixed;
   pointer-events: none;
   top: 0;
@@ -886,6 +907,8 @@ div.artifact .animation-frame-container {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  visibility: hidden;
+  opacity: 0;
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact .animation-frame-container {
@@ -911,8 +934,8 @@ div.artifact .animation-frame-container img {
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact .animation-frame-container img {
-    width: 95vw;
-    margin: 20% 0;
+    width: 100vw;
+    margin: 0;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
@@ -944,7 +967,7 @@ div.artifact .background-image-container:before {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  transition: opacity var(--explore-images-timing), background-image var(--explore-images-timing);
+  transition: opacity var(--explore-images-timing), background-color var(--explore-images-timing), background-image var(--explore-images-timing);
 }
 div.artifact .fixed-image-container {
   z-index: -1;
@@ -975,7 +998,9 @@ div.artifact .fixed-image-container img {
   visibility: hidden;
   opacity: 0;
   transition: opacity var(--explore-images-timing), visibility var(--explore-images-timing);
-  width: 80%;
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
   align-self: center;
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
@@ -1077,6 +1102,12 @@ div.artifact .dropdown.explore-another-object button::after {
     display: none;
   }
 }
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  div.artifact .dropdown.explore-another-object button span.toggler-icon {
+    width: 5vh;
+    height: 5vh;
+  }
+}
 div.artifact .dropdown.explore-another-object ul.dropdown-menu {
   z-index: -1;
   top: 1rem;
@@ -1087,6 +1118,7 @@ div.artifact .dropdown.explore-another-object ul.dropdown-menu {
   visibility: hidden;
   display: none;
   opacity: 0;
+  color: var(--navy-blue);
   background-color: var(--mobile-header-gray);
   transition: opacity var(--explore-menu-timing), visibility var(--explore-menu-timing);
 }
@@ -1147,7 +1179,7 @@ div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li a.dropdow
     position: absolute !important;
     top: 0;
     left: -90vw;
-    width: 102vw;
+    width: 101vw;
     height: 100vh;
     z-index: 5;
     transform: none !important;
@@ -1166,17 +1198,19 @@ div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li a.dropdow
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show .close {
-    display: block;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    top: 0.5vh;
-    left: 86vw;
+    top: 1vh;
+    left: 90vw;
     color: var(--navy-blue);
     border: 1px solid white;
     width: 2.6rem;
     height: 2.6rem;
     border-radius: 1.3rem;
-    padding-left: 0.7rem;
-    padding-top: 0rem;
+    padding: 0;
   }
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show .close svg {
     stroke-width: 2;
@@ -1189,12 +1223,11 @@ div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li a.dropdow
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show .close {
     top: 0.5vh;
     left: 94vw;
-    width: 2.4rem;
-    height: 2.4rem;
-    border-radius: 1.2rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 1.1rem;
   }
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show .close svg {
-    margin-bottom: -0.5rem;
     width: 0.9rem;
     height: 0.9rem;
   }
@@ -1222,14 +1255,14 @@ div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li a.dropdow
     display: flex;
   }
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li .item.popup {
-    font-size: 160%;
+    font-size: 140%;
   }
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li .item a.dropdown-item {
     display: inline-block;
     margin-right: auto;
     margin-left: auto;
-    font-size: 160%;
-    padding: 0.5em 1em;
+    font-size: 140%;
+    padding: 0.5rem 1rem;
     border-radius: 0;
     color: var(--navy-blue);
     background-color: var(--mobile-header-gray);
@@ -1237,38 +1270,39 @@ div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li a.dropdow
   }
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li .item a.dropdown-item.small {
     font-family: "Nunito Sans", sans-serif;
-    font-size: 140%;
+    font-size: 130%;
+  }
+  div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li .item a.dropdown-item.disabled {
+    color: gray;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li .item a.dropdown-item {
-    font-size: 140%;
-  }
-  div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li .item a.dropdown-item.small {
+    padding: 0.35em 1em;
     font-size: 120%;
   }
-}
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
-  div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li .item a.dropdown-item.disabled {
-    color: gray;
+  div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li .item a.dropdown-item.small {
+    font-size: 100%;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li .item.dropdown-divider {
     width: 20%;
-    margin: 2rem 0;
+    margin: 2.5rem 0;
+    color: white;
     border: 1px solid white;
     opacity: 1;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li .item.dropdown-divider {
-    margin: 1.2rem 0;
+    margin: 0.8rem 0;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li .item.dropdown-divider.wide {
     width: 100%;
+    margin-bottom: 3rem;
   }
 }
 div.artifact div.arrow-scroll-down {
@@ -1287,13 +1321,17 @@ div.artifact div.arrow-scroll-down {
   align-items: center;
   justify-content: center;
   color: var(--white);
-  background-color: transparent;
   transition: opacity var(--explore-images-timing), visibility var(--explore-images-timing), bottom var(--arrow-scroll-timing);
 }
+div.artifact div.arrow-scroll-down.hide {
+  display: none;
+}
 div.artifact div.arrow-scroll-down .label {
+  padding: 0.5rem;
   font-size: var(--scroll-down-label);
   opacity: 0;
-  transition: opacity var(--explore-content-timing);
+  text-shadow: 0 0 1rem white;
+  transition: filter opacity var(--explore-content-timing);
 }
 div.artifact div.arrow-scroll-down:hover .label {
   opacity: 1;
@@ -1334,6 +1372,11 @@ div.artifact div.arrow-scroll-down .arrow svg {
     margin-bottom: 0.2rem;
   }
 }
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact div.arrow-scroll-down {
+    bottom: var(--arrow-scroll-down-bottom);
+  }
+}
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact div.arrow-scroll-down {
     bottom: 3vh;
@@ -1342,13 +1385,27 @@ div.artifact div.arrow-scroll-down .arrow svg {
     transform: scale(0.8);
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 320px) and (orientation: landscape) {
-  div.artifact div.arrow-scroll-down {
-    bottom: 2vh;
-  }
-  div.artifact div.arrow-scroll-down svg {
-    transform: scale(0.7);
-  }
+div.artifact .mute-button-wrapper {
+  font-size: var(--explore-content-mute-button);
+  color: var(--mute-button-color);
+  text-transform: uppercase;
+}
+div.artifact .mute-button-wrapper.secondary {
+  position: fixed;
+  bottom: var(--unmute-bottom);
+  height: var(--unmute-footer-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: bottom var(--mute-button-timing);
+  right: 0;
+  margin-right: var(--unmute-right-distance);
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.02rem;
+}
+div.artifact .mute-button-wrapper.secondary.hide {
+  display: none;
 }
 div.artifact .mute-button {
   font-size: var(--explore-content-mute-button);
@@ -1363,17 +1420,12 @@ div.artifact .mute-button {
 }
 div.artifact .mute-button.secondary {
   position: fixed;
-  bottom: 2vh;
+  bottom: 0vh;
   transition: bottom var(--mute-button-timing);
   right: var(--unmute-right-distance);
   cursor: pointer;
   font-weight: 600;
   letter-spacing: 0.02rem;
-}
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  div.artifact .mute-button.secondary {
-    bottom: 2.5vh;
-  }
 }
 div.artifact .mute-button div {
   margin-right: 0.3rem;
@@ -1388,11 +1440,11 @@ div.artifact .mute-button div.on {
 div.artifact .mute-button svg {
   width: 1.95rem;
   height: auto;
-  margin-left: 0rem;
+  margin-left: 0.2rem;
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact .mute-button svg {
-    width: 2.25rem;
+    width: 2.75rem;
   }
 }
 div.artifact .mute-button svg circle {
@@ -1442,8 +1494,8 @@ div.artifact .next-object-footer {
   transition: opacity var(--next-object-footer-timing-in), visibility var(--next-object-footer-timing-in);
   bottom: 0;
   left: 0;
-  width: 100vw;
-  height: 9vh;
+  width: 100%;
+  height: var(--next-object-footer-height);
   padding: 0;
   font-size: var(--next-object);
   font-weight: 300;
@@ -1455,22 +1507,30 @@ div.artifact .next-object-footer .back-to-top {
   font-size: var(--back-to-top);
   pointer-events: auto;
   height: 1.5rem;
-  margin-right: 2.5rem;
+  margin-right: 2rem;
   margin-bottom: -0.3rem;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  cursor: pointer;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact .next-object-footer .back-to-top {
+    margin-bottom: -0.1rem;
+  }
 }
 div.artifact .next-object-footer .back-to-top .label {
   text-transform: uppercase;
-  margin-right: 0.5em;
+  margin-right: 0.2rem;
   margin-top: -0.1rem;
-  width: 5rem;
+  width: auto;
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact .next-object-footer .back-to-top .label {
-    width: 5.5rem;
+    margin-top: 0rem;
+    margin-bottom: -0.1rem;
+    width: 8rem;
   }
 }
 div.artifact .next-object-footer .back-to-top svg.back-to-top-svg {
@@ -1478,10 +1538,16 @@ div.artifact .next-object-footer .back-to-top svg.back-to-top-svg {
   transform: rotate(0.5turn);
   margin: 0 0 0 0.25rem;
   align-self: flex-start;
-  stroke-width: 1.25;
   color: var(--navy-blue);
+  stroke-width: 1.25;
   height: 1rem;
   width: auto;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact .next-object-footer .back-to-top svg.back-to-top-svg {
+    stroke-width: 1.5;
+    height: 1.2rem;
+  }
 }
 div.artifact .next-object-footer button {
   margin-right: var(--next-object-right-margin);
@@ -1495,7 +1561,7 @@ div.artifact .next-object-footer button {
 div.artifact .next-object-footer button svg.next-object-svg {
   display: inline-block;
   transform: rotate(-0.25turn);
-  margin-left: 0.8rem;
+  margin-left: 0.6rem;
   vertical-align: middle;
   margin-top: -0.1rem;
   stroke-width: 1.15;
@@ -1504,8 +1570,15 @@ div.artifact .next-object-footer button svg.next-object-svg {
   width: auto;
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact .next-object-footer button svg.next-object-svg {
+    stroke-width: 1.5;
+    height: 1.2rem;
+    margin-right: 0.2rem;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact .next-object-footer {
-    height: 5vh;
+    height: var(--next-object-footer-height);
     font-size: var(--next-object);
   }
   div.artifact .next-object-footer .label {
@@ -1514,7 +1587,8 @@ div.artifact .next-object-footer button svg.next-object-svg {
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact .next-object-footer {
-    height: 10vh;
+    height: var(--next-object-footer-height);
+    font-size: var(--next-object);
   }
 }
 div.artifact .unmute-footer {
@@ -1538,14 +1612,21 @@ div.artifact .unmute-footer {
   font-style: italic;
 }
 div.artifact .unmute-footer .label {
-  margin-right: 19vw;
+  margin-right: 20vw;
   margin-left: auto;
-  margin-top: -0.05rem;
+  margin-top: -0.1rem;
   color: var(--navy-blue);
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact .unmute-footer .label {
     margin-bottom: 0;
+    margin-left: 1.5rem;
+    margin-right: auto;
+  }
+}
+@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 7/5) and (min-width: 640px) {
+  div.artifact .unmute-footer .label {
+    margin-right: 30vw;
   }
 }
 div.artifact .unmute-footer.on .label {
@@ -1553,7 +1634,7 @@ div.artifact .unmute-footer.on .label {
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact .unmute-footer {
-    height: 5vh;
+    height: var(--unmute-footer-height);
     font-size: var(--unmute-footer);
   }
   div.artifact .unmute-footer .label {
@@ -1562,7 +1643,7 @@ div.artifact .unmute-footer.on .label {
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact .unmute-footer {
-    height: 7vh;
+    height: var(--unmute-footer-height);
     font-size: var(--unmute-footer);
   }
   div.artifact .unmute-footer .label {
@@ -1570,9 +1651,10 @@ div.artifact .unmute-footer.on .label {
   }
 }
 div.artifact .unmute-footer .footer-items {
+  height: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: start;
   align-items: center;
   font-size: var(--unmute-footer-items);
   font-family: "Nunito Sans", sans-serif;
@@ -1585,12 +1667,14 @@ div.artifact .unmute-footer .footer-items {
 }
 div.artifact .unmute-footer .footer-items .item {
   margin: 0 0rem 0 1.5rem;
+  vertical-align: middle;
+  line-height: var(--unmute-footer-items);
 }
 div.artifact .unmute-footer .footer-items .item a {
   color: var(--white);
 }
 div.artifact .unmute-footer .footer-items .item.popup {
-  margin: 0 0.5rem 0 0;
+  margin-left: 0;
   padding: 0.45rem 2.5rem;
   background-color: var(--navy-blue);
 }
@@ -1643,7 +1727,6 @@ div.artifact .about-thoreau .offcanvas-header button.close svg {
     width: 100vw;
     height: 8vh;
     padding: 0;
-    border-bottom: 1px solid var(--white);
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -1725,8 +1808,8 @@ div.artifact .about-thoreau .offcanvas-body .about .description p:last-of-type {
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact .about-thoreau .offcanvas-body {
-    margin: 0;
-    padding: 4vh 8vw;
+    margin: -3vh 0 0 0;
+    padding: 0vh 8vw;
     display: flex;
     flex-direction: column;
     overflow-y: visible !important;
@@ -1784,7 +1867,7 @@ div.artifact .fixed-video-container {
   padding: 0;
   visibility: hidden;
   opacity: 0;
-  transition: opacity var(--explore-images-timing), visibility var(--explore-images-timing);
+  transition: opacity var(--explore-video-timing), visibility var(--explore-video-timing);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1814,7 +1897,7 @@ div.artifact .fixed-video-container .video-wrapper .tint {
   width: 100vw;
   height: 100vh;
   background-color: var(--white-rgba-00);
-  transition: opacity var(--explore-images-timing), visibility var(--explore-images-timing), background-color var(--explore-video-tint-timing);
+  transition: opacity var(--explore-video-tint-timing), visibility var(--explore-video-tint-timing), background-color var(--explore-video-tint-timing);
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact .fixed-video-container .video-wrapper {
@@ -1889,6 +1972,10 @@ div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.sta
 div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.start .content .title {
   color: var(--thoreau-blue);
 }
+div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.start .content .image-container img.artifact {
+  width: 100%;
+  height: auto;
+}
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.start {
     flex-direction: column;
@@ -1908,12 +1995,12 @@ div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.cur
   visibility: hidden;
   top: 57vh;
   left: 7vw;
-  width: 29vw;
-  max-width: 29vw;
+  width: 27rem;
+  max-width: 27rem;
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.curious {
-    top: 48vh;
+    top: 44vh;
     left: 10vw;
     width: 80vw;
     max-width: 80vw;
@@ -1935,12 +2022,12 @@ div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.his
   opacity: 0;
   top: 9vh;
   left: 7vw;
-  width: 28vw;
-  max-width: 28vw;
+  width: 27rem;
+  max-width: 27rem;
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.his-experiments {
-    top: 46vh;
+    top: 42vh;
     left: 10vw;
     width: 80vw;
     max-width: 80vw;
@@ -1962,8 +2049,8 @@ div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.wou
   opacity: 0;
   top: 30vh;
   left: 32.5vw;
-  width: 37vw;
-  max-width: 37vw;
+  width: var(--thoreau-quote-width);
+  max-width: var(--thoreau-quote-width);
   font-weight: 600;
   color: var(--white);
   font-size: var(--explore-content-heading);
@@ -2010,6 +2097,10 @@ div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.wal
   }
 }
 div.artifact.spyglass .fixed-image-container.spyglass img.spyglass-photo-rotated {
+  min-height: unset;
+  min-width: unset;
+  object-fit: contain;
+  width: 80%;
   transform: rotate(-9deg);
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
@@ -2019,6 +2110,10 @@ div.artifact.spyglass .fixed-image-container.spyglass img.spyglass-photo-rotated
     transform: rotate(-9deg) translate(1.5rem, -16vh);
   }
 }
+div.artifact.spyglass .animation-frame-container.spyglass {
+  visibility: hidden;
+  opacity: 0;
+}
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact.spyglass .animation-frame-container.spyglass {
     margin: 0 0 0 0;
@@ -2027,15 +2122,16 @@ div.artifact.spyglass .fixed-image-container.spyglass img.spyglass-photo-rotated
   }
 }
 div.artifact.spyglass .background-image-container.spyglass:before {
-  background-color: var(--thoreau-blue);
+  background-color: transparent;
 }
 
 #spyglass[data-content-scroll="0"] .unmute-footer {
   display: flex;
 }
-#spyglass[data-content-scroll="0"] .mute-button {
+#spyglass[data-content-scroll="0"] .mute-button-wrapper {
   z-index: 1;
-  bottom: var(--unmute-footer-control-bottom);
+  bottom: var(--unmute-bottom-first-page);
+  bottom: 0;
 }
 #spyglass[data-content-scroll="0"] .animation-frame-container.spyglass {
   visibility: hidden;
@@ -2087,85 +2183,180 @@ div.artifact.spyglass .background-image-container.spyglass:before {
   color: var(--navy-blue);
 }
 
-#spyglass[data-content-scroll="1"] .background-image-container.spyglass:before {
+#spyglass[data-content-scroll="1"] .background-image-container.spyglass:before,
+#spyglass[data-content-scroll="2"] .background-image-container.spyglass:before {
   background-color: var(--thoreau-blue);
   background-image: url("../media/images/thoreau-handwriting-light-background.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  #spyglass[data-content-scroll="1"] .animation-frame-container.spyglass {
-    top: 15vh;
+#spyglass[data-content-scroll="1"] .animation-frame-container.spyglass,
+#spyglass[data-content-scroll="2"] .animation-frame-container.spyglass {
+  visibility: visible;
+  opacity: 1;
+}
+@media only screen and (min-aspect-ratio: 3/2) and (min-width: 1280px) {
+  #spyglass[data-content-scroll="1"] .animation-frame-container.spyglass img,
+#spyglass[data-content-scroll="2"] .animation-frame-container.spyglass img {
+    width: 110%;
+    height: auto;
   }
 }
-#spyglass[data-content-scroll="1"] .animation-frame-container.spyglass img {
-  margin: 5vh 10vw;
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  #spyglass[data-content-scroll="1"] .animation-frame-container.spyglass,
+#spyglass[data-content-scroll="2"] .animation-frame-container.spyglass {
+    top: 15vh;
+  }
+  #spyglass[data-content-scroll="1"] .animation-frame-container.spyglass img,
+#spyglass[data-content-scroll="2"] .animation-frame-container.spyglass img {
+    width: 110%;
+    height: auto;
+  }
 }
-#spyglass[data-content-scroll="1"] img.spyglass-photo-rotated {
+#spyglass[data-content-scroll="1"] img.spyglass-photo-rotated,
+#spyglass[data-content-scroll="2"] img.spyglass-photo-rotated {
   visibility: visible;
   opacity: 1;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  #spyglass[data-content-scroll="2"] .animation-frame-container.spyglass,
-#spyglass[data-content-scroll="3"] .animation-frame-container.spyglass {
-    top: 15vh;
-  }
-}
-#spyglass[data-content-scroll="2"] .animation-frame-container.spyglass img,
-#spyglass[data-content-scroll="3"] .animation-frame-container.spyglass img {
-  margin: 5vh 10vw;
+#spyglass[data-content-scroll="2"] img.spyglass-photo-rotated {
+  visibility: hidden;
+  opacity: 0;
 }
 
+#spyglass[data-content-scroll="3"] .background-image-container.spyglass:before {
+  background-color: var(--thoreau-blue);
+}
+#spyglass[data-content-scroll="3"] .animation-frame-container.spyglass {
+  visibility: visible;
+  opacity: 1;
+}
+@media only screen and (min-aspect-ratio: 3/2) and (min-width: 1280px) {
+  #spyglass[data-content-scroll="3"] .animation-frame-container.spyglass {
+    padding: 1vw 5vw 20vh 30vw;
+  }
+  #spyglass[data-content-scroll="3"] .animation-frame-container.spyglass img {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  #spyglass[data-content-scroll="3"] .animation-frame-container.spyglass {
+    top: 3vh;
+    padding: 0 5vw;
+  }
+  #spyglass[data-content-scroll="3"] .animation-frame-container.spyglass img {
+    width: 100%;
+  }
+}
+
+#spyglass[data-content-scroll="4"] .background-image-container.spyglass:before,
+#spyglass[data-content-scroll="5"] .background-image-container.spyglass:before {
+  background-color: var(--thoreau-blue);
+}
 #spyglass[data-content-scroll="4"] .absolute-content-container.spyglass.curious,
 #spyglass[data-content-scroll="5"] .absolute-content-container.spyglass.curious {
   visibility: visible;
   opacity: 1;
   position: fixed;
 }
+#spyglass[data-content-scroll="4"] .animation-frame-container.spyglass,
+#spyglass[data-content-scroll="5"] .animation-frame-container.spyglass {
+  visibility: visible;
+  opacity: 1;
+}
+@media only screen and (min-aspect-ratio: 3/2) and (min-width: 1280px) {
+  #spyglass[data-content-scroll="4"] .animation-frame-container.spyglass,
+#spyglass[data-content-scroll="5"] .animation-frame-container.spyglass {
+    padding: 2vw 5vw 22vh 30vw;
+  }
+  #spyglass[data-content-scroll="4"] .animation-frame-container.spyglass img,
+#spyglass[data-content-scroll="5"] .animation-frame-container.spyglass img {
+    width: 100%;
+    height: auto;
+  }
+}
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   #spyglass[data-content-scroll="4"] .animation-frame-container.spyglass,
 #spyglass[data-content-scroll="5"] .animation-frame-container.spyglass {
-    top: 15vh;
+    top: 3vh;
+    padding: 0 5vw;
   }
-}
-#spyglass[data-content-scroll="4"] .animation-frame-container.spyglass img,
+  #spyglass[data-content-scroll="4"] .animation-frame-container.spyglass img,
 #spyglass[data-content-scroll="5"] .animation-frame-container.spyglass img {
-  margin: 5vh 10vw;
+    width: 100%;
+    height: auto;
+  }
 }
 
 #spyglass[data-content-scroll="4"] .absolute-content-container.spyglass.curious {
   position: sticky;
 }
 
+#spyglass[data-content-scroll="6"] .background-image-container.spyglass:before {
+  background-color: var(--thoreau-blue);
+}
+#spyglass[data-content-scroll="6"] .animation-frame-container.spyglass {
+  visibility: visible;
+  opacity: 1;
+}
+#spyglass[data-content-scroll="6"] .animation-frame-container.spyglass img {
+  margin: 15vh 30vw 10vh 30vw;
+}
 @media only screen and (min-aspect-ratio: 3/2) and (min-width: 1280px) {
   #spyglass[data-content-scroll="6"] .animation-frame-container.spyglass img {
-    margin: 20vh 30vw 10vh 30vw;
+    margin: 15vh 30vw 10vh 30vw;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  #spyglass[data-content-scroll="6"] .animation-frame-container.spyglass {
+    top: -10vh;
+    padding: 0 7vw;
+  }
+  #spyglass[data-content-scroll="6"] .animation-frame-container.spyglass img {
+    width: 100%;
   }
 }
 
+#spyglass[data-content-scroll="7"] .background-image-container.spyglass:before,
+#spyglass[data-content-scroll="8"] .background-image-container.spyglass:before {
+  background-color: var(--thoreau-blue);
+}
 #spyglass[data-content-scroll="7"] .absolute-content-container.spyglass.his-experiments,
 #spyglass[data-content-scroll="8"] .absolute-content-container.spyglass.his-experiments {
   visibility: visible;
   opacity: 1;
   position: fixed;
 }
+#spyglass[data-content-scroll="7"] .animation-frame-container.spyglass,
+#spyglass[data-content-scroll="8"] .animation-frame-container.spyglass {
+  visibility: visible;
+  opacity: 1;
+}
+#spyglass[data-content-scroll="7"] .animation-frame-container.spyglass img,
+#spyglass[data-content-scroll="8"] .animation-frame-container.spyglass img {
+  margin: 15vh 30vw 10vh 30vw;
+}
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   #spyglass[data-content-scroll="7"] .animation-frame-container.spyglass,
 #spyglass[data-content-scroll="8"] .animation-frame-container.spyglass {
     top: -10vh;
+    padding: 0 7vw;
   }
-}
-#spyglass[data-content-scroll="7"] .animation-frame-container.spyglass img,
+  #spyglass[data-content-scroll="7"] .animation-frame-container.spyglass img,
 #spyglass[data-content-scroll="8"] .animation-frame-container.spyglass img {
-  margin: 20vh 30vw 10vh 30vw;
+    width: 100%;
+  }
 }
 
 #spyglass[data-content-scroll="7"] .absolute-content-container.spyglass.his-experiments {
   position: sticky;
 }
 
+#spyglass[data-content-scroll="9"] .background-image-container.spyglass:before,
+#spyglass[data-content-scroll="10"] .background-image-container.spyglass:before {
+  background-color: var(--thoreau-blue);
+}
 #spyglass[data-content-scroll="9"] .absolute-content-container.spyglass.would-it-not,
 #spyglass[data-content-scroll="10"] .absolute-content-container.spyglass.would-it-not {
   visibility: visible;
@@ -2182,11 +2373,6 @@ div.artifact.spyglass .background-image-container.spyglass:before {
   visibility: visible;
   opacity: 1;
   background-color: var(--thoreau-blue-rgba-80);
-}
-#spyglass[data-content-scroll="9"] .animation-frame-container.spyglass,
-#spyglass[data-content-scroll="10"] .animation-frame-container.spyglass {
-  visibility: hidden;
-  opacity: 0;
 }
 
 #spyglass[data-content-scroll="10"] .absolute-content-container.spyglass.would-it-not {
@@ -2230,17 +2416,873 @@ div.artifact.spyglass .background-image-container.spyglass:before {
   visibility: visible;
   transition: opacity var(--next-object-footer-timing-out), visibility var(--next-object-footer-timing-out);
 }
-#spyglass[data-content-scroll="11"] .mute-button,
-#spyglass[data-content-scroll="12"] .mute-button {
-  bottom: 11.5vh;
+#spyglass[data-content-scroll="11"] .mute-button-wrapper,
+#spyglass[data-content-scroll="12"] .mute-button-wrapper {
+  bottom: var(--unmute-bottom-last-page);
   color: var(--white);
+}
+#spyglass[data-content-scroll="11"] .mute-button-wrapper .mute-button div,
+#spyglass[data-content-scroll="12"] .mute-button-wrapper .mute-button div {
   filter: drop-shadow(0 0 0.5rem var(--navy-blue));
 }
+
+body#desk {
+  height: 1000vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+div.artifact.desk .tint {
+  visibility: visible;
+  opacity: 1;
+  background-color: var(--desk-brown-rgba-80);
+}
+div.artifact.desk .content.desk .absolute-content-container.desk.start {
+  height: 200vh;
+  width: 100%;
+  max-width: 100vw;
+}
+div.artifact.desk .content.desk .absolute-content-container.desk.start .content .title {
+  color: var(--desk-brown);
+}
+div.artifact.desk .content.desk .absolute-content-container.desk.start .content .image-container img.artifact {
+  height: 90%;
+  width: auto;
+}
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  #spyglass[data-content-scroll="11"] .mute-button,
-#spyglass[data-content-scroll="12"] .mute-button {
-    bottom: 6.5vh;
+  div.artifact.desk .content.desk .absolute-content-container.desk.start {
+    flex-direction: column;
+    justify-content: flex-start;
   }
+}
+@media only screen and (3/4 <= aspect-ratio <= 1/1) and (min-width: 640px) {
+  div.artifact.desk .content.desk .absolute-content-container.desk.start {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+div.artifact.desk .content.desk .absolute-content-container.desk.before-the-more {
+  height: 100vh;
+}
+div.artifact.desk .content.desk .absolute-content-container.desk.the-more {
+  height: 200vh;
+  position: -webkit-sticky;
+  position: sticky;
+  visibility: hidden;
+  top: 10vh;
+  left: 7vw;
+  width: 22rem;
+  max-width: 22rem;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact.desk .content.desk .absolute-content-container.desk.the-more {
+    top: 45vh;
+    left: 10vw;
+    width: 80vw;
+    max-width: 80vw;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  div.artifact.desk .content.desk .absolute-content-container.desk.the-more {
+    top: 7vh;
+    left: 5vw;
+    width: 30vw;
+    max-width: 30vw;
+  }
+}
+div.artifact.desk .content.desk .absolute-content-container.desk.and-once {
+  height: 200vh;
+  position: -webkit-sticky;
+  position: sticky;
+  visibility: hidden;
+  opacity: 0;
+  top: 10vh;
+  left: 7vw;
+  width: 22rem;
+  max-width: 22rem;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact.desk .content.desk .absolute-content-container.desk.and-once {
+    top: 46vh;
+    left: 10vw;
+    width: 80vw;
+    max-width: 80vw;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  div.artifact.desk .content.desk .absolute-content-container.desk.and-once {
+    top: 7vh;
+    left: 5vw;
+    width: 30vw;
+    max-width: 30vw;
+  }
+}
+div.artifact.desk .content.desk .absolute-content-container.desk.i-sit-before {
+  height: 100vh;
+  position: -webkit-sticky;
+  position: sticky;
+  visibility: hidden;
+  opacity: 0;
+  top: 30vh;
+  left: 32.5vw;
+  width: var(--thoreau-quote-width);
+  max-width: var(--thoreau-quote-width);
+  font-weight: 600;
+  color: var(--white);
+  font-size: var(--explore-content-heading);
+  font-family: "Libre Caslon Text", serif;
+  text-indent: -1rem;
+}
+div.artifact.desk .content.desk .absolute-content-container.desk.i-sit-before hr {
+  border-color: var(--navy-blue);
+}
+div.artifact.desk .content.desk .absolute-content-container.desk.i-sit-before .author {
+  font-weight: 300;
+  text-indent: 0;
+}
+div.artifact.desk .content.desk .absolute-content-container.desk.i-sit-before .author .mute-button {
+  color: var(--navy-blue);
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact.desk .content.desk .absolute-content-container.desk.i-sit-before {
+    top: 24vh;
+    left: 20vw;
+    width: 58vw;
+    max-width: 58vw;
+  }
+}
+div.artifact.desk .content.desk .absolute-content-container.desk.stars {
+  height: 200vh;
+  position: -webkit-sticky;
+  position: sticky;
+  visibility: hidden;
+}
+div.artifact.desk .content.desk .absolute-content-container.desk.stars .video--wrapper .tint {
+  visibility: visible;
+  opacity: 1;
+  background-color: var(--desk-brown-rgba-80);
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact.desk .image-container img.desk-photo {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  div.artifact.desk .image-container img.desk-photo {
+    width: 60%;
+  }
+}
+div.artifact.desk .fixed-image-container.desk {
+  visibility: hidden;
+  opacity: 0;
+}
+div.artifact.desk .fixed-image-container.desk img {
+  width: 100%;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact.desk .fixed-image-container.desk img {
+    object-position: 60%;
+  }
+}
+div.artifact.desk .animation-frame-container.desk {
+  top: 4vh;
+  height: 80vh;
+  left: 36vw;
+  width: 52vw;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact.desk .animation-frame-container.desk {
+    top: 1vh;
+    width: 100vw;
+    left: 0;
+    height: 38vh;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  div.artifact.desk .animation-frame-container.desk {
+    top: 0;
+    left: 25vw;
+    width: 80vw;
+    height: 80vh;
+  }
+}
+div.artifact.desk .background-image-container.desk:before {
+  background-color: transparent;
+}
+
+#desk[data-content-scroll="0"] .unmute-footer {
+  display: flex;
+}
+#desk[data-content-scroll="0"] .mute-button-wrapper {
+  z-index: 1;
+  bottom: var(--unmute-bottom-first-page);
+  bottom: 0;
+}
+#desk[data-content-scroll="0"] .background-image-container.desk:before {
+  background-color: white;
+  background-image: url("../media/images/thoreau-handwriting-dark-background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#desk[data-content-scroll="0"] .absolute-content-container.desk.start {
+  visibility: visible;
+  opacity: 1;
+}
+#desk[data-content-scroll="0"] .absolute-content-container.desk.start .image-container {
+  -webkit-clip-path: inset(0% 0% 0% 0%);
+  clip-path: inset(0% 0% 0% 0%);
+  transition: opacity var(--explore-images-timing), background-image var(--explore-images-timing);
+  background-image: url(../media/images/desk/watercolor-background.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+#desk[data-content-scroll="0"] .explore-another-object {
+  visibility: visible;
+  opacity: 1;
+}
+#desk[data-content-scroll="0"] div.arrow-scroll-down {
+  bottom: var(--arrow-scroll-down-bottom-first-screen);
+  visibility: visible;
+  opacity: 1;
+  color: var(--navy-blue);
+}
+@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  #desk[data-content-scroll="0"] div.arrow-scroll-down {
+    bottom: var(--arrow-scroll-down-bottom-first-screen);
+  }
+}
+#desk[data-content-scroll="0"] div.arrow-scroll-down svg {
+  color: var(--navy-blue);
+}
+
+#desk[data-content-scroll="1"] .background-image-container.desk:before {
+  background-color: var(--desk-brown);
+  background-image: url("../media/images/thoreau-handwriting-light-background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#desk[data-content-scroll="1"] .fixed-image-container {
+  visibility: visible;
+  opacity: 1;
+}
+#desk[data-content-scroll="1"] .fixed-image-container img {
+  visibility: visible;
+  opacity: 1;
+}
+
+#desk[data-content-scroll="2"] .background-image-container.desk:before {
+  background-color: var(--desk-brown);
+}
+#desk[data-content-scroll="2"] .animation-frame-container.desk {
+  opacity: 1;
+  visibility: visible;
+}
+#desk[data-content-scroll="2"] .animation-frame-container.desk img {
+  margin: 5vh 10vw;
+}
+
+#desk[data-content-scroll="3"] .background-image-container.desk:before,
+#desk[data-content-scroll="4"] .background-image-container.desk:before {
+  background-color: var(--desk-brown);
+}
+#desk[data-content-scroll="3"] .absolute-content-container.desk.the-more,
+#desk[data-content-scroll="4"] .absolute-content-container.desk.the-more {
+  visibility: visible;
+  opacity: 1;
+  position: fixed;
+}
+#desk[data-content-scroll="3"] .animation-frame-container.desk,
+#desk[data-content-scroll="4"] .animation-frame-container.desk {
+  opacity: 1;
+  visibility: visible;
+}
+#desk[data-content-scroll="3"] .animation-frame-container.desk img,
+#desk[data-content-scroll="4"] .animation-frame-container.desk img {
+  margin: 5vh 10vw;
+}
+
+#desk[data-content-scroll="3"] .background-image-container.desk:before {
+  background-color: var(--desk-brown);
+}
+#desk[data-content-scroll="3"] .absolute-content-container.desk.the-more {
+  position: sticky;
+}
+
+#desk[data-content-scroll="5"] .background-image-container.desk:before,
+#desk[data-content-scroll="6"] .background-image-container.desk:before {
+  background-color: var(--desk-brown);
+}
+#desk[data-content-scroll="5"] .absolute-content-container.desk.and-once,
+#desk[data-content-scroll="6"] .absolute-content-container.desk.and-once {
+  visibility: visible;
+  opacity: 1;
+  position: fixed;
+}
+#desk[data-content-scroll="5"] .animation-frame-container.desk,
+#desk[data-content-scroll="6"] .animation-frame-container.desk {
+  opacity: 1;
+  visibility: visible;
+}
+#desk[data-content-scroll="5"] .animation-frame-container.desk img,
+#desk[data-content-scroll="6"] .animation-frame-container.desk img {
+  margin: 20vh 30vw 10vh 30vw;
+}
+
+#desk[data-content-scroll="5"] .absolute-content-container.desk.and-once {
+  position: sticky;
+}
+
+#desk[data-content-scroll="7"] .background-image-container.desk:before,
+#desk[data-content-scroll="8"] .background-image-container.desk:before {
+  background-color: var(--desk-brown);
+}
+#desk[data-content-scroll="7"] .absolute-content-container.desk.i-sit-before,
+#desk[data-content-scroll="8"] .absolute-content-container.desk.i-sit-before {
+  visibility: visible;
+  opacity: 1;
+  position: sticky;
+}
+#desk[data-content-scroll="7"] .fixed-video-container.desk.stars,
+#desk[data-content-scroll="8"] .fixed-video-container.desk.stars {
+  visibility: visible;
+  opacity: 1;
+}
+#desk[data-content-scroll="7"] .fixed-video-container.desk.stars .tint,
+#desk[data-content-scroll="8"] .fixed-video-container.desk.stars .tint {
+  visibility: visible;
+  opacity: 1;
+  background-color: var(--desk-brown-rgba-80);
+}
+
+#desk[data-content-scroll="7"] .absolute-content-container.desk.i-sit-before {
+  visibility: visible;
+  opacity: 1;
+  position: fixed;
+}
+
+#desk[data-content-scroll="8"] .absolute-content-container.desk.stars,
+#desk[data-content-scroll="9"] .absolute-content-container.desk.stars {
+  visibility: visible;
+  opacity: 1;
+}
+#desk[data-content-scroll="8"] .fixed-video-container.desk.stars,
+#desk[data-content-scroll="9"] .fixed-video-container.desk.stars {
+  visibility: visible;
+  opacity: 1;
+}
+#desk[data-content-scroll="8"] .fixed-video-container.desk.stars .tint,
+#desk[data-content-scroll="9"] .fixed-video-container.desk.stars .tint {
+  visibility: hidden;
+  opacity: 0;
+  background-color: transparent;
+}
+#desk[data-content-scroll="8"] .arrow-scroll-down,
+#desk[data-content-scroll="9"] .arrow-scroll-down {
+  visibility: hidden;
+  opacity: 0;
+}
+#desk[data-content-scroll="8"] .next-object-footer,
+#desk[data-content-scroll="8"] .back-to-top,
+#desk[data-content-scroll="9"] .next-object-footer,
+#desk[data-content-scroll="9"] .back-to-top {
+  visibility: visible;
+  opacity: 1;
+}
+#desk[data-content-scroll="8"] .next-object-footer,
+#desk[data-content-scroll="9"] .next-object-footer {
+  visibility: visible;
+  transition: opacity var(--next-object-footer-timing-out), visibility var(--next-object-footer-timing-out);
+}
+#desk[data-content-scroll="8"] .mute-button-wrapper,
+#desk[data-content-scroll="9"] .mute-button-wrapper {
+  bottom: var(--unmute-bottom-last-page);
+  color: var(--white);
+}
+#desk[data-content-scroll="8"] .mute-button-wrapper .mute-button div,
+#desk[data-content-scroll="9"] .mute-button-wrapper .mute-button div {
+  filter: drop-shadow(0 0 0.5rem var(--navy-blue));
+}
+
+body#lock-and-key {
+  height: 1500vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+div.artifact.lock-and-key .tint {
+  visibility: visible;
+  opacity: 1;
+  background-color: var(--lock-and-key-yellow-rgba-80);
+}
+div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.start {
+  height: 200vh;
+  width: 100%;
+  max-width: 100vw;
+}
+div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.start .content .title {
+  color: var(--lock-and-key-yellow);
+}
+div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.start .content .image-container img.artifact {
+  height: 90%;
+  width: auto;
+}
+@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.start .content .image-container img.artifact {
+    height: 75%;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.start {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+@media only screen and (3/4 <= aspect-ratio <= 1/1) and (min-width: 640px) {
+  div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.start {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.before-thoreaus-friend {
+  height: 100vh;
+}
+div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.thoreaus-friend {
+  height: 200vh;
+  position: -webkit-sticky;
+  position: sticky;
+  visibility: hidden;
+  top: 9vh;
+  left: 5vw;
+  width: 27rem;
+  max-width: 27rem;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.thoreaus-friend {
+    top: 40vh;
+    left: 10vw;
+    width: 80vw;
+    max-width: 80vw;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.thoreaus-friend {
+    top: 10vh;
+    left: 5vw;
+    width: 35vw;
+    max-width: 35vw;
+  }
+}
+div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.before-he-walked {
+  height: 100vh;
+}
+div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.he-walked {
+  height: 200vh;
+  position: -webkit-sticky;
+  position: sticky;
+  visibility: hidden;
+  opacity: 0;
+  top: 8vh;
+  left: 5vw;
+  width: 27rem;
+  max-width: 27rem;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.he-walked {
+    top: 38vh;
+    left: 10vw;
+    width: 80vw;
+    max-width: 80vw;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.he-walked {
+    top: 10vh;
+    left: 5vw;
+    width: 35vw;
+    max-width: 35vw;
+  }
+}
+div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.before-he-wrote {
+  height: 100vh;
+}
+div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.he-wrote {
+  height: 200vh;
+  position: -webkit-sticky;
+  position: sticky;
+  visibility: hidden;
+  opacity: 0;
+  top: 6vh;
+  left: 5vw;
+  width: 30vw;
+  max-width: 30vw;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.he-wrote {
+    top: 42vh;
+    left: 10vw;
+    width: 80vw;
+    max-width: 80vw;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.he-wrote {
+    top: 5vh;
+    left: 10vw;
+    width: 45vw;
+    max-width: 45vw;
+  }
+}
+div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.under-a-government {
+  height: 100vh;
+  position: -webkit-sticky;
+  position: sticky;
+  visibility: hidden;
+  opacity: 0;
+  top: 30vh;
+  left: 32.5vw;
+  width: var(--thoreau-quote-width);
+  max-width: var(--thoreau-quote-width);
+  font-weight: 600;
+  color: var(--white);
+  font-size: var(--explore-content-heading);
+  font-family: "Libre Caslon Text", serif;
+  text-indent: -1rem;
+}
+div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.under-a-government hr {
+  border-color: var(--navy-blue);
+}
+div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.under-a-government .author {
+  font-weight: 300;
+  text-indent: 0;
+}
+div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.under-a-government .author .mute-button {
+  color: var(--navy-blue);
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.under-a-government {
+    top: 24vh;
+    left: 20vw;
+    width: 58vw;
+    max-width: 58vw;
+  }
+}
+div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.town {
+  height: 200vh;
+  position: -webkit-sticky;
+  position: sticky;
+  visibility: hidden;
+}
+div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.town .video--wrapper .tint {
+  visibility: visible;
+  opacity: 1;
+  background-color: var(--lock-and-key-yellow-rgba-80);
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact.lock-and-key .image-container img.lock-and-key-photo {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  div.artifact.lock-and-key .image-container img.lock-and-key-photo {
+    width: 60%;
+  }
+}
+div.artifact.lock-and-key .fixed-image-container.lock-and-key {
+  visibility: hidden;
+  opacity: 0;
+}
+div.artifact.lock-and-key .fixed-image-container.lock-and-key img {
+  width: 100%;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact.lock-and-key .fixed-image-container.lock-and-key img {
+    object-position: 45%;
+  }
+}
+div.artifact.lock-and-key .animation-frame-container.lock-and-key {
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+div.artifact.lock-and-key .animation-frame-container.lock-and-key img {
+  margin: 4vh 0 0 16vw;
+  width: 88vw;
+  height: auto;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact.lock-and-key .animation-frame-container.lock-and-key {
+    top: 0vh;
+    width: 100vw;
+    left: 0;
+    height: 50vh;
+  }
+  div.artifact.lock-and-key .animation-frame-container.lock-and-key img {
+    margin: 4vh 0 0 0;
+    width: 100%;
+    height: auto;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  div.artifact.lock-and-key .animation-frame-container.lock-and-key img {
+    margin: 8vh 0 0 32vw;
+    width: 70%;
+    height: auto;
+  }
+}
+div.artifact.lock-and-key .background-image-container.lock-and-key:before {
+  background-color: transparent;
+}
+
+#lock-and-key[data-content-scroll="0"] .unmute-footer {
+  display: flex;
+}
+#lock-and-key[data-content-scroll="0"] .mute-button-wrapper {
+  z-index: 1;
+  bottom: var(--unmute-bottom-first-page);
+  bottom: 0;
+}
+#lock-and-key[data-content-scroll="0"] .background-image-container.lock-and-key:before {
+  background-color: white;
+  background-image: url("../media/images/thoreau-handwriting-dark-background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#lock-and-key[data-content-scroll="0"] .absolute-content-container.lock-and-key.start {
+  visibility: visible;
+  opacity: 1;
+}
+#lock-and-key[data-content-scroll="0"] .absolute-content-container.lock-and-key.start .image-container {
+  -webkit-clip-path: inset(0% 0% 0% 0%);
+  clip-path: inset(0% 0% 0% 0%);
+  transition: opacity var(--explore-images-timing), background-image var(--explore-images-timing);
+  background-image: url(../media/images/lock-and-key/watercolor-background.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+#lock-and-key[data-content-scroll="0"] .explore-another-object {
+  visibility: visible;
+  opacity: 1;
+}
+#lock-and-key[data-content-scroll="0"] div.arrow-scroll-down {
+  bottom: var(--arrow-scroll-down-bottom-first-screen);
+  visibility: visible;
+  opacity: 1;
+  color: var(--navy-blue);
+}
+@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  #lock-and-key[data-content-scroll="0"] div.arrow-scroll-down {
+    bottom: var(--arrow-scroll-down-bottom-first-screen);
+  }
+}
+#lock-and-key[data-content-scroll="0"] div.arrow-scroll-down svg {
+  color: var(--navy-blue);
+}
+
+#lock-and-key[data-content-scroll="1"] .background-image-container.lock-and-key:before {
+  background-color: var(--lock-and-key-yellow);
+}
+#lock-and-key[data-content-scroll="1"] .fixed-image-container {
+  visibility: visible;
+  opacity: 1;
+}
+#lock-and-key[data-content-scroll="1"] .fixed-image-container img {
+  visibility: visible;
+  opacity: 1;
+}
+
+#lock-and-key[data-content-scroll="2"] .background-image-container.lock-and-key:before {
+  background-color: var(--lock-and-key-yellow);
+}
+#lock-and-key[data-content-scroll="2"] .animation-frame-container.lock-and-key {
+  opacity: 1;
+  visibility: visible;
+}
+
+#lock-and-key[data-content-scroll="3"] .background-image-container.lock-and-key:before,
+#lock-and-key[data-content-scroll="4"] .background-image-container.lock-and-key:before {
+  background-color: var(--lock-and-key-yellow);
+}
+#lock-and-key[data-content-scroll="3"] .absolute-content-container.lock-and-key.thoreaus-friend,
+#lock-and-key[data-content-scroll="4"] .absolute-content-container.lock-and-key.thoreaus-friend {
+  visibility: visible;
+  opacity: 1;
+  position: fixed;
+}
+#lock-and-key[data-content-scroll="3"] .animation-frame-container.lock-and-key,
+#lock-and-key[data-content-scroll="4"] .animation-frame-container.lock-and-key {
+  opacity: 1;
+  visibility: visible;
+}
+
+#lock-and-key[data-content-scroll="3"] .absolute-content-container.lock-and-key.thoreaus-friend {
+  position: sticky;
+}
+
+#lock-and-key[data-content-scroll="5"] .background-image-container.lock-and-key:before {
+  background-color: var(--lock-and-key-yellow);
+}
+#lock-and-key[data-content-scroll="5"] .animation-frame-container.lock-and-key {
+  opacity: 1;
+  visibility: visible;
+}
+
+#lock-and-key[data-content-scroll="6"] .background-image-container.lock-and-key:before,
+#lock-and-key[data-content-scroll="7"] .background-image-container.lock-and-key:before {
+  background-color: var(--lock-and-key-yellow);
+}
+#lock-and-key[data-content-scroll="6"] .absolute-content-container.lock-and-key.he-walked,
+#lock-and-key[data-content-scroll="7"] .absolute-content-container.lock-and-key.he-walked {
+  visibility: visible;
+  opacity: 1;
+  position: fixed;
+}
+#lock-and-key[data-content-scroll="6"] .animation-frame-container.lock-and-key,
+#lock-and-key[data-content-scroll="7"] .animation-frame-container.lock-and-key {
+  opacity: 1;
+  visibility: visible;
+}
+
+#lock-and-key[data-content-scroll="6"] .absolute-content-container.lock-and-key.he-walked {
+  position: sticky;
+}
+
+#lock-and-key[data-content-scroll="8"] .background-image-container.lock-and-key:before {
+  background-color: var(--lock-and-key-yellow);
+}
+#lock-and-key[data-content-scroll="8"] .animation-frame-container.lock-and-key {
+  opacity: 1;
+  visibility: visible;
+}
+#lock-and-key[data-content-scroll="8"] .animation-frame-container.lock-and-key img {
+  margin: 8vh 0 0 0;
+  width: 100%;
+  height: auto;
+  transform: scale(1.06);
+}
+@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  #lock-and-key[data-content-scroll="8"] .animation-frame-container.lock-and-key img {
+    margin: -6vh 0 0 0;
+    width: 100%;
+    height: auto;
+    transform: scale(1);
+  }
+}
+
+#lock-and-key[data-content-scroll="9"] .background-image-container.lock-and-key:before,
+#lock-and-key[data-content-scroll="10"] .background-image-container.lock-and-key:before {
+  background-color: var(--lock-and-key-yellow);
+}
+#lock-and-key[data-content-scroll="9"] .absolute-content-container.lock-and-key.he-wrote,
+#lock-and-key[data-content-scroll="10"] .absolute-content-container.lock-and-key.he-wrote {
+  visibility: visible;
+  opacity: 1;
+  position: fixed;
+}
+#lock-and-key[data-content-scroll="9"] .animation-frame-container.lock-and-key,
+#lock-and-key[data-content-scroll="10"] .animation-frame-container.lock-and-key {
+  opacity: 1;
+  visibility: visible;
+}
+#lock-and-key[data-content-scroll="9"] .animation-frame-container.lock-and-key img,
+#lock-and-key[data-content-scroll="10"] .animation-frame-container.lock-and-key img {
+  margin: 8vh 0 0 0;
+  width: 100%;
+  height: auto;
+  transform: scale(1.06);
+}
+@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  #lock-and-key[data-content-scroll="9"] .animation-frame-container.lock-and-key img,
+#lock-and-key[data-content-scroll="10"] .animation-frame-container.lock-and-key img {
+    margin: -6vh 0 0 0;
+    width: 100%;
+    height: auto;
+    transform: scale(1);
+  }
+}
+
+#lock-and-key[data-content-scroll="9"] .absolute-content-container.lock-and-key.he-wrote {
+  position: sticky;
+}
+
+#lock-and-key[data-content-scroll="11"] .background-image-container.lock-and-key:before,
+#lock-and-key[data-content-scroll="12"] .background-image-container.lock-and-key:before {
+  background-color: var(--lock-and-key-yellow);
+}
+#lock-and-key[data-content-scroll="11"] .absolute-content-container.lock-and-key.under-a-government,
+#lock-and-key[data-content-scroll="12"] .absolute-content-container.lock-and-key.under-a-government {
+  visibility: visible;
+  opacity: 1;
+  position: fixed;
+}
+#lock-and-key[data-content-scroll="11"] .fixed-video-container.lock-and-key.town,
+#lock-and-key[data-content-scroll="12"] .fixed-video-container.lock-and-key.town {
+  visibility: visible;
+  opacity: 1;
+}
+#lock-and-key[data-content-scroll="11"] .fixed-video-container.lock-and-key.town .tint,
+#lock-and-key[data-content-scroll="12"] .fixed-video-container.lock-and-key.town .tint {
+  transition: opacity var(--explore-images-timing), visibility var(--explore-images-timing);
+  visibility: visible;
+  opacity: 1;
+  background-color: var(--lock-and-key-yellow-rgba-80);
+}
+
+#lock-and-key[data-content-scroll="11"] .absolute-content-container.lock-and-key.under-a-government {
+  visibility: visible;
+  opacity: 1;
+  position: sticky;
+}
+
+#lock-and-key[data-content-scroll="13"] .absolute-content-container.lock-and-key.town,
+#lock-and-key[data-content-scroll="14"] .absolute-content-container.lock-and-key.town {
+  visibility: visible;
+  opacity: 1;
+}
+#lock-and-key[data-content-scroll="13"] .fixed-video-container.lock-and-key.town,
+#lock-and-key[data-content-scroll="14"] .fixed-video-container.lock-and-key.town {
+  visibility: visible;
+  opacity: 1;
+}
+#lock-and-key[data-content-scroll="13"] .fixed-video-container.lock-and-key.town .tint,
+#lock-and-key[data-content-scroll="14"] .fixed-video-container.lock-and-key.town .tint {
+  visibility: hidden;
+  opacity: 0;
+  background-color: transparent;
+}
+#lock-and-key[data-content-scroll="13"] .arrow-scroll-down,
+#lock-and-key[data-content-scroll="14"] .arrow-scroll-down {
+  visibility: hidden;
+  opacity: 0;
+}
+#lock-and-key[data-content-scroll="13"] .next-object-footer,
+#lock-and-key[data-content-scroll="13"] .back-to-top,
+#lock-and-key[data-content-scroll="14"] .next-object-footer,
+#lock-and-key[data-content-scroll="14"] .back-to-top {
+  visibility: visible;
+  opacity: 1;
+}
+#lock-and-key[data-content-scroll="13"] .next-object-footer,
+#lock-and-key[data-content-scroll="14"] .next-object-footer {
+  visibility: visible;
+  transition: opacity var(--next-object-footer-timing-out), visibility var(--next-object-footer-timing-out);
+}
+#lock-and-key[data-content-scroll="13"] .mute-button-wrapper,
+#lock-and-key[data-content-scroll="14"] .mute-button-wrapper {
+  bottom: var(--unmute-bottom-last-page);
+  color: var(--white);
+}
+#lock-and-key[data-content-scroll="13"] .mute-button-wrapper .mute-button div,
+#lock-and-key[data-content-scroll="14"] .mute-button-wrapper .mute-button div {
+  filter: drop-shadow(0 0 0.5rem var(--navy-blue));
 }
 
 body#walking-stick {
@@ -2267,6 +3309,10 @@ div.artifact.walking-stick .content.walking-stick .absolute-content-container.wa
 div.artifact.walking-stick .content.walking-stick .absolute-content-container.walking-stick.start .title {
   color: var(--navy-blue);
 }
+div.artifact.walking-stick .content.walking-stick .absolute-content-container.walking-stick.start .image-container img.artifact {
+  height: 90%;
+  width: auto;
+}
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact.walking-stick .content.walking-stick .absolute-content-container.walking-stick.start {
     flex-direction: column;
@@ -2287,8 +3333,8 @@ div.artifact.walking-stick .content.walking-stick .absolute-content-container.wa
   opacity: 0;
   top: 30vh;
   left: 32.5vw;
-  width: 37vw;
-  max-width: 37vw;
+  width: 34rem;
+  max-width: 34rem;
   font-weight: 600;
   color: var(--white);
   font-size: var(--explore-content-heading);
@@ -2350,24 +3396,30 @@ div.artifact.walking-stick .content.walking-stick .absolute-content-container.wa
 }
 div.artifact.walking-stick .fixed-image-container.walking-stick img.walking-stick-detail {
   width: 90%;
-  margin-right: -10%;
+  object-fit: scale-down;
+  object-position: 90%;
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact.walking-stick .fixed-image-container.walking-stick img.walking-stick-detail {
-    width: 90vw;
-    height: auto;
+    object-fit: unset;
+    object-position: unset;
+    min-height: unset;
+    min-width: unset;
+    height: unset;
+    margin-right: -10vw;
   }
 }
 div.artifact.walking-stick .background-image-container.walking-stick:before {
-  background-color: var(--thoreau-purple);
+  background-color: transparent;
 }
 
 #walking-stick[data-content-scroll="0"] .unmute-footer {
   display: flex;
 }
-#walking-stick[data-content-scroll="0"] .mute-button {
+#walking-stick[data-content-scroll="0"] .mute-button-wrapper {
   z-index: 1;
-  bottom: var(--unmute-footer-control-bottom);
+  bottom: var(--unmute-bottom-first-page);
+  bottom: 0;
 }
 #walking-stick[data-content-scroll="0"] .background-image-container.walking-stick:before {
   background-color: white;
@@ -2416,7 +3468,7 @@ div.artifact.walking-stick .background-image-container.walking-stick:before {
 }
 
 #walking-stick[data-content-scroll="1"] .background-image-container.walking-stick:before {
-  background-color: var(--thoreau-purple);
+  background-color: var(--walking-stick-slate);
   background-image: url("../media/images/thoreau-handwriting-light-background.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -2425,8 +3477,6 @@ div.artifact.walking-stick .background-image-container.walking-stick:before {
 #walking-stick[data-content-scroll="1"] img.walking-stick-detail {
   visibility: visible;
   opacity: 1;
-  width: 90%;
-  margin-right: -10%;
 }
 
 #walking-stick[data-content-scroll="2"] .background-image-container.walking-stick:before,
@@ -2460,6 +3510,7 @@ div.artifact.walking-stick .background-image-container.walking-stick:before {
 }
 
 #walking-stick[data-content-scroll="4"] .background-image-container.walking-stick:before {
+  background-color: var(--thoreau-purple);
   background-image: url("../media/images/walking-stick/forest-path-istockphoto-182508042-1024x1024.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -2487,15 +3538,12 @@ div.artifact.walking-stick .background-image-container.walking-stick:before {
   visibility: visible;
   transition: opacity var(--next-object-footer-timing-out), visibility var(--next-object-footer-timing-out);
 }
-#walking-stick[data-content-scroll="4"] .mute-button {
-  bottom: 11.5vh;
+#walking-stick[data-content-scroll="4"] .mute-button-wrapper {
+  bottom: var(--unmute-bottom-last-page);
   color: var(--white);
-  filter: drop-shadow(0 0 0.5rem var(--navy-blue));
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  #walking-stick[data-content-scroll="4"] .mute-button {
-    bottom: 6.5vh;
-  }
+#walking-stick[data-content-scroll="4"] .mute-button-wrapper .mute-button div {
+  filter: drop-shadow(0 0 0.5rem var(--navy-blue));
 }
 
 body#flute {
@@ -2522,6 +3570,10 @@ div.artifact.flute .content.flute .absolute-content-container.flute.start {
 div.artifact.flute .content.flute .absolute-content-container.flute.start .content .title {
   color: var(--thoreau-green);
 }
+div.artifact.flute .content.flute .absolute-content-container.flute.start .content .image-container img.artifact {
+  width: 100%;
+  height: auto;
+}
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact.flute .content.flute .absolute-content-container.flute.start {
     flex-direction: column;
@@ -2542,8 +3594,8 @@ div.artifact.flute .content.flute .absolute-content-container.flute.my-music {
   opacity: 0;
   top: 30vh;
   left: 32.5vw;
-  width: 37vw;
-  max-width: 37vw;
+  width: var(--thoreau-quote-width);
+  max-width: var(--thoreau-quote-width);
   font-weight: 600;
   color: var(--white);
   font-size: var(--explore-content-heading);
@@ -2604,24 +3656,29 @@ div.artifact.flute .content.flute .absolute-content-container.flute.stream-path 
   }
 }
 div.artifact.flute .fixed-image-container.flute img.flute-detail {
-  width: 147%;
+  object-fit: none;
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact.flute .fixed-image-container.flute img.flute-detail {
-    width: 150vw;
-    height: auto;
+    object-fit: contain;
+    min-height: unset;
+    min-width: unset;
+    height: unset;
+    width: 100%;
+    transform: scale(1.5);
   }
 }
 div.artifact.flute .background-image-container.flute:before {
-  background-color: var(--thoreau-green);
+  background-color: transparent;
 }
 
 #flute[data-content-scroll="0"] .unmute-footer {
   display: flex;
 }
-#flute[data-content-scroll="0"] .mute-button {
+#flute[data-content-scroll="0"] .mute-button-wrapper {
   z-index: 1;
-  bottom: var(--unmute-footer-control-bottom);
+  bottom: var(--unmute-bottom-first-page);
+  bottom: 0;
 }
 #flute[data-content-scroll="0"] .background-image-container.flute:before {
   background-color: white;
@@ -2712,6 +3769,7 @@ div.artifact.flute .background-image-container.flute:before {
 }
 
 #flute[data-content-scroll="4"] .background-image-container.flute:before {
+  background-color: var(--thoreau-green);
   background-image: url("../media/images/flute/forest-stream-david-lindahl-IcEB7ExxMew-unsplash.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -2739,15 +3797,12 @@ div.artifact.flute .background-image-container.flute:before {
   visibility: visible;
   transition: opacity var(--next-object-footer-timing-out), visibility var(--next-object-footer-timing-out);
 }
-#flute[data-content-scroll="4"] .mute-button {
-  bottom: 11.5vh;
+#flute[data-content-scroll="4"] .mute-button-wrapper {
+  bottom: var(--unmute-bottom-last-page);
   color: var(--white);
-  filter: drop-shadow(0 0 0.5rem var(--navy-blue));
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  #flute[data-content-scroll="4"] .mute-button {
-    bottom: 6.5vh;
-  }
+#flute[data-content-scroll="4"] .mute-button-wrapper .mute-button div {
+  filter: drop-shadow(0 0 0.5rem var(--navy-blue));
 }
 
 body#snowshoes {
@@ -2798,8 +3853,8 @@ div.artifact.snowshoes .content.snowshoes .absolute-content-container.snowshoes.
   opacity: 0;
   top: 30vh;
   left: 32.5vw;
-  width: 37vw;
-  max-width: 37vw;
+  width: var(--thoreau-quote-width);
+  max-width: var(--thoreau-quote-width);
   font-weight: 600;
   color: var(--snowshoe-brown);
   font-size: var(--explore-content-heading);
@@ -2869,12 +3924,17 @@ div.artifact.snowshoes .fixed-image-container.snowshoes img.snowshoes-detail {
     height: auto;
   }
 }
+div.artifact.snowshoes .background-image-container.snowshoes:before {
+  background-color: transparent;
+}
+
 #snowshoes[data-content-scroll="0"] .unmute-footer {
   display: flex;
 }
-#snowshoes[data-content-scroll="0"] .mute-button {
+#snowshoes[data-content-scroll="0"] .mute-button-wrapper {
   z-index: 1;
-  bottom: var(--unmute-footer-control-bottom);
+  bottom: var(--unmute-bottom-first-page);
+  bottom: 0;
 }
 #snowshoes[data-content-scroll="0"] .background-image-container.snowshoes:before {
   background-color: white;
@@ -2965,6 +4025,7 @@ div.artifact.snowshoes .fixed-image-container.snowshoes img.snowshoes-detail {
 }
 
 #snowshoes[data-content-scroll="4"] .background-image-container.snowshoes:before {
+  background-color: var(--snowshoe-brown);
   background-image: url("../media/images/snowshoes/snowy-leaves-david-lindahl-IcEB7ExxMew-unsplash.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -2992,15 +4053,12 @@ div.artifact.snowshoes .fixed-image-container.snowshoes img.snowshoes-detail {
   visibility: visible;
   transition: opacity var(--next-object-footer-timing-out), visibility var(--next-object-footer-timing-out);
 }
-#snowshoes[data-content-scroll="4"] .mute-button {
-  bottom: 11.5vh;
+#snowshoes[data-content-scroll="4"] .mute-button-wrapper {
+  bottom: var(--unmute-bottom-last-page);
   color: var(--white);
-  filter: drop-shadow(0 0 0.5rem var(--navy-blue));
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  #snowshoes[data-content-scroll="4"] .mute-button {
-    bottom: 6.5vh;
-  }
+#snowshoes[data-content-scroll="4"] .mute-button-wrapper .mute-button div {
+  filter: drop-shadow(0 0 0.5rem var(--navy-blue));
 }
 
 .unmute-footer {
@@ -3024,14 +4082,21 @@ div.artifact.snowshoes .fixed-image-container.snowshoes img.snowshoes-detail {
   font-style: italic;
 }
 .unmute-footer .label {
-  margin-right: 19vw;
+  margin-right: 20vw;
   margin-left: auto;
-  margin-top: -0.05rem;
+  margin-top: -0.1rem;
   color: var(--navy-blue);
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   .unmute-footer .label {
     margin-bottom: 0;
+    margin-left: 1.5rem;
+    margin-right: auto;
+  }
+}
+@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 7/5) and (min-width: 640px) {
+  .unmute-footer .label {
+    margin-right: 30vw;
   }
 }
 .unmute-footer.on .label {
@@ -3039,7 +4104,7 @@ div.artifact.snowshoes .fixed-image-container.snowshoes img.snowshoes-detail {
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   .unmute-footer {
-    height: 5vh;
+    height: var(--unmute-footer-height);
     font-size: var(--unmute-footer);
   }
   .unmute-footer .label {
@@ -3048,7 +4113,7 @@ div.artifact.snowshoes .fixed-image-container.snowshoes img.snowshoes-detail {
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   .unmute-footer {
-    height: 7vh;
+    height: var(--unmute-footer-height);
     font-size: var(--unmute-footer);
   }
   .unmute-footer .label {
@@ -3056,9 +4121,10 @@ div.artifact.snowshoes .fixed-image-container.snowshoes img.snowshoes-detail {
   }
 }
 .unmute-footer .footer-items {
+  height: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: start;
   align-items: center;
   font-size: var(--unmute-footer-items);
   font-family: "Nunito Sans", sans-serif;
@@ -3071,16 +4137,17 @@ div.artifact.snowshoes .fixed-image-container.snowshoes img.snowshoes-detail {
 }
 .unmute-footer .footer-items .item {
   margin: 0 0rem 0 1.5rem;
+  vertical-align: middle;
+  line-height: var(--unmute-footer-items);
 }
 .unmute-footer .footer-items .item a {
   color: var(--white);
 }
 .unmute-footer .footer-items .item.popup {
-  margin: 0 0.5rem 0 0;
+  margin-left: 0;
   padding: 0.45rem 2.5rem;
   background-color: var(--navy-blue);
 }
-
 .about-thoreau {
   width: 30vw;
   overflow-y: auto;
@@ -3130,7 +4197,6 @@ div.artifact.snowshoes .fixed-image-container.snowshoes img.snowshoes-detail {
     width: 100vw;
     height: 8vh;
     padding: 0;
-    border-bottom: 1px solid var(--white);
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -3212,8 +4278,8 @@ div.artifact.snowshoes .fixed-image-container.snowshoes img.snowshoes-detail {
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   .about-thoreau .offcanvas-body {
-    margin: 0;
-    padding: 4vh 8vw;
+    margin: -3vh 0 0 0;
+    padding: 0vh 8vw;
     display: flex;
     flex-direction: column;
     overflow-y: visible !important;
@@ -3349,6 +4415,12 @@ div.artifact.snowshoes .fixed-image-container.snowshoes img.snowshoes-detail {
     display: none;
   }
 }
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  .dropdown.explore-another-object button span.toggler-icon {
+    width: 5vh;
+    height: 5vh;
+  }
+}
 .dropdown.explore-another-object ul.dropdown-menu {
   z-index: -1;
   top: 1rem;
@@ -3359,6 +4431,7 @@ div.artifact.snowshoes .fixed-image-container.snowshoes img.snowshoes-detail {
   visibility: hidden;
   display: none;
   opacity: 0;
+  color: var(--navy-blue);
   background-color: var(--mobile-header-gray);
   transition: opacity var(--explore-menu-timing), visibility var(--explore-menu-timing);
 }
@@ -3419,7 +4492,7 @@ div.artifact.snowshoes .fixed-image-container.snowshoes img.snowshoes-detail {
     position: absolute !important;
     top: 0;
     left: -90vw;
-    width: 102vw;
+    width: 101vw;
     height: 100vh;
     z-index: 5;
     transform: none !important;
@@ -3438,17 +4511,19 @@ div.artifact.snowshoes .fixed-image-container.snowshoes img.snowshoes-detail {
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   .dropdown.explore-another-object ul.dropdown-menu.show .close {
-    display: block;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    top: 0.5vh;
-    left: 86vw;
+    top: 1vh;
+    left: 90vw;
     color: var(--navy-blue);
     border: 1px solid white;
     width: 2.6rem;
     height: 2.6rem;
     border-radius: 1.3rem;
-    padding-left: 0.7rem;
-    padding-top: 0rem;
+    padding: 0;
   }
   .dropdown.explore-another-object ul.dropdown-menu.show .close svg {
     stroke-width: 2;
@@ -3461,12 +4536,11 @@ div.artifact.snowshoes .fixed-image-container.snowshoes img.snowshoes-detail {
   .dropdown.explore-another-object ul.dropdown-menu.show .close {
     top: 0.5vh;
     left: 94vw;
-    width: 2.4rem;
-    height: 2.4rem;
-    border-radius: 1.2rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 1.1rem;
   }
   .dropdown.explore-another-object ul.dropdown-menu.show .close svg {
-    margin-bottom: -0.5rem;
     width: 0.9rem;
     height: 0.9rem;
   }
@@ -3494,14 +4568,14 @@ div.artifact.snowshoes .fixed-image-container.snowshoes img.snowshoes-detail {
     display: flex;
   }
   .dropdown.explore-another-object ul.dropdown-menu.show li .item.popup {
-    font-size: 160%;
+    font-size: 140%;
   }
   .dropdown.explore-another-object ul.dropdown-menu.show li .item a.dropdown-item {
     display: inline-block;
     margin-right: auto;
     margin-left: auto;
-    font-size: 160%;
-    padding: 0.5em 1em;
+    font-size: 140%;
+    padding: 0.5rem 1rem;
     border-radius: 0;
     color: var(--navy-blue);
     background-color: var(--mobile-header-gray);
@@ -3509,38 +4583,39 @@ div.artifact.snowshoes .fixed-image-container.snowshoes img.snowshoes-detail {
   }
   .dropdown.explore-another-object ul.dropdown-menu.show li .item a.dropdown-item.small {
     font-family: "Nunito Sans", sans-serif;
-    font-size: 140%;
+    font-size: 130%;
+  }
+  .dropdown.explore-another-object ul.dropdown-menu.show li .item a.dropdown-item.disabled {
+    color: gray;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   .dropdown.explore-another-object ul.dropdown-menu.show li .item a.dropdown-item {
-    font-size: 140%;
-  }
-  .dropdown.explore-another-object ul.dropdown-menu.show li .item a.dropdown-item.small {
+    padding: 0.35em 1em;
     font-size: 120%;
   }
-}
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
-  .dropdown.explore-another-object ul.dropdown-menu.show li .item a.dropdown-item.disabled {
-    color: gray;
+  .dropdown.explore-another-object ul.dropdown-menu.show li .item a.dropdown-item.small {
+    font-size: 100%;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   .dropdown.explore-another-object ul.dropdown-menu.show li .item.dropdown-divider {
     width: 20%;
-    margin: 2rem 0;
+    margin: 2.5rem 0;
+    color: white;
     border: 1px solid white;
     opacity: 1;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   .dropdown.explore-another-object ul.dropdown-menu.show li .item.dropdown-divider {
-    margin: 1.2rem 0;
+    margin: 0.8rem 0;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   .dropdown.explore-another-object ul.dropdown-menu.show li .item.dropdown-divider.wide {
     width: 100%;
+    margin-bottom: 3rem;
   }
 }
 
@@ -3597,8 +4672,8 @@ body.index {
     flex-direction: row;
     margin: 0;
     padding: 0;
-    height: 10vh;
-    min-height: 10vh;
+    height: 8vh;
+    min-height: 8vh;
     align-items: center;
     justify-content: flex-end;
     background-color: var(--mobile-header-gray);
@@ -3656,17 +4731,22 @@ body.index {
   height: 14vh;
   width: auto;
 }
+@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 7/5) and (min-width: 640px) {
+  .content.index .main img.pinetree.noborder {
+    height: 12vh;
+  }
+}
 .content.index .main .header {
   display: flex;
   flex-direction: row;
   align-self: center;
   align-items: center;
-  justify-content: flex-end;
-  padding: 0 0;
+  justify-content: center;
   line-height: normal;
   width: 90vw;
-  height: 24vh;
   margin: 1vh 2vw;
+  padding: 0 0;
+  height: 24vh;
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   .content.index .main .header {
@@ -3676,11 +4756,20 @@ body.index {
     flex-direction: column;
   }
 }
+@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 7/5) and (min-width: 640px) {
+  .content.index .main .header {
+    align-self: start;
+    justify-content: center;
+    width: 95vw;
+    margin: 1vh 0vw;
+    padding: 0 0;
+  }
+}
 .content.index .main .header .title {
   margin: 0vh 0.4vw;
   padding-bottom: 2vh;
   font-family: "Libre Caslon Text", serif;
-  font-size: var(--main-title);
+  font-size: var(--main-menu-title);
   font-weight: 700;
   color: var(--navy-blue);
 }
@@ -3688,7 +4777,7 @@ body.index {
   margin: 0 1vw 0 0;
   padding: 0;
   font-family: "Libre Caslon Display", serif;
-  font-size: var(--main-title-world);
+  font-size: var(--main-menu-title-world);
   color: var(--medium-gray);
   font-weight: 600;
   padding-bottom: 0.5vh;
@@ -3698,10 +4787,18 @@ body.index {
     margin: 1.5vh 0 3vh 0;
     padding-bottom: 0;
   }
+  .content.index .main .header .title .world {
+    font-family: "Libre Caslon Text", serif;
+    font-weight: 700;
+  }
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   .content.index .main .header .title {
     margin: 4vh 0 4vh 0;
+  }
+  .content.index .main .header .title .world {
+    font-family: "Libre Caslon Text", serif;
+    font-weight: 700;
   }
 }
 .content.index .main .header .separator {
@@ -3737,7 +4834,7 @@ body.index {
   }
 }
 .content.index .main .header .description {
-  width: 30vw;
+  width: 28rem;
   font-weight: 300;
   font-size: var(--main-description);
   line-height: var(--main-description-line-height);
@@ -3765,9 +4862,22 @@ body.index {
     display: contents;
   }
 }
+@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+  .content.index .main .header .description {
+    width: 26rem;
+  }
+}
 @media only screen and (max-device-width: 570px) and (orientation: landscape) {
   .content.index .main .header .description {
     width: 100%;
+  }
+}
+@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 7/5) and (min-width: 640px) {
+  .content.index .main .header .description {
+    width: 36vw;
+  }
+  .content.index .main .header .description br {
+    display: none;
   }
 }
 .content.index .main .gallery {
@@ -3775,22 +4885,25 @@ body.index {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  pointer-events: all;
   margin: 0;
   width: 95vw;
-  height: 65vh;
+  height: 63vh;
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   .content.index .main .gallery {
     width: 100vw;
-    margin-top: 0;
-    padding: 0;
-    height: auto;
-    justify-content: center;
   }
 }
 .content.index .main .gallery .image-container {
-  margin-top: 0;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
   height: 74vh;
   width: 70vw;
   display: flex;
@@ -3798,10 +4911,12 @@ body.index {
   align-items: center;
   object-fit: contain;
   cursor: pointer;
+  touch-action: none;
   background-image: url("../media/images/main-menu-texture.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  transition: opacity var(--gallery-carousel-timing);
   justify-content: space-around;
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
@@ -3817,14 +4932,13 @@ body.index {
 .content.index .main .gallery .image-container img {
   position: absolute;
   margin: 0;
-  padding: 0;
   height: inherit;
-  width: inherit;
+  width: 70vw;
   object-fit: contain;
   visibility: hidden;
   opacity: 0;
   cursor: pointer;
-  transition: all var(--gallery-carousel-timing);
+  transition: opacity var(--gallery-carousel-timing);
   filter: grayscale(100%) brightness(150%) contrast(125%) opacity(75%);
 }
 .content.index .main .gallery .image-container img.enabled {
@@ -3833,9 +4947,63 @@ body.index {
 .content.index .main .gallery .image-container img.selected {
   visibility: visible;
   opacity: 1;
+  padding: 4rem 5rem;
+}
+.content.index .main .gallery .image-container img.selected.desk {
+  padding: 4rem 5rem;
+}
+.content.index .main .gallery .image-container img.selected.snowshoes {
+  padding: 3rem 5rem;
+}
+.content.index .main .gallery .image-container img.selected.lock-and-key {
+  padding: 4rem 5rem;
+}
+.content.index .main .gallery .image-container img.selected.walking-stick {
+  padding: 4rem 5rem;
+}
+.content.index .main .gallery .image-container img.selected.spyglass {
+  padding: 5rem 5rem;
+}
+.content.index .main .gallery .image-container img.selected.flute {
+  padding: 5rem 5rem;
+}
+.content.index .main .gallery .image-container img.selected.left {
+  right: var(--gallery-carousel-shift);
+}
+.content.index .main .gallery .image-container img.selected.right {
+  left: var(--gallery-carousel-shift);
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  .content.index .main .gallery .image-container img.selected {
+    padding: 1rem 1rem;
+  }
+  .content.index .main .gallery .image-container img.selected.desk {
+    padding: 2rem 1rem;
+  }
+  .content.index .main .gallery .image-container img.selected.snowshoes {
+    padding: 1rem 0rem;
+  }
+  .content.index .main .gallery .image-container img.selected.lock-and-key {
+    padding: 0rem 4rem;
+  }
+  .content.index .main .gallery .image-container img.selected.walking-stick {
+    padding: 4rem 2rem;
+  }
+  .content.index .main .gallery .image-container img.selected.spyglass {
+    padding: 0rem 0rem;
+  }
+  .content.index .main .gallery .image-container img.selected.flute {
+    padding: 0rem 1rem;
+  }
 }
 .content.index .main .gallery .select {
-  margin: -1rem 0 0 0;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: auto;
+  overflow: hidden;
   width: 12vw;
   height: 20vh;
   display: flex;
@@ -3868,7 +5036,7 @@ body.index {
   .content.index .main .gallery .select .circle {
     width: 14vw;
     height: 14vw;
-    margin-left: -10vw;
+    margin-left: -7vw;
   }
   .content.index .main .gallery .select .circle svg {
     width: 1.6rem;
@@ -3882,6 +5050,9 @@ body.index {
   }
 }
 .content.index .main .gallery .select.right {
+  left: auto;
+  right: 0;
+  margin: auto;
   justify-content: flex-end;
 }
 .content.index .main .gallery .select.right .circle svg {
@@ -3890,7 +5061,7 @@ body.index {
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   .content.index .main .gallery .select.right .circle {
-    margin-right: -10vw;
+    margin-right: -7vw;
   }
   .content.index .main .gallery .select.right .circle svg {
     margin: 0 1.7rem 0 0;
@@ -3900,13 +5071,39 @@ body.index {
   display: flex;
   align-items: center;
 }
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  .content.index .unmute-footer {
+    display: none;
+  }
+}
 .content.index .unmute-footer .footer-items {
   height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+.content.index .unmute-footer .footer-items .item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 0rem 0 1.5rem;
 }
 .content.index .unmute-footer .footer-items .item.popup {
-  height: 100%;
-  line-height: 2.2rem;
+  margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.45rem 2.5rem;
   color: var(--white);
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  .content.index .unmute-footer .footer-items .item {
+    margin: 0 0rem 0 1.25rem;
+  }
+  .content.index .unmute-footer .footer-items .item.popup {
+    padding: 0.45rem 1.5rem;
+  }
 }
 @media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   .content.index .unmute-footer .footer-items .item.popup {
@@ -3921,7 +5118,7 @@ div.viewport {
   z-index: -99;
   height: 100vh;
   width: 100vw;
-  visible: hidden;
+  visibility: hidden;
 }
 
 @supports (font-size: clamp(10px, 1.8vmin, 36px)) {
@@ -3958,4 +5155,9 @@ div.viewport {
 }
 .offcanvas-backdrop.show {
   opacity: 0.6;
+}
+
+span.who-was-question {
+  color: var(--november-skies);
+  font-weight: 500;
 }

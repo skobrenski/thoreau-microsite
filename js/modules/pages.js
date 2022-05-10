@@ -46,7 +46,7 @@ export const pages = [{
   {
     id: 'lock-and-key',
     type: 'artifact',
-    enabled: false,
+    enabled: true,
     dropdownMenu: 'all',
     name: 'Lock and Key (Concord Jail)',
     location: "lock-and-key.html",
@@ -75,7 +75,7 @@ export const pages = [{
   {
     id: 'desk',
     type: 'artifact',
-    enabled: false,
+    enabled: true,
     dropdownMenu: 'all',
     name: 'Thoreau’s Desk',
     location: "desk.html",
