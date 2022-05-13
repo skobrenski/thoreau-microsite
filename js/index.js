@@ -7,12 +7,41 @@ import { generateFooterItems, generateDropdownUL } from "./modules/menu.js";
 
 app.dev = true;
 
+const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+
+const shiftDistance = isReduced ? 20 : 60;
+const shiftStep = isReduced ? 1 : 3;
+
 const artifactPages = pages.filter(p => p.type == 'artifact' && p.enabled);
 
 let selectRight, selectLeft, selectedImage, carouselImageContainer;
 
 let pageIndex = 1;
 let selectedPage = artifactPages[pageIndex];
+
+const updatePageIndexFromHash = () => {
+  let hash = window.location.hash.slice(1);
+  let index;
+  if (hash.length > 0) {
+    index = artifactPages.findIndex((p) => p.id == hash);
+    if (index >= 0) {
+      pageIndex = index;
+    }
+  }
+}
+
+const addDropDownListeners = () => {
+  const dropdown = document.getElementById('explore-another-object');
+  const pinetree = document.getElementById('mobile-pinetree');
+
+  dropdown.addEventListener('show.bs.dropdown', () => {
+    pinetree.classList.add('hide');
+  })
+  dropdown.addEventListener('hide.bs.dropdown', () => {
+    pinetree.classList.remove('hide');
+  })
+}
+
 let swipeCompleted = false;
 
 const swipeActiveDistance = 10;
@@ -24,25 +53,79 @@ const removeStyles = () => {
   carouselImageContainer.style.opacity = '';
 }
 
+const startSlideOut = (direction, absPixelShift, callback) => {
+  const elemWidth = carouselImageContainer.clientWidth;
+  let shift = Math.abs(absPixelShift / elemWidth) * 100;
+
+  const slideOut = () => {
+    const shiftEnd = shiftDistance;
+    let opacity = 1;
+    let increment = shiftStep;
+
+    switch (direction) {
+    case 'left':
+      carouselImageContainer.style.left = `-${shift}%`;
+      carouselImageContainer.style.right = '';
+      break;
+    case 'right':
+      carouselImageContainer.style.right = `-${shift}%`;
+      carouselImageContainer.style.left = '';
+      break;
+    case false:
+      removeStyles();
+      break;
+    }
+
+    if (direction) {
+      const slide = () => {
+        carouselImageContainer.style.opacity = opacity;
+        switch (direction) {
+        case 'left':
+          carouselImageContainer.style.left = `-${shift}%`;
+          carouselImageContainer.style.right = '';
+          break;
+        case 'right':
+          carouselImageContainer.style.right = `-${shift}%`;
+          carouselImageContainer.style.left = '';
+        }
+        shift += increment;
+        opacity = 1 - shift / shiftEnd;
+        carouselImageContainer.style.opacity = opacity;
+        app.logger('opacity', opacity);
+        if (shift < shiftEnd) {
+          window.requestAnimationFrame(slide);
+        } else {
+          removeStyles();
+          callback();
+        }
+      }
+      shift += increment;
+      window.requestAnimationFrame(slide);
+    }
+  }
+  window.requestAnimationFrame(slideOut);
+}
+
 const updateSelectedPage = (direction) => {
   selectedImage.classList.remove('selected');
   selectedImage.style.opacity = 0;
 
-  const finish = () => {
+  const slideIn = () => {
     selectedPage = artifactPages[pageIndex];
     selectedImage = selectedPage.element;
 
-    let shift = 60;
-    let decrement = 3;
+    const shiftStart = shiftDistance;
+    let shift = shiftStart;
+    let opacity = 0;
+    let opacityShift = 0;
+    let decrement = shiftStep;
 
     switch (direction) {
     case 'left':
-      // carouselImageContainer.classList.add('left');
       carouselImageContainer.style.right = `-${shift}%`;
       carouselImageContainer.style.left = '';
       break;
     case 'right':
-      // carouselImageContainer.classList.add('right');
       carouselImageContainer.style.left = `-${shift}%`;
       carouselImageContainer.style.right = '';
       break;
@@ -57,22 +140,21 @@ const updateSelectedPage = (direction) => {
 
     if (direction) {
       const slide = () => {
-        carouselImageContainer.style.opacity = '';
+        carouselImageContainer.style.opacity = opacity;
         switch (direction) {
         case 'left':
           carouselImageContainer.style.right = `-${shift}%`;
           carouselImageContainer.style.left = '';
-          // carouselImageContainer.style.left = `${shift}%`;
-          // carouselImageContainer.style.right = '';
           break;
         case 'right':
           carouselImageContainer.style.left = `-${shift}%`;
           carouselImageContainer.style.right = '';
-          // carouselImageContainer.style.right = `${shift}%`;
-          // carouselImageContainer.style.left = '';
         }
         selectedImage.classList.add('selected');
         shift -= decrement;
+        opacity = 1 - shift / shiftStart + opacityShift;
+        carouselImageContainer.style.opacity = opacity;
+        app.logger('opacity', opacity);
         if (shift > 1) {
           if (shift > decrement) {
             window.requestAnimationFrame(slide);
@@ -89,21 +171,25 @@ const updateSelectedPage = (direction) => {
     }
   }
   carouselImageContainer.style.opacity = 0;
-  window.requestAnimationFrame(finish);
+  window.requestAnimationFrame(slideIn);
 }
 
-const nextPage = () => {
-  pageIndex += 1;
-  if (pageIndex >= artifactPages.length) pageIndex = 0;
-  selectedPage = artifactPages[pageIndex];
-  updateSelectedPage('right');
+const nextPage = (absPixelShift) => {
+  startSlideOut('right', absPixelShift, () => {
+    pageIndex += 1;
+    if (pageIndex >= artifactPages.length) pageIndex = 0;
+    selectedPage = artifactPages[pageIndex];
+    updateSelectedPage('right');
+  });
 }
 
-const previousPage = () => {
-  pageIndex -= 1;
-  if (pageIndex < 0) pageIndex = artifactPages.length - 1;
-  selectedPage = artifactPages[pageIndex];
-  updateSelectedPage('left');
+const previousPage = (absPixelShift) => {
+  startSlideOut('left', absPixelShift, () => {
+    pageIndex -= 1;
+    if (pageIndex < 0) pageIndex = artifactPages.length - 1;
+    selectedPage = artifactPages[pageIndex];
+    updateSelectedPage('left');
+  });
 }
 
 const generateCarouselImgElements = () => {
@@ -123,39 +209,28 @@ const generateCarouselImgElements = () => {
 
 app.domReady(() => {
   generateDropdownUL('main');
-
-  const dropdown = document.getElementById('explore-another-object');
-  const pinetree = document.getElementById('mobile-pinetree');
-
-  dropdown.addEventListener('show.bs.dropdown', () => {
-    pinetree.classList.add('hide');
-  })
-  dropdown.addEventListener('hide.bs.dropdown', () => {
-    pinetree.classList.remove('hide');
-  })
+  addDropDownListeners();
   generateFooterItems();
-  selectRight = document.getElementById('select-right');
-  selectLeft = document.getElementById('select-left');
+
   carouselImageContainer = document.getElementById('carousel-image-container');
 
-  let hash = window.location.hash.slice(1);
-  let index;
-  if (hash.length > 0) {
-    index = artifactPages.findIndex((p) => p.id == hash);
-    if (index >= 0) {
-      pageIndex = index;
-    }
-  }
   generateCarouselImgElements();
+
+  updatePageIndexFromHash();
   selectedPage = artifactPages[pageIndex];
 
+  selectRight = document.getElementById('select-right');
+  selectLeft = document.getElementById('select-left');
+
   selectRight.addEventListener('click', () => {
-    nextPage();
+    nextPage(0);
   })
 
   selectLeft.addEventListener('click', () => {
-    previousPage();
+    previousPage(0);
   })
+
+  // swipe items
 
   let swipeDragStarted = false;
   let currentSwipeDistance = 0;
@@ -197,20 +272,23 @@ app.domReady(() => {
       currentSwipeDistance = (e.offsetX - swipeDragStarted);
       let absShift = `${Math.abs(currentSwipeDistance / elemWidth) * 100}%`;
       app.logger('absShift', absShift);
+      let absPixelShiftValue = Math.abs(currentSwipeDistance);
+      let absPixelShift = `${absPixelShiftValue}px`;
+      app.logger('absPixelShift', absPixelShift);
       if (swipeIsActive()) {
         e.preventDefault();
         e.stopPropagation();
-        if (currentSwipeDistance > 10) {
-          carouselImageContainer.style.left = absShift;
+        if (currentSwipeDistance > swipeActiveDistance) {
+          carouselImageContainer.style.left = absPixelShift;
           carouselImageContainer.style.right = '';
           if (swipeIsComplete()) {
-            nextPage();
+            nextPage(absPixelShiftValue);
           }
-        } else if (currentSwipeDistance < -10) {
-          carouselImageContainer.style.right = absShift;
+        } else if (currentSwipeDistance < -swipeActiveDistance) {
+          carouselImageContainer.style.right = absPixelShift;
           carouselImageContainer.style.left = '';
           if (swipeIsComplete()) {
-            previousPage();
+            previousPage(absPixelShiftValue);
           }
         }
       }
