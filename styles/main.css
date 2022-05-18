@@ -176,7 +176,7 @@
     --zoom-button-size: 1.2rem;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   :root {
     --main-menu-title: 2rem;
     --main-menu-title-world: 2.8rem;
@@ -308,6 +308,8 @@
     --zoom-button-width: 2.6rem;
     --zoom-icon-width: 1rem;
     --zoom-divide-width: 0.15rem;
+    --about-thoreau-width: 70vw;
+    --about-thoreau-max-img-width: 32rem;
   }
 }
 
@@ -553,7 +555,7 @@ div.artifact .content .absolute-content-container.start .content .image-containe
     width: 85%;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact .content .absolute-content-container.start .content .image-container {
     width: 70%;
     margin-top: 0;
@@ -574,7 +576,7 @@ div.artifact .content .absolute-content-container.start .content .zoom-controls 
   justify-content: center;
   padding: 0em 0em;
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact .content .absolute-content-container.start .content .zoom-controls {
     display: none;
   }
@@ -856,7 +858,7 @@ div.artifact .content .absolute-content-container .author .audio.player audio {
     height: 85%;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact .content {
     padding: 0;
   }
@@ -979,7 +981,7 @@ div.artifact .animation-frame-container {
     justify-content: center;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact .animation-frame-container {
     height: 90vh;
   }
@@ -998,7 +1000,7 @@ div.artifact .animation-frame-container img {
     margin: 0;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact .animation-frame-container img {
     width: 100%;
   }
@@ -1049,7 +1051,7 @@ div.artifact .fixed-image-container {
     height: 100vh;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact .fixed-image-container {
     height: 90vh;
   }
@@ -1069,7 +1071,7 @@ div.artifact .fixed-image-container img {
     width: auto;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact .fixed-image-container img {
     width: 70%;
   }
@@ -1088,7 +1090,7 @@ div.artifact .dropdown.explore-another-object {
     margin: 0 4vw 0 0;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact .dropdown.explore-another-object {
     margin: 0 4vw 0 0;
   }
@@ -1120,7 +1122,7 @@ div.artifact .dropdown.explore-another-object button svg.toggler-svg {
   stroke-width: 1.5;
   color: white;
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact .dropdown.explore-another-object button svg.toggler-svg {
     display: none;
   }
@@ -1128,7 +1130,7 @@ div.artifact .dropdown.explore-another-object button svg.toggler-svg {
 div.artifact .dropdown.explore-another-object button::after {
   display: none;
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact .dropdown.explore-another-object button {
     padding: 0.35rem 0;
     border: none;
@@ -1163,7 +1165,7 @@ div.artifact .dropdown.explore-another-object button::after {
     display: none;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact .dropdown.explore-another-object button span.toggler-icon {
     width: 5vh;
     height: 5vh;
@@ -1217,7 +1219,7 @@ div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li a.dropdow
   display: inline-block;
   visibility: visible;
   opacity: 1;
-  padding: 0.1rem 1rem;
+  padding: 0.1rem 0.75rem;
   border-radius: 0;
   color: var(--navy-blue);
   background-color: var(--mobile-header-gray);
@@ -1235,12 +1237,12 @@ div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li a.dropdow
   background-color: var(--navy-blue);
   color: white;
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show {
     position: absolute !important;
     top: 0;
     left: -90vw;
-    width: 101vw;
+    width: 101.5vw;
     height: 100vh;
     z-index: 5;
     transform: none !important;
@@ -1249,15 +1251,15 @@ div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li a.dropdow
     background-color: var(--mobile-header-gray);
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show {
     left: -94vw;
-    width: 105vw;
+    width: 100.5vw;
     height: 100vh;
     padding: 5vh 0 0 0 !important;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show .close {
     display: flex;
     flex-direction: row;
@@ -1280,7 +1282,7 @@ div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li a.dropdow
     vertical-align: middle;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show .close {
     top: 0.5vh;
     left: 94vw;
@@ -1293,7 +1295,7 @@ div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li a.dropdow
     height: 0.9rem;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li {
     margin: 0;
     padding: 0;
@@ -1317,13 +1319,14 @@ div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li a.dropdow
   }
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li .item.popup {
     font-size: 140%;
+    padding: 1rem 2rem;
   }
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li .item a.dropdown-item {
     display: inline-block;
     margin-right: auto;
     margin-left: auto;
     font-size: 140%;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.75rem;
     border-radius: 0;
     color: var(--navy-blue);
     background-color: var(--mobile-header-gray);
@@ -1337,7 +1340,7 @@ div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li a.dropdow
     color: gray;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li .item a.dropdown-item {
     padding: 0.35em 1em;
     font-size: 120%;
@@ -1346,29 +1349,30 @@ div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li a.dropdow
     font-size: 100%;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li .item.dropdown-divider {
     width: 20%;
-    margin: 2.5rem 0;
+    margin: 2rem 0;
     color: white;
     border: 1px solid white;
     opacity: 1;
   }
+  div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li .item.dropdown-divider.wide {
+    width: 100%;
+    margin: 2.25rem 0 1.5rem 0;
+  }
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li .item.dropdown-divider {
+    margin: 1.5rem 0;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li .item.dropdown-divider {
     margin: 0.8rem 0;
   }
-}
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li .item.dropdown-divider.wide {
-    width: 100%;
-    margin-bottom: 3rem;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
-  div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li .item.dropdown-divider.wide {
-    margin-bottom: 2rem;
+    margin: 1.25rem 0 1rem 0;
   }
 }
 div.artifact div.arrow-scroll-down {
@@ -1443,7 +1447,7 @@ div.artifact div.arrow-scroll-down .arrow svg {
     bottom: var(--arrow-scroll-down-bottom);
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact div.arrow-scroll-down {
     bottom: 3vh;
   }
@@ -1650,7 +1654,7 @@ div.artifact .next-object-footer button svg.next-object-svg {
     margin-right: 38vw;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact .next-object-footer {
     height: var(--next-object-footer-height);
     font-size: var(--next-object);
@@ -1706,7 +1710,7 @@ div.artifact .unmute-footer.on .label {
     margin-right: 42vw;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact .unmute-footer {
     height: var(--unmute-footer-height);
     font-size: var(--unmute-footer);
@@ -1751,12 +1755,6 @@ div.artifact .about-thoreau {
   bottom: calc(var(--unmute-footer-height) + 2px);
   background-color: var(--navy-blue);
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
-  div.artifact .about-thoreau {
-    width: 100vw;
-    min-height: 100vh;
-  }
-}
 div.artifact .about-thoreau .offcanvas-header {
   position: absolute;
   top: 0;
@@ -1787,44 +1785,6 @@ div.artifact .about-thoreau .offcanvas-header button.close svg {
   stroke-width: 3;
   width: 0.8rem;
   height: 0.8rem;
-}
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
-  div.artifact .about-thoreau .offcanvas-header {
-    position: sticky;
-    width: 100vw;
-    height: 8vh;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-  }
-  div.artifact .about-thoreau .offcanvas-header button.close {
-    width: 2.6rem;
-    height: 2.6rem;
-    margin-right: 4vh;
-    border: 1px solid white;
-    border-radius: 1.3rem;
-    color: var(--navy-blue);
-    background-color: var(--november-skies);
-  }
-  div.artifact .about-thoreau .offcanvas-header button.close svg {
-    stroke-width: 3;
-    width: 1rem;
-    height: 1rem;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
-  div.artifact .about-thoreau .offcanvas-header button.close {
-    width: 1.8rem;
-    height: 1.8rem;
-    border-radius: 1.4rem;
-  }
-  div.artifact .about-thoreau .offcanvas-header button.close svg {
-    display: block;
-    stroke-width: 3;
-    width: 0.7rem;
-    height: 0.7rem;
-  }
 }
 div.artifact .about-thoreau .offcanvas-body {
   margin: 0;
@@ -1874,6 +1834,41 @@ div.artifact .about-thoreau .offcanvas-body .about .description p:first-of-type 
 div.artifact .about-thoreau .offcanvas-body .about .description p:last-of-type {
   margin-bottom: 0;
 }
+@media only screen and (min-aspect-ratio: 9/5) and (min-width: 1280px) {
+  div.artifact .about-thoreau .offcanvas-body .about {
+    display: flex;
+    flex-direction: row;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
+  div.artifact .about-thoreau {
+    width: 100vw;
+    min-height: 100vh;
+  }
+  div.artifact .about-thoreau .offcanvas-header {
+    position: sticky;
+    width: 100vw;
+    height: 8vh;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  div.artifact .about-thoreau .offcanvas-header button.close {
+    width: 2.6rem;
+    height: 2.6rem;
+    margin-right: 4vh;
+    border: 1px solid white;
+    border-radius: 1.3rem;
+    color: var(--navy-blue);
+    background-color: var(--november-skies);
+  }
+  div.artifact .about-thoreau .offcanvas-header button.close svg {
+    stroke-width: 3;
+    width: 1rem;
+    height: 1rem;
+  }
+}
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   div.artifact .about-thoreau .offcanvas-body {
     margin: -3vh 0 0 0;
@@ -1894,7 +1889,61 @@ div.artifact .about-thoreau .offcanvas-body .about .description p:last-of-type {
     margin: 0.8rem 0 1.4rem 0;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
+  div.artifact .about-thoreau .offcanvas-header button.close {
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 1.4rem;
+  }
+  div.artifact .about-thoreau .offcanvas-header button.close svg {
+    display: block;
+    stroke-width: 3;
+    width: 0.7rem;
+    height: 0.7rem;
+  }
+  div.artifact .about-thoreau .offcanvas-body {
+    margin: 0;
+    padding: 2vw 4vw 2vw 4vw;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    overflow-y: visible !important;
+  }
+  div.artifact .about-thoreau .offcanvas-body img {
+    width: 100%;
+    height: auto;
+  }
+  div.artifact .about-thoreau .offcanvas-body .about {
+    margin-left: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 45rem;
+  }
+  div.artifact .about-thoreau .offcanvas-body .about .title {
+    margin: 0rem 0 0.6rem 0;
+    font-family: "Libre Caslon Text";
+    font-weight: 700;
+    font-size: var(--about-thoreau-title);
+    color: var(--november-skies);
+  }
+  div.artifact .about-thoreau .offcanvas-body .about hr.title {
+    width: 60%;
+    margin: 0.6rem 0 1.2rem 0;
+  }
+}
+@media only screen and (min-aspect-ratio: 9/5) and (min-width: 1280px) {
+  div.artifact .about-thoreau .offcanvas-header button.close {
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 1.4rem;
+  }
+  div.artifact .about-thoreau .offcanvas-header button.close svg {
+    display: block;
+    stroke-width: 3;
+    width: 0.7rem;
+    height: 0.7rem;
+  }
   div.artifact .about-thoreau .offcanvas-body {
     margin: 0;
     padding: 2vw 4vw 2vw 4vw;
@@ -1948,7 +1997,7 @@ div.artifact .fixed-video-container {
     width: 100vw;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact .fixed-video-container {
     height: 100vh;
   }
@@ -2003,7 +2052,7 @@ div.artifact .fixed-video-container .video-wrapper video {
     height: auto;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact .fixed-video-container .video-wrapper video {
     height: 100%;
     width: auto;
@@ -2076,7 +2125,7 @@ div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.cur
     max-width: 80vw;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.curious {
     top: 40vh;
     left: 7vw;
@@ -2111,7 +2160,7 @@ div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.his
     max-width: 80vw;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.his-experiments {
     top: 6vh;
     left: 3vw;
@@ -2177,7 +2226,7 @@ div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.wal
     width: 80%;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact.spyglass .image-container img.spyglass-photo {
     width: 60%;
   }
@@ -2200,7 +2249,7 @@ div.artifact.spyglass .animation-frame-container.spyglass {
   visibility: hidden;
   opacity: 0;
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact.spyglass .animation-frame-container.spyglass {
     margin: 0 0 0 0;
     padding: 2rem 0 0 0;
@@ -2260,7 +2309,7 @@ div.artifact.spyglass .background-image-container.spyglass:before {
   opacity: 1;
   color: var(--navy-blue);
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   #spyglass[data-content-scroll="0"] div.arrow-scroll-down {
     bottom: var(--arrow-scroll-down-bottom-first-screen);
   }
@@ -2605,7 +2654,7 @@ div.artifact.desk .content.desk .absolute-content-container.desk.the-more {
     max-width: 80vw;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact.desk .content.desk .absolute-content-container.desk.the-more {
     top: 7vh;
     left: 5vw;
@@ -2632,7 +2681,7 @@ div.artifact.desk .content.desk .absolute-content-container.desk.and-once {
     max-width: 80vw;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact.desk .content.desk .absolute-content-container.desk.and-once {
     top: 7vh;
     left: 5vw;
@@ -2690,7 +2739,7 @@ div.artifact.desk .content.desk .absolute-content-container.desk.stars .video--w
     width: 80%;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact.desk .image-container img.desk-photo {
     width: 60%;
   }
@@ -2729,7 +2778,7 @@ div.artifact.desk .animation-frame-container.desk img {
     height: auto;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact.desk .animation-frame-container.desk {
     top: 5vh;
     left: 30vw;
@@ -2795,7 +2844,7 @@ div.artifact.desk .background-image-container.desk:before {
   opacity: 1;
   color: var(--navy-blue);
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   #desk[data-content-scroll="0"] div.arrow-scroll-down {
     bottom: var(--arrow-scroll-down-bottom-first-screen);
   }
@@ -2966,7 +3015,7 @@ div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock
   height: 90%;
   width: auto;
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.start .content .image-container img.artifact {
     height: 75%;
   }
@@ -3012,7 +3061,7 @@ div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock
     max-width: 80vw;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.thoreaus-friend {
     top: 10vh;
     left: 5vw;
@@ -3050,7 +3099,7 @@ div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock
     max-width: 80vw;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.he-walked {
     top: 10vh;
     left: 5vw;
@@ -3088,7 +3137,7 @@ div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock
     max-width: 80vw;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.he-wrote {
     top: 5vh;
     left: 10vw;
@@ -3146,7 +3195,7 @@ div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock
     width: 80%;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact.lock-and-key .image-container img.lock-and-key-photo {
     width: 60%;
   }
@@ -3249,7 +3298,7 @@ div.artifact.lock-and-key .background-image-container.lock-and-key:before {
   opacity: 1;
   color: var(--navy-blue);
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   #lock-and-key[data-content-scroll="0"] div.arrow-scroll-down {
     bottom: var(--arrow-scroll-down-bottom-first-screen);
   }
@@ -3357,7 +3406,7 @@ div.artifact.lock-and-key .background-image-container.lock-and-key:before {
     height: auto;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   #lock-and-key[data-content-scroll="8"] .animation-frame-container.lock-and-key {
     padding: 8vh 0 0 0;
   }
@@ -3439,7 +3488,7 @@ div.artifact.lock-and-key .background-image-container.lock-and-key:before {
     height: auto;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   #lock-and-key[data-content-scroll="9"] .animation-frame-container.lock-and-key,
 #lock-and-key[data-content-scroll="10"] .animation-frame-container.lock-and-key {
     padding: 8vh 0 0 0;
@@ -3666,7 +3715,7 @@ div.artifact.walking-stick .content.walking-stick .absolute-content-container.wa
     max-width: 80vw;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact.walking-stick .content.walking-stick .absolute-content-container.walking-stick.forest-path {
     left: 3vw;
     max-width: 30vw;
@@ -3677,7 +3726,7 @@ div.artifact.walking-stick .content.walking-stick .absolute-content-container.wa
     width: 80%;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact.walking-stick .image-container img.walking-stick-photo {
     width: 60%;
   }
@@ -3746,7 +3795,7 @@ div.artifact.walking-stick .background-image-container.walking-stick:before {
   opacity: 1;
   color: var(--navy-blue);
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   #walking-stick[data-content-scroll="0"] div.arrow-scroll-down {
     bottom: var(--arrow-scroll-down-bottom-first-screen);
   }
@@ -3927,7 +3976,7 @@ div.artifact.flute .content.flute .absolute-content-container.flute.stream-path 
     max-width: 80vw;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact.flute .content.flute .absolute-content-container.flute.stream-path {
     left: 3vw;
     max-width: 30vw;
@@ -3938,7 +3987,7 @@ div.artifact.flute .content.flute .absolute-content-container.flute.stream-path 
     width: 80%;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact.flute .image-container img.flute-photo {
     width: 60%;
   }
@@ -3956,7 +4005,7 @@ div.artifact.flute .fixed-image-container.flute img.flute-detail {
     transform: scale(1.5);
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact.flute .fixed-image-container.flute img.flute-detail {
     object-fit: contain;
     min-height: unset;
@@ -4015,7 +4064,7 @@ div.artifact.flute .background-image-container.flute:before {
   opacity: 1;
   color: var(--navy-blue);
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   #flute[data-content-scroll="0"] div.arrow-scroll-down {
     bottom: var(--arrow-scroll-down-bottom-first-screen);
   }
@@ -4197,7 +4246,7 @@ div.artifact.snowshoes .content.snowshoes .absolute-content-container.snowshoes.
     max-width: 80vw;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact.snowshoes .content.snowshoes .absolute-content-container.snowshoes.snowy-leaves {
     left: 3vw;
     max-width: 30vw;
@@ -4208,7 +4257,7 @@ div.artifact.snowshoes .content.snowshoes .absolute-content-container.snowshoes.
     width: 80%;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact.snowshoes .image-container img.snowshoes-photo {
     width: 60%;
   }
@@ -4271,7 +4320,7 @@ div.artifact.snowshoes .background-image-container.snowshoes:before {
   opacity: 1;
   color: var(--navy-blue);
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   #snowshoes[data-content-scroll="0"] div.arrow-scroll-down {
     bottom: var(--arrow-scroll-down-bottom-first-screen);
   }
@@ -4409,7 +4458,7 @@ div.artifact.snowshoes .background-image-container.snowshoes:before {
     margin-right: 42vw;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   .unmute-footer {
     height: var(--unmute-footer-height);
     font-size: var(--unmute-footer);
@@ -4454,12 +4503,6 @@ div.artifact.snowshoes .background-image-container.snowshoes:before {
   bottom: calc(var(--unmute-footer-height) + 2px);
   background-color: var(--navy-blue);
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
-  .about-thoreau {
-    width: 100vw;
-    min-height: 100vh;
-  }
-}
 .about-thoreau .offcanvas-header {
   position: absolute;
   top: 0;
@@ -4490,44 +4533,6 @@ div.artifact.snowshoes .background-image-container.snowshoes:before {
   stroke-width: 3;
   width: 0.8rem;
   height: 0.8rem;
-}
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
-  .about-thoreau .offcanvas-header {
-    position: sticky;
-    width: 100vw;
-    height: 8vh;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-  }
-  .about-thoreau .offcanvas-header button.close {
-    width: 2.6rem;
-    height: 2.6rem;
-    margin-right: 4vh;
-    border: 1px solid white;
-    border-radius: 1.3rem;
-    color: var(--navy-blue);
-    background-color: var(--november-skies);
-  }
-  .about-thoreau .offcanvas-header button.close svg {
-    stroke-width: 3;
-    width: 1rem;
-    height: 1rem;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
-  .about-thoreau .offcanvas-header button.close {
-    width: 1.8rem;
-    height: 1.8rem;
-    border-radius: 1.4rem;
-  }
-  .about-thoreau .offcanvas-header button.close svg {
-    display: block;
-    stroke-width: 3;
-    width: 0.7rem;
-    height: 0.7rem;
-  }
 }
 .about-thoreau .offcanvas-body {
   margin: 0;
@@ -4577,6 +4582,41 @@ div.artifact.snowshoes .background-image-container.snowshoes:before {
 .about-thoreau .offcanvas-body .about .description p:last-of-type {
   margin-bottom: 0;
 }
+@media only screen and (min-aspect-ratio: 9/5) and (min-width: 1280px) {
+  .about-thoreau .offcanvas-body .about {
+    display: flex;
+    flex-direction: row;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
+  .about-thoreau {
+    width: 100vw;
+    min-height: 100vh;
+  }
+  .about-thoreau .offcanvas-header {
+    position: sticky;
+    width: 100vw;
+    height: 8vh;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  .about-thoreau .offcanvas-header button.close {
+    width: 2.6rem;
+    height: 2.6rem;
+    margin-right: 4vh;
+    border: 1px solid white;
+    border-radius: 1.3rem;
+    color: var(--navy-blue);
+    background-color: var(--november-skies);
+  }
+  .about-thoreau .offcanvas-header button.close svg {
+    stroke-width: 3;
+    width: 1rem;
+    height: 1rem;
+  }
+}
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   .about-thoreau .offcanvas-body {
     margin: -3vh 0 0 0;
@@ -4597,7 +4637,61 @@ div.artifact.snowshoes .background-image-container.snowshoes:before {
     margin: 0.8rem 0 1.4rem 0;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
+  .about-thoreau .offcanvas-header button.close {
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 1.4rem;
+  }
+  .about-thoreau .offcanvas-header button.close svg {
+    display: block;
+    stroke-width: 3;
+    width: 0.7rem;
+    height: 0.7rem;
+  }
+  .about-thoreau .offcanvas-body {
+    margin: 0;
+    padding: 2vw 4vw 2vw 4vw;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    overflow-y: visible !important;
+  }
+  .about-thoreau .offcanvas-body img {
+    width: 100%;
+    height: auto;
+  }
+  .about-thoreau .offcanvas-body .about {
+    margin-left: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 45rem;
+  }
+  .about-thoreau .offcanvas-body .about .title {
+    margin: 0rem 0 0.6rem 0;
+    font-family: "Libre Caslon Text";
+    font-weight: 700;
+    font-size: var(--about-thoreau-title);
+    color: var(--november-skies);
+  }
+  .about-thoreau .offcanvas-body .about hr.title {
+    width: 60%;
+    margin: 0.6rem 0 1.2rem 0;
+  }
+}
+@media only screen and (min-aspect-ratio: 9/5) and (min-width: 1280px) {
+  .about-thoreau .offcanvas-header button.close {
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 1.4rem;
+  }
+  .about-thoreau .offcanvas-header button.close svg {
+    display: block;
+    stroke-width: 3;
+    width: 0.7rem;
+    height: 0.7rem;
+  }
   .about-thoreau .offcanvas-body {
     margin: 0;
     padding: 2vw 4vw 2vw 4vw;
@@ -4644,7 +4738,7 @@ div.artifact.snowshoes .background-image-container.snowshoes:before {
     margin: 0 4vw 0 0;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   .dropdown.explore-another-object {
     margin: 0 4vw 0 0;
   }
@@ -4676,7 +4770,7 @@ div.artifact.snowshoes .background-image-container.snowshoes:before {
   stroke-width: 1.5;
   color: white;
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   .dropdown.explore-another-object button svg.toggler-svg {
     display: none;
   }
@@ -4684,7 +4778,7 @@ div.artifact.snowshoes .background-image-container.snowshoes:before {
 .dropdown.explore-another-object button::after {
   display: none;
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   .dropdown.explore-another-object button {
     padding: 0.35rem 0;
     border: none;
@@ -4719,7 +4813,7 @@ div.artifact.snowshoes .background-image-container.snowshoes:before {
     display: none;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   .dropdown.explore-another-object button span.toggler-icon {
     width: 5vh;
     height: 5vh;
@@ -4773,7 +4867,7 @@ div.artifact.snowshoes .background-image-container.snowshoes:before {
   display: inline-block;
   visibility: visible;
   opacity: 1;
-  padding: 0.1rem 1rem;
+  padding: 0.1rem 0.75rem;
   border-radius: 0;
   color: var(--navy-blue);
   background-color: var(--mobile-header-gray);
@@ -4791,12 +4885,12 @@ div.artifact.snowshoes .background-image-container.snowshoes:before {
   background-color: var(--navy-blue);
   color: white;
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   .dropdown.explore-another-object ul.dropdown-menu.show {
     position: absolute !important;
     top: 0;
     left: -90vw;
-    width: 101vw;
+    width: 101.5vw;
     height: 100vh;
     z-index: 5;
     transform: none !important;
@@ -4805,15 +4899,15 @@ div.artifact.snowshoes .background-image-container.snowshoes:before {
     background-color: var(--mobile-header-gray);
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   .dropdown.explore-another-object ul.dropdown-menu.show {
     left: -94vw;
-    width: 105vw;
+    width: 100.5vw;
     height: 100vh;
     padding: 5vh 0 0 0 !important;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   .dropdown.explore-another-object ul.dropdown-menu.show .close {
     display: flex;
     flex-direction: row;
@@ -4836,7 +4930,7 @@ div.artifact.snowshoes .background-image-container.snowshoes:before {
     vertical-align: middle;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   .dropdown.explore-another-object ul.dropdown-menu.show .close {
     top: 0.5vh;
     left: 94vw;
@@ -4849,7 +4943,7 @@ div.artifact.snowshoes .background-image-container.snowshoes:before {
     height: 0.9rem;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   .dropdown.explore-another-object ul.dropdown-menu.show li {
     margin: 0;
     padding: 0;
@@ -4873,13 +4967,14 @@ div.artifact.snowshoes .background-image-container.snowshoes:before {
   }
   .dropdown.explore-another-object ul.dropdown-menu.show li .item.popup {
     font-size: 140%;
+    padding: 1rem 2rem;
   }
   .dropdown.explore-another-object ul.dropdown-menu.show li .item a.dropdown-item {
     display: inline-block;
     margin-right: auto;
     margin-left: auto;
     font-size: 140%;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.75rem;
     border-radius: 0;
     color: var(--navy-blue);
     background-color: var(--mobile-header-gray);
@@ -4893,7 +4988,7 @@ div.artifact.snowshoes .background-image-container.snowshoes:before {
     color: gray;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   .dropdown.explore-another-object ul.dropdown-menu.show li .item a.dropdown-item {
     padding: 0.35em 1em;
     font-size: 120%;
@@ -4902,29 +4997,30 @@ div.artifact.snowshoes .background-image-container.snowshoes:before {
     font-size: 100%;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   .dropdown.explore-another-object ul.dropdown-menu.show li .item.dropdown-divider {
     width: 20%;
-    margin: 2.5rem 0;
+    margin: 2rem 0;
     color: white;
     border: 1px solid white;
     opacity: 1;
   }
+  .dropdown.explore-another-object ul.dropdown-menu.show li .item.dropdown-divider.wide {
+    width: 100%;
+    margin: 2.25rem 0 1.5rem 0;
+  }
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  .dropdown.explore-another-object ul.dropdown-menu.show li .item.dropdown-divider {
+    margin: 1.5rem 0;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   .dropdown.explore-another-object ul.dropdown-menu.show li .item.dropdown-divider {
     margin: 0.8rem 0;
   }
-}
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
   .dropdown.explore-another-object ul.dropdown-menu.show li .item.dropdown-divider.wide {
-    width: 100%;
-    margin-bottom: 3rem;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape), only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
-  .dropdown.explore-another-object ul.dropdown-menu.show li .item.dropdown-divider.wide {
-    margin-bottom: 2rem;
+    margin: 1.25rem 0 1rem 0;
   }
 }
 
@@ -4963,7 +5059,7 @@ body.index {
     height: 90vh;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   .content.index .main {
     height: 100vh;
   }
@@ -5007,7 +5103,7 @@ body.index {
     background-color: var(--mobile-header-gray);
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   .content.index .main .menu {
     margin: 0;
     padding: 0;
@@ -5119,7 +5215,7 @@ body.index {
     font-weight: 700;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   .content.index .main .header .title {
     margin: 4vh 0 4vh 0;
   }
@@ -5145,7 +5241,7 @@ body.index {
     border-top: 1px solid;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   .content.index .main .header .separator {
     margin-left: 0.5vw;
     width: 1.5vw;
@@ -5166,6 +5262,7 @@ body.index {
   font-size: var(--main-description);
   line-height: var(--main-description-line-height);
   color: var(--navy-blue);
+  text-align: left;
 }
 .content.index .main .header .description .heading {
   font-weight: 600;
@@ -5189,7 +5286,7 @@ body.index {
     display: contents;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   .content.index .main .header .description {
     width: 26rem;
   }
@@ -5250,7 +5347,7 @@ body.index {
     height: 45vh;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   .content.index .main .gallery .image-container {
     height: 100%;
   }
@@ -5370,7 +5467,7 @@ body.index {
     stroke-width: 0.15rem;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   .content.index .main .gallery .select {
     justify-content: center;
   }
@@ -5443,7 +5540,7 @@ body.index {
     padding: 0.45rem 1.5rem;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 915px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   .content.index .unmute-footer .footer-items .item.popup {
     line-height: 1.75rem;
   }
