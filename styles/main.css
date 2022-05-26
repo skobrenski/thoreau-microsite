@@ -1,6 +1,7 @@
 /* color variables */
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties */
 :root {
+  --black: rgb(255, 255, 255);
   --thoreau-blue: rgb(93, 192, 208);
   --thoreau-blue-rgba-80: rgba(93, 192, 208, 0.8);
   --thoreau-purple: rgb(75, 90, 116);
@@ -48,15 +49,17 @@
 
 /* font sizes */
 :root {
+  --minimum-font-size: 10px;
+  --maximum-font-size: 36px;
   --content: 2rem;
-  --main-menu-title: 3.6rem;
-  --main-menu-title-world: 7.8rem;
+  --main-menu-title: 3.2rem;
+  --main-menu-title-world: 6rem;
   --main-title: 3.6rem;
   --main-title-world: 7.8rem;
   --main-description: 1.2rem;
   --main-description-line-height: 2rem;
-  --artifact-title: 2.1rem;
-  --artifact-title-line-height: 2.4rem;
+  --artifact-title: 1.75rem;
+  --artifact-title-line-height: 2rem;
   --artifact-description: 1.2rem;
   --artifact-description-letter-spacing: calc(
     clamp(0px, (0.4vh - 3.61px), 2px)
@@ -74,17 +77,17 @@
   --unmute-right-distance: 6vw;
   --zoom-button-size: 1.1rem;
   --zoom-button-top: 86.7vh;
-  --zoom-button-height: 1.9rem;
-  --zoom-button-width: 2.65rem;
+  --zoom-button-height: 1.65rem;
+  --zoom-button-width: 2.35rem;
   --zoom-icon-width: 0.9rem;
   --zoom-divide-width: 0.1rem;
-  --explore-button: 0.85rem;
-  --explore-content: 1.28rem;
-  --explore-content-line-height: 168%;
+  --explore-button: 0.735rem;
+  --explore-content: 1.1rem;
+  --explore-content-line-height: 165%;
   --explore-content-letter-spacing: 0.75px;
-  --explore-content-author: 0.88rem;
-  --explore-content-mute-button: 0.76rem;
-  --thoreau-quote: 2.2rem;
+  --explore-content-author: 0.77rem;
+  --explore-content-mute-button: 0.675rem;
+  --thoreau-quote: 1.9rem;
   --explore-content-weight: 400;
   --explore-content-heading: 2.2rem;
   --explore-content-heading-weight: 600;
@@ -92,7 +95,7 @@
   --next-object: 0.875em;
   --back-to-top: 0.87em;
   --next-object-footer-height: 8vh;
-  --unmute-footer: 0.76rem;
+  --unmute-footer: 0.7rem;
   --unmute-footer-height: 8vh;
   --unmute-footer-items: 0.9rem;
   --unmute-footer-label-right: 18rem;
@@ -227,48 +230,31 @@
     --scroll-down-label: 1.1rem;
   }
 }
-@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
+@media only screen and (min-aspect-ratio: 7/8) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
   :root {
-    --main-menu-title: 2.4rem;
-    --main-menu-title-world: 4.4rem;
+    --main-menu-title: 2.2rem;
+    --main-menu-title-world: 3.8rem;
     --main-title: 2.6rem;
     --main-title-world: 4rem;
-    --main-description: 1.1rem;
-    --main-description-line-height: 2rem;
-    --artifact-title: 1.9rem;
+    --main-description: max(0.8rem, var(--minimum-font-size));
+    --main-description-line-height: 1.4rem;
+    --artifact-title: 1.4rem;
     --artifact-title-line-height: 2rem;
-    --artifact-description: 1.2rem;
-    --artifact-description-letter-spacing: calc(clamp(0px, (0.2vh - 3px), 2px));
-    --artifact-description-line-height: calc(clamp(25px, (7.5vh - 36px), 60px));
-    --zoom-button-height: 1.8rem;
-    --zoom-button-width: 2.4rem;
-    --zoom-icon-width: 1rem;
-    --zoom-divide-width: 0.15rem;
-    --unmute-footer: 0.8rem;
-    --unmute-footer-height: 6vh;
-    --unmute-footer-label-right: 16rem;
-    --explore-content-mute-button: 0.8rem;
-    --unmute-bottom: 0vh;
-    --unmute-bottom-last-page: 5.5vh;
-    --next-object: 0.9rem;
-    --back-to-top: 0.8rem;
-    --next-object-footer-height: 6vh;
-    --zoom-button-top: calc(100vh - (var(--unmute-footer-height) + 5vh));
-    --arrow-scroll-down-bottom: calc(var(--unmute-bottom) + 2.8vh);
-    --arrow-scroll-down-bottom-first-screen: calc(
-      var(--unmute-footer-height) + 2.4vh
+    --artifact-description: 1rem;
+    --artifact-description-letter-spacing: calc(
+      clamp(0px, (0.4vh - 3.61px), 2px)
     );
-    --scroll-down-label: 0.9rem;
+    --artifact-description-line-height: calc(clamp(30px, (8vh - 26px), 60px));
   }
 }
-@media only screen and (max-aspect-ratio: 3/4) and (min-width: 560px) {
+@media only screen and (max-aspect-ratio: 7/8) and (min-width: 500px) {
   :root {
-    --main-menu-title: 2.4rem;
-    --main-menu-title-world: 4.4rem;
+    --main-menu-title: 3.2rem;
+    --main-menu-title-world: 4.2rem;
     --main-title: 2.6rem;
     --main-title-world: 4rem;
-    --main-description: 1.1rem;
-    --main-description-line-height: 2rem;
+    --main-description: 1.3rem;
+    --main-description-line-height: 2.4rem;
     --artifact-title: 1.9rem;
     --artifact-title-line-height: 2rem;
     --artifact-description: 1.2rem;
@@ -281,6 +267,7 @@
     --unmute-footer: 1rem;
     --unmute-footer-height: 6vh;
     --unmute-footer-label-right: 17rem;
+    --unmute-footer-items: 1rem;
     --explore-content-mute-button: 1rem;
     --unmute-bottom: 0vh;
     --unmute-bottom-last-page: 5.5vh;
@@ -295,19 +282,20 @@
     --scroll-down-label: 0.9rem;
   }
 }
-@media only screen and (min-aspect-ratio: 9/5) and (min-width: 1280px) {
+@media only screen and (min-aspect-ratio: 10/5) and (min-width: 1280px) {
   :root {
     --main-menu-title: 3.2rem;
     --main-menu-title-world: 6.2rem;
     --artifact-title: 1.8rem;
     --artifact-title-line-height: 2rem;
-    --artifact-description: 1.2rem;
+    --artifact-description: 1.1rem;
+    --artifact-description-letter-spacing: calc(
+      clamp(0px, (0.4vh - 3.61px), 2px)
+    );
+    --artifact-description-line-height: calc(clamp(30px, (8vh - 22px), 60px));
+    --artifact-description-line-height: 1.8rem;
     --thoreau-quote: 1.8rem;
-    --zoom-button-top: 85vh;
-    --zoom-button-height: 1.8rem;
-    --zoom-button-width: 2.6rem;
-    --zoom-icon-width: 1rem;
-    --zoom-divide-width: 0.15rem;
+    --zoom-button-top: 84vh;
     --about-thoreau-width: 70vw;
     --about-thoreau-max-img-width: 32rem;
   }
@@ -327,7 +315,7 @@
   --explore-menu-timing: 0.2s ease-in-out;
 }
 
-body {
+body.artifact {
   width: 100vw;
   font-family: "Nunito Sans", sans-serif;
 }
@@ -411,14 +399,23 @@ div.artifact .content .absolute-content-container.start .menu {
   }
 }
 div.artifact .content .absolute-content-container.start .menu .home {
-  margin: 2rem 0 0 5.5rem;
+  margin: 1.5rem 0 0 4.75rem;
 }
 div.artifact .content .absolute-content-container.start .menu .home a img {
-  width: 5.6rem;
-  height: 5.6rem;
+  width: 4.8rem;
+  height: 4.8rem;
   padding: 0rem;
 }
-@media only screen and (min-aspect-ratio: 9/5) and (min-width: 1280px) {
+@media only screen and (min-aspect-ratio: 7/8) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
+  div.artifact .content .absolute-content-container.start .menu .home {
+    margin: 0.9rem 0 0 4rem;
+  }
+  div.artifact .content .absolute-content-container.start .menu .home a img {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+@media only screen and (min-aspect-ratio: 10/5) and (min-width: 1280px) {
   div.artifact .content .absolute-content-container.start .menu .home a img {
     width: 6rem;
     height: 6rem;
@@ -463,9 +460,9 @@ div.artifact .content .absolute-content-container.start .content {
 }
 div.artifact .content .absolute-content-container.start .content .about-container {
   width: 30vw;
-  margin: 5rem 0 0 5.5rem;
+  margin: 4.1rem 0 0 4.5rem;
 }
-@media only screen and (min-aspect-ratio: 9/5) and (min-width: 1280px) {
+@media only screen and (min-aspect-ratio: 10/5) and (min-width: 1280px) {
   div.artifact .content .absolute-content-container.start .content .about-container .header {
     display: flex;
     align-items: center;
@@ -473,13 +470,18 @@ div.artifact .content .absolute-content-container.start .content .about-containe
 }
 div.artifact .content .absolute-content-container.start .content .about-container .header .title {
   width: 100%;
-  margin: 3rem 0 2.9rem 0;
+  margin: 2.8rem 0 2.7rem 0;
   font-family: "Libre Caslon Text", serif;
   font-size: var(--artifact-title);
   line-height: var(--artifact-title-line-height);
   font-weight: 600;
   color: var(--thoreau-blue);
   text-transform: capitalize;
+}
+@media only screen and (min-aspect-ratio: 7/8) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
+  div.artifact .content .absolute-content-container.start .content .about-container .header .title {
+    margin: 1.5rem 0;
+  }
 }
 div.artifact .content .absolute-content-container.start .content .about-container hr {
   display: block;
@@ -489,7 +491,7 @@ div.artifact .content .absolute-content-container.start .content .about-containe
   color: var(--november-skies);
 }
 div.artifact .content .absolute-content-container.start .content .about-container .description {
-  margin: 2.5rem 0;
+  margin: 2rem 0;
   width: 100%;
   font-size: var(--artifact-description);
   line-height: var(--artifact-description-line-height);
@@ -500,6 +502,20 @@ div.artifact .content .absolute-content-container.start .content .about-containe
 div.artifact .content .absolute-content-container.start .content .about-container .description span.first-line,
 div.artifact .content .absolute-content-container.start .content .about-container .description span.bold {
   font-weight: 700;
+}
+@media only screen and (min-aspect-ratio: 7/8) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
+  div.artifact .content .absolute-content-container.start .content .about-container {
+    margin: 2.7rem 0 0 4rem;
+  }
+  div.artifact .content .absolute-content-container.start .content .about-container .header .title {
+    margin: 1.5rem 0;
+  }
+  div.artifact .content .absolute-content-container.start .content .about-container hr {
+    margin: 0.5rem 0;
+  }
+  div.artifact .content .absolute-content-container.start .content .about-container .description {
+    margin: 1.4rem 0;
+  }
 }
 div.artifact .content .absolute-content-container.start .content .image-container {
   position: relative;
@@ -530,6 +546,7 @@ div.artifact .content .absolute-content-container.start .content .image-containe
   width: auto;
   transform: scale(1);
   max-width: 80%;
+  object-fit: contain;
 }
 div.artifact .content .absolute-content-container.start .content .image-container div.draglayer {
   position: absolute;
@@ -691,7 +708,7 @@ div.artifact .content .absolute-content-container .author .audio.player {
   margin-left: -0.6em;
 }
 div.artifact .content .absolute-content-container .author .audio.player .playpause {
-  font-size: 2.6em;
+  font-size: 2.5em;
   pointer-events: all;
 }
 div.artifact .content .absolute-content-container .author .audio.player .playpause .play,
@@ -705,7 +722,7 @@ div.artifact .content .absolute-content-container .author .audio.player .playpau
 }
 div.artifact .content .absolute-content-container .author .audio.player .playpause .play svg,
 div.artifact .content .absolute-content-container .author .audio.player .playpause .pause svg {
-  width: 2.7rem;
+  width: 2.4rem;
   height: auto;
   vertical-align: unset;
   margin: 0;
@@ -908,7 +925,7 @@ div.artifact .content .absolute-content-container .author .audio.player audio {
     width: 60%;
   }
 }
-@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
+@media only screen and (min-aspect-ratio: 7/8) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
   div.artifact .content .absolute-content-container.start .content .about-container {
     width: 35vw;
   }
@@ -916,7 +933,7 @@ div.artifact .content .absolute-content-container .author .audio.player audio {
     width: 65vw;
   }
 }
-@media only screen and (max-aspect-ratio: 3/4) and (min-width: 560px) {
+@media only screen and (max-aspect-ratio: 7/8) and (min-width: 500px) {
   div.artifact .content .absolute-content-container.start {
     flex-direction: column;
     justify-content: flex-start;
@@ -928,7 +945,7 @@ div.artifact .content .absolute-content-container .author .audio.player audio {
     width: 60vw;
   }
 }
-@media only screen and (min-aspect-ratio: 9/5) and (min-width: 1280px) {
+@media only screen and (min-aspect-ratio: 10/5) and (min-width: 1280px) {
   div.artifact .content .absolute-content-container.start .menu {
     min-height: 4rem;
     display: flex;
@@ -1003,6 +1020,12 @@ div.artifact .animation-frame-container img {
 @media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact .animation-frame-container img {
     width: 100%;
+  }
+}
+@media only screen and (min-aspect-ratio: 10/5) and (min-width: 1280px) {
+  div.artifact .animation-frame-container img {
+    height: 100%;
+    width: auto;
   }
 }
 div.artifact .background-image-container {
@@ -1096,7 +1119,7 @@ div.artifact .dropdown.explore-another-object {
   }
 }
 div.artifact .dropdown.explore-another-object button {
-  padding: 0.35rem 1.5rem 0.33rem 1.5rem;
+  padding: 0.325rem 1.3rem;
   border: none;
   border-radius: 1.25rem;
   background-color: var(--navy-blue);
@@ -1117,7 +1140,7 @@ div.artifact .dropdown.explore-another-object button svg.toggler-svg {
   display: inline-block;
   margin-left: 0.7rem;
   margin-bottom: -0.2rem;
-  width: 1.5rem;
+  width: 1.4rem;
   height: auto;
   stroke-width: 1.5;
   color: white;
@@ -1129,6 +1152,18 @@ div.artifact .dropdown.explore-another-object button svg.toggler-svg {
 }
 div.artifact .dropdown.explore-another-object button::after {
   display: none;
+}
+@media only screen and (min-aspect-ratio: 7/8) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
+  div.artifact .dropdown.explore-another-object {
+    padding: 0.1rem 0;
+  }
+  div.artifact .dropdown.explore-another-object button {
+    padding: 0.25rem 1rem;
+  }
+  div.artifact .dropdown.explore-another-object button svg.toggler-svg {
+    width: 1rem;
+    stroke-width: 1.25;
+  }
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   div.artifact .dropdown.explore-another-object button {
@@ -1174,7 +1209,7 @@ div.artifact .dropdown.explore-another-object button::after {
 div.artifact .dropdown.explore-another-object ul.dropdown-menu {
   z-index: -1;
   top: 1rem;
-  padding-top: 2rem;
+  padding-top: 1.4rem;
   background-color: transparent;
   display: block;
   transform: translateZ(-10px);
@@ -1195,7 +1230,7 @@ div.artifact .dropdown.explore-another-object ul.dropdown-menu.show {
   width: 100%;
   opacity: 1;
   transition: opacity var(--explore-menu-timing), visibility var(--explore-menu-timing);
-  padding-top: 1.75em;
+  padding-top: 1.4em;
   border-radius: 0.5rem;
   background-color: var(--mobile-header-gray);
   border: none;
@@ -1219,7 +1254,7 @@ div.artifact .dropdown.explore-another-object ul.dropdown-menu.show li a.dropdow
   display: inline-block;
   visibility: visible;
   opacity: 1;
-  padding: 0.1rem 0.75rem;
+  padding: 0.085rem 0.62rem;
   border-radius: 0;
   color: var(--navy-blue);
   background-color: var(--mobile-header-gray);
@@ -1422,24 +1457,24 @@ div.artifact div.arrow-scroll-down .arrow svg {
   margin: 0;
   color: var(--white);
   stroke-width: 1.5px;
-  height: 1.9rem;
-  width: auto;
+  width: 2.75rem;
+  height: auto;
   animation-duration: 2.5s;
   animation-iteration-count: infinite;
   animation-name: pulse;
 }
 @keyframes pulse {
   0% {
-    height: 1.7rem;
-    margin-bottom: 0.2rem;
+    width: 2.4rem;
+    margin-bottom: 0.1rem;
   }
   50% {
-    height: 2.15rem;
+    width: 2.9rem;
     margin-bottom: 0rem;
   }
   100% {
-    height: 1.7rem;
-    margin-bottom: 0.2rem;
+    width: 2.4rem;
+    margin-bottom: 0.1rem;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
@@ -1508,7 +1543,7 @@ div.artifact .mute-button div.on {
   display: none;
 }
 div.artifact .mute-button svg {
-  width: 1.95rem;
+  width: 1.85rem;
   height: auto;
   margin-left: 0.2rem;
 }
@@ -1693,7 +1728,7 @@ div.artifact .unmute-footer .label {
     margin-right: auto;
   }
 }
-@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
+@media only screen and (min-aspect-ratio: 7/8) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
   div.artifact .unmute-footer .label {
     margin-right: 30vw;
   }
@@ -1834,7 +1869,7 @@ div.artifact .about-thoreau .offcanvas-body .about .description p:first-of-type 
 div.artifact .about-thoreau .offcanvas-body .about .description p:last-of-type {
   margin-bottom: 0;
 }
-@media only screen and (min-aspect-ratio: 9/5) and (min-width: 1280px) {
+@media only screen and (min-aspect-ratio: 10/5) and (min-width: 1280px) {
   div.artifact .about-thoreau .offcanvas-body .about {
     display: flex;
     flex-direction: row;
@@ -1932,7 +1967,7 @@ div.artifact .about-thoreau .offcanvas-body .about .description p:last-of-type {
     margin: 0.6rem 0 1.2rem 0;
   }
 }
-@media only screen and (min-aspect-ratio: 9/5) and (min-width: 1280px) {
+@media only screen and (min-aspect-ratio: 10/5) and (min-width: 1280px) {
   div.artifact .about-thoreau .offcanvas-header button.close {
     width: 1.8rem;
     height: 1.8rem;
@@ -2101,7 +2136,7 @@ div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.sta
     justify-content: flex-start;
   }
 }
-@media only screen and (max-aspect-ratio: 3/4) and (min-width: 560px) {
+@media only screen and (max-aspect-ratio: 7/8) and (min-width: 500px) {
   div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.start {
     flex-direction: column;
     justify-content: flex-start;
@@ -2133,12 +2168,20 @@ div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.cur
     max-width: 29vw;
   }
 }
-@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
+@media only screen and (min-aspect-ratio: 7/8) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
   div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.curious {
     top: 60vh;
     left: 15vw;
     width: 75vw;
     max-width: 80vw;
+  }
+}
+@media only screen and (min-aspect-ratio: 10/5) and (min-width: 1280px) {
+  div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.curious {
+    top: 50vh;
+    left: 7vw;
+    width: 27rem;
+    max-width: 27rem;
   }
 }
 div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.his-experiments {
@@ -2168,7 +2211,7 @@ div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.his
     max-width: 45vw;
   }
 }
-@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
+@media only screen and (min-aspect-ratio: 7/8) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
   div.artifact.spyglass .content.spyglass .absolute-content-container.spyglass.his-experiments {
     top: 60vh;
     left: 10vw;
@@ -2336,7 +2379,7 @@ div.artifact.spyglass .background-image-container.spyglass:before {
   width: 110%;
   height: auto;
 }
-@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
+@media only screen and (min-aspect-ratio: 7/8) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
   #spyglass[data-content-scroll="1"] .animation-frame-container.spyglass img,
 #spyglass[data-content-scroll="2"] .animation-frame-container.spyglass img {
     width: 110%;
@@ -2377,7 +2420,7 @@ div.artifact.spyglass .background-image-container.spyglass:before {
   width: 100%;
   height: auto;
 }
-@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
+@media only screen and (min-aspect-ratio: 7/8) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
   #spyglass[data-content-scroll="3"] .animation-frame-container.spyglass {
     padding: 0vw 5vw 45vh 5vw;
   }
@@ -2393,6 +2436,12 @@ div.artifact.spyglass .background-image-container.spyglass:before {
   }
   #spyglass[data-content-scroll="3"] .animation-frame-container.spyglass img {
     width: 100%;
+  }
+}
+@media only screen and (min-aspect-ratio: 10/5) and (min-width: 1280px) {
+  #spyglass[data-content-scroll="3"] .animation-frame-container.spyglass img {
+    height: 100%;
+    width: auto;
   }
 }
 
@@ -2417,11 +2466,18 @@ div.artifact.spyglass .background-image-container.spyglass:before {
   width: 100%;
   height: auto;
 }
-@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
+@media only screen and (min-aspect-ratio: 7/8) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
   #spyglass[data-content-scroll="4"] .animation-frame-container.spyglass,
 #spyglass[data-content-scroll="5"] .animation-frame-container.spyglass {
     padding: 0vw 5vw 45vh 5vw;
   }
+  #spyglass[data-content-scroll="4"] .animation-frame-container.spyglass img,
+#spyglass[data-content-scroll="5"] .animation-frame-container.spyglass img {
+    height: 100%;
+    width: auto;
+  }
+}
+@media only screen and (min-aspect-ratio: 10/5) and (min-width: 1280px) {
   #spyglass[data-content-scroll="4"] .animation-frame-container.spyglass img,
 #spyglass[data-content-scroll="5"] .animation-frame-container.spyglass img {
     height: 100%;
@@ -2466,10 +2522,16 @@ div.artifact.spyglass .background-image-container.spyglass:before {
     width: 100%;
   }
 }
-@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
+@media only screen and (min-aspect-ratio: 7/8) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
   #spyglass[data-content-scroll="6"] .animation-frame-container.spyglass {
     padding: 0vw 5vw 45vh 5vw;
   }
+  #spyglass[data-content-scroll="6"] .animation-frame-container.spyglass img {
+    height: 100%;
+    width: auto;
+  }
+}
+@media only screen and (min-aspect-ratio: 10/5) and (min-width: 1280px) {
   #spyglass[data-content-scroll="6"] .animation-frame-container.spyglass img {
     height: 100%;
     width: auto;
@@ -2508,11 +2570,18 @@ div.artifact.spyglass .background-image-container.spyglass:before {
     width: 100%;
   }
 }
-@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
+@media only screen and (min-aspect-ratio: 7/8) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
   #spyglass[data-content-scroll="7"] .animation-frame-container.spyglass,
 #spyglass[data-content-scroll="8"] .animation-frame-container.spyglass {
     padding: 0vw 5vw 45vh 5vw;
   }
+  #spyglass[data-content-scroll="7"] .animation-frame-container.spyglass img,
+#spyglass[data-content-scroll="8"] .animation-frame-container.spyglass img {
+    height: 100%;
+    width: auto;
+  }
+}
+@media only screen and (min-aspect-ratio: 10/5) and (min-width: 1280px) {
   #spyglass[data-content-scroll="7"] .animation-frame-container.spyglass img,
 #spyglass[data-content-scroll="8"] .animation-frame-container.spyglass img {
     height: 100%;
@@ -2627,7 +2696,7 @@ div.artifact.desk .content.desk .absolute-content-container.desk.start .content 
     justify-content: flex-start;
   }
 }
-@media only screen and (max-aspect-ratio: 3/4) and (min-width: 560px) {
+@media only screen and (max-aspect-ratio: 7/8) and (min-width: 500px) {
   div.artifact.desk .content.desk .absolute-content-container.desk.start {
     flex-direction: column;
     justify-content: flex-start;
@@ -2790,7 +2859,7 @@ div.artifact.desk .animation-frame-container.desk img {
     height: auto;
   }
 }
-@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
+@media only screen and (min-aspect-ratio: 7/8) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
   div.artifact.desk .animation-frame-container.desk {
     top: 12vh;
     height: 80vh;
@@ -2876,6 +2945,12 @@ div.artifact.desk .background-image-container.desk:before {
   opacity: 1;
   visibility: visible;
 }
+@media only screen and (min-aspect-ratio: 10/5) and (min-width: 1280px) {
+  #desk[data-content-scroll="2"] .animation-frame-container.desk img {
+    height: 100%;
+    width: auto;
+  }
+}
 
 #desk[data-content-scroll="3"] .background-image-container.desk:before,
 #desk[data-content-scroll="4"] .background-image-container.desk:before {
@@ -2891,6 +2966,13 @@ div.artifact.desk .background-image-container.desk:before {
 #desk[data-content-scroll="4"] .animation-frame-container.desk {
   opacity: 1;
   visibility: visible;
+}
+@media only screen and (min-aspect-ratio: 10/5) and (min-width: 1280px) {
+  #desk[data-content-scroll="3"] .animation-frame-container.desk img,
+#desk[data-content-scroll="4"] .animation-frame-container.desk img {
+    height: 100%;
+    width: auto;
+  }
 }
 
 #desk[data-content-scroll="3"] .background-image-container.desk:before {
@@ -2914,6 +2996,13 @@ div.artifact.desk .background-image-container.desk:before {
 #desk[data-content-scroll="6"] .animation-frame-container.desk {
   opacity: 1;
   visibility: visible;
+}
+@media only screen and (min-aspect-ratio: 10/5) and (min-width: 1280px) {
+  #desk[data-content-scroll="5"] .animation-frame-container.desk img,
+#desk[data-content-scroll="6"] .animation-frame-container.desk img {
+    height: 100%;
+    width: auto;
+  }
 }
 
 #desk[data-content-scroll="5"] .absolute-content-container.desk.and-once {
@@ -3026,7 +3115,7 @@ div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock
     justify-content: flex-start;
   }
 }
-@media only screen and (max-aspect-ratio: 3/4) and (min-width: 560px) {
+@media only screen and (max-aspect-ratio: 7/8) and (min-width: 500px) {
   div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.start {
     flex-direction: column;
     justify-content: flex-start;
@@ -3053,7 +3142,7 @@ div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock
     max-width: 80vw;
   }
 }
-@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
+@media only screen and (min-aspect-ratio: 7/8) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
   div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.thoreaus-friend {
     top: 50vh;
     left: 10vw;
@@ -3091,7 +3180,7 @@ div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock
     max-width: 80vw;
   }
 }
-@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
+@media only screen and (min-aspect-ratio: 7/8) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
   div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.he-walked {
     top: 50vh;
     left: 10vw;
@@ -3129,7 +3218,7 @@ div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock
     max-width: 80vw;
   }
 }
-@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
+@media only screen and (min-aspect-ratio: 7/8) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
   div.artifact.lock-and-key .content.lock-and-key .absolute-content-container.lock-and-key.he-wrote {
     top: 60vh;
     left: 10vw;
@@ -3239,7 +3328,7 @@ div.artifact.lock-and-key .animation-frame-container.lock-and-key img {
     height: auto;
   }
 }
-@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
+@media only screen and (min-aspect-ratio: 7/8) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
   div.artifact.lock-and-key .animation-frame-container.lock-and-key {
     top: 0vh;
     width: 100vw;
@@ -3248,7 +3337,7 @@ div.artifact.lock-and-key .animation-frame-container.lock-and-key img {
     padding: 0;
   }
 }
-@media only screen and (min-aspect-ratio: 9/5) and (min-width: 1280px) {
+@media only screen and (min-aspect-ratio: 10/5) and (min-width: 1280px) {
   div.artifact.lock-and-key .animation-frame-container.lock-and-key {
     top: 0;
     left: 30vw;
@@ -3417,7 +3506,7 @@ div.artifact.lock-and-key .background-image-container.lock-and-key:before {
     transform: scale(1);
   }
 }
-@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
+@media only screen and (min-aspect-ratio: 7/8) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
   #lock-and-key[data-content-scroll="8"] .animation-frame-container.lock-and-key {
     top: 0vh;
     width: 100vw;
@@ -3431,7 +3520,7 @@ div.artifact.lock-and-key .background-image-container.lock-and-key:before {
     width: auto;
   }
 }
-@media only screen and (min-aspect-ratio: 9/5) and (min-width: 1280px) {
+@media only screen and (min-aspect-ratio: 10/5) and (min-width: 1280px) {
   #lock-and-key[data-content-scroll="8"] .animation-frame-container.lock-and-key {
     top: 0;
     left: 0;
@@ -3501,7 +3590,7 @@ div.artifact.lock-and-key .background-image-container.lock-and-key:before {
     transform: scale(1);
   }
 }
-@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
+@media only screen and (min-aspect-ratio: 7/8) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
   #lock-and-key[data-content-scroll="9"] .animation-frame-container.lock-and-key,
 #lock-and-key[data-content-scroll="10"] .animation-frame-container.lock-and-key {
     top: 0vh;
@@ -3517,7 +3606,7 @@ div.artifact.lock-and-key .background-image-container.lock-and-key:before {
     width: auto;
   }
 }
-@media only screen and (min-aspect-ratio: 9/5) and (min-width: 1280px) {
+@media only screen and (min-aspect-ratio: 10/5) and (min-width: 1280px) {
   #lock-and-key[data-content-scroll="9"] .animation-frame-container.lock-and-key,
 #lock-and-key[data-content-scroll="10"] .animation-frame-container.lock-and-key {
     top: 0;
@@ -3638,13 +3727,13 @@ div.artifact.walking-stick .content.walking-stick .absolute-content-container.wa
   height: 100%;
   width: auto;
 }
-@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
+@media only screen and (min-aspect-ratio: 7/8) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
   div.artifact.walking-stick .content.walking-stick .absolute-content-container.walking-stick.start .image-container img.artifact {
     width: 100%;
     height: auto;
   }
 }
-@media only screen and (max-aspect-ratio: 3/4) and (min-width: 560px) {
+@media only screen and (max-aspect-ratio: 7/8) and (min-width: 500px) {
   div.artifact.walking-stick .content.walking-stick .absolute-content-container.walking-stick.start .image-container img.artifact {
     width: 100%;
     height: auto;
@@ -3656,7 +3745,7 @@ div.artifact.walking-stick .content.walking-stick .absolute-content-container.wa
     justify-content: flex-start;
   }
 }
-@media only screen and (max-aspect-ratio: 3/4) and (min-width: 560px) {
+@media only screen and (max-aspect-ratio: 7/8) and (min-width: 500px) {
   div.artifact.walking-stick .content.walking-stick .absolute-content-container.walking-stick.start {
     flex-direction: column;
     justify-content: flex-start;
@@ -3917,7 +4006,7 @@ div.artifact.flute .content.flute .absolute-content-container.flute.start .conte
     justify-content: flex-start;
   }
 }
-@media only screen and (max-aspect-ratio: 3/4) and (min-width: 560px) {
+@media only screen and (max-aspect-ratio: 7/8) and (min-width: 500px) {
   div.artifact.flute .content.flute .absolute-content-container.flute.start {
     flex-direction: column;
     justify-content: flex-start;
@@ -4186,7 +4275,7 @@ div.artifact.snowshoes .content.snowshoes .absolute-content-container.snowshoes.
     justify-content: flex-start;
   }
 }
-@media only screen and (max-aspect-ratio: 3/4) and (min-width: 560px) {
+@media only screen and (max-aspect-ratio: 7/8) and (min-width: 500px) {
   div.artifact.snowshoes .content.snowshoes .absolute-content-container.snowshoes.start {
     flex-direction: column;
     justify-content: flex-start;
@@ -4441,7 +4530,7 @@ div.artifact.snowshoes .background-image-container.snowshoes:before {
     margin-right: auto;
   }
 }
-@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
+@media only screen and (min-aspect-ratio: 7/8) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
   .unmute-footer .label {
     margin-right: 30vw;
   }
@@ -4582,7 +4671,7 @@ div.artifact.snowshoes .background-image-container.snowshoes:before {
 .about-thoreau .offcanvas-body .about .description p:last-of-type {
   margin-bottom: 0;
 }
-@media only screen and (min-aspect-ratio: 9/5) and (min-width: 1280px) {
+@media only screen and (min-aspect-ratio: 10/5) and (min-width: 1280px) {
   .about-thoreau .offcanvas-body .about {
     display: flex;
     flex-direction: row;
@@ -4680,7 +4769,7 @@ div.artifact.snowshoes .background-image-container.snowshoes:before {
     margin: 0.6rem 0 1.2rem 0;
   }
 }
-@media only screen and (min-aspect-ratio: 9/5) and (min-width: 1280px) {
+@media only screen and (min-aspect-ratio: 10/5) and (min-width: 1280px) {
   .about-thoreau .offcanvas-header button.close {
     width: 1.8rem;
     height: 1.8rem;
@@ -4744,7 +4833,7 @@ div.artifact.snowshoes .background-image-container.snowshoes:before {
   }
 }
 .dropdown.explore-another-object button {
-  padding: 0.35rem 1.5rem 0.33rem 1.5rem;
+  padding: 0.325rem 1.3rem;
   border: none;
   border-radius: 1.25rem;
   background-color: var(--navy-blue);
@@ -4765,7 +4854,7 @@ div.artifact.snowshoes .background-image-container.snowshoes:before {
   display: inline-block;
   margin-left: 0.7rem;
   margin-bottom: -0.2rem;
-  width: 1.5rem;
+  width: 1.4rem;
   height: auto;
   stroke-width: 1.5;
   color: white;
@@ -4777,6 +4866,18 @@ div.artifact.snowshoes .background-image-container.snowshoes:before {
 }
 .dropdown.explore-another-object button::after {
   display: none;
+}
+@media only screen and (min-aspect-ratio: 7/8) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
+  .dropdown.explore-another-object {
+    padding: 0.1rem 0;
+  }
+  .dropdown.explore-another-object button {
+    padding: 0.25rem 1rem;
+  }
+  .dropdown.explore-another-object button svg.toggler-svg {
+    width: 1rem;
+    stroke-width: 1.25;
+  }
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait), (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
   .dropdown.explore-another-object button {
@@ -4822,7 +4923,7 @@ div.artifact.snowshoes .background-image-container.snowshoes:before {
 .dropdown.explore-another-object ul.dropdown-menu {
   z-index: -1;
   top: 1rem;
-  padding-top: 2rem;
+  padding-top: 1.4rem;
   background-color: transparent;
   display: block;
   transform: translateZ(-10px);
@@ -4843,7 +4944,7 @@ div.artifact.snowshoes .background-image-container.snowshoes:before {
   width: 100%;
   opacity: 1;
   transition: opacity var(--explore-menu-timing), visibility var(--explore-menu-timing);
-  padding-top: 1.75em;
+  padding-top: 1.4em;
   border-radius: 0.5rem;
   background-color: var(--mobile-header-gray);
   border: none;
@@ -4867,7 +4968,7 @@ div.artifact.snowshoes .background-image-container.snowshoes:before {
   display: inline-block;
   visibility: visible;
   opacity: 1;
-  padding: 0.1rem 0.75rem;
+  padding: 0.085rem 0.62rem;
   border-radius: 0;
   color: var(--navy-blue);
   background-color: var(--mobile-header-gray);
@@ -5033,7 +5134,6 @@ body.index {
   margin: 0;
   padding: 0;
   width: 100vw;
-  overflow: hidden;
   font-family: "Nunito Sans", sans-serif;
   font-size: 16px;
   color: black;
@@ -5043,10 +5143,12 @@ body.index {
   background-position: center;
   background-size: cover;
 }
+
 .content.index {
   margin: 0;
   padding: 0;
   height: 100vh;
+  overflow: visible;
 }
 .content.index .main {
   margin: 0;
@@ -5054,100 +5156,16 @@ body.index {
   display: flex;
   flex-direction: column;
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  .content.index .main {
-    height: 90vh;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
-  .content.index .main {
-    height: 100vh;
-  }
-}
 .content.index .main .menu {
   display: none;
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  .content.index .main {
-    height: 90vh;
-  }
-  .content.index .main .menu {
-    z-index: 3;
-    display: none;
-    flex-direction: row;
-    align-items: baseline;
-    justify-content: space-between;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  .content.index .main .menu {
-    display: flex;
-    flex-direction: row;
-    margin: 0;
-    padding: 0;
-    height: 8vh;
-    min-height: 8vh;
-    align-items: center;
-    justify-content: flex-end;
-    background-color: var(--mobile-header-gray);
-    line-height: var(--explore-content-line-height);
-    letter-spacing: var(--explore-content-letter-spacing);
-    font-size: var(--explore-content);
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (max-width: 320px) and (max-height: 570px) and (orientation: portrait) {
-  .content.index .main .menu {
-    display: flex;
-    margin: 0;
-    height: 7.5vh;
-    background-color: var(--mobile-header-gray);
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
-  .content.index .main .menu {
-    margin: 0;
-    padding: 0;
-    height: 8vh;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--mobile-header-gray);
-    line-height: var(--explore-content-line-height);
-    letter-spacing: var(--explore-content-letter-spacing);
-    font-size: var(--explore-content);
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (min-aspect-ratio: 9/5) and (min-width: 1280px) {
-  .content.index .main .menu {
-    display: flex;
-    align-items: center;
-  }
-}
 .content.index .main img.pinetree {
   display: none;
-}
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  .content.index .main img.pinetree {
-    z-index: 10;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -2rem;
-    width: 8.5rem;
-    height: 8.5rem;
-  }
-  .content.index .main img.pinetree.hide {
-    display: none;
-  }
 }
 .content.index .main img.pinetree.noborder {
   margin: 0 1vw 2vh 0.25vw;
   height: 14vh;
   width: auto;
-}
-@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
-  .content.index .main img.pinetree.noborder {
-    height: 12vh;
-  }
 }
 .content.index .main .header {
   display: flex;
@@ -5157,40 +5175,13 @@ body.index {
   justify-content: center;
   line-height: normal;
   width: 90vw;
-  margin: 1vh 2vw;
-  padding: 0 0;
-  height: 24vh;
+  margin: 1vh 2vw 0 2vw;
+  padding: 1rem 0 0 0;
   text-align: center;
-}
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  .content.index .main .header {
-    width: 100%;
-    height: auto;
-    margin: 0vh 2vw 1vh 2vw;
-    flex-direction: column;
-  }
-}
-@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
-  .content.index .main .header {
-    align-self: start;
-    justify-content: center;
-    width: 100vw;
-    margin: 1vh 0vw;
-    padding: 0 0;
-  }
-}
-@media only screen and (max-aspect-ratio: 3/4) and (min-width: 560px) {
-  .content.index .main .header {
-    align-self: start;
-    justify-content: center;
-    width: 100vw;
-    margin: 1vh 0vw;
-    padding: 0 0;
-  }
 }
 .content.index .main .header .title {
   margin: 0vh 0.4vw;
-  padding-bottom: 2vh;
+  padding-bottom: 0;
   font-family: "Libre Caslon Text", serif;
   font-size: var(--main-menu-title);
   font-weight: 700;
@@ -5205,56 +5196,16 @@ body.index {
   font-weight: 600;
   padding-bottom: 0.5vh;
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  .content.index .main .header .title {
-    margin: 1.5vh 0 3vh 0;
-    padding-bottom: 0;
-  }
-  .content.index .main .header .title .world {
-    font-family: "Libre Caslon Text", serif;
-    font-weight: 700;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
-  .content.index .main .header .title {
-    margin: 4vh 0 4vh 0;
-  }
-  .content.index .main .header .title .world {
-    font-family: "Libre Caslon Text", serif;
-    font-weight: 700;
-  }
-}
 .content.index .main .header .separator {
-  width: 2.25vw;
+  width: 1.5rem;
   height: 50%;
-  margin-left: 0.75vw;
-  margin-bottom: 0vh;
+  margin-left: 0.25rem;
+  margin-bottom: 0;
   color: var(--navy-blue);
   border-left: 1px solid;
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  .content.index .main .header .separator {
-    width: 35%;
-    height: 1vh;
-    color: var(--medium-gray);
-    border-left: none;
-    border-top: 1px solid;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
-  .content.index .main .header .separator {
-    margin-left: 0.5vw;
-    width: 1.5vw;
-    height: 50%;
-  }
-}
 .content.index .main .header img.pinetree.noborder {
   display: block;
-}
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  .content.index .main .header img.pinetree.noborder {
-    display: none;
-  }
 }
 .content.index .main .header .description {
   width: 28rem;
@@ -5267,43 +5218,6 @@ body.index {
 .content.index .main .header .description .heading {
   font-weight: 600;
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  .content.index .main .header .description .heading {
-    font-weight: 300;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  .content.index .main .header .description {
-    width: 26rem;
-    margin: 2vh 0;
-    letter-spacing: var(--main-description-letter-spacing);
-    text-align: center;
-  }
-  .content.index .main .header .description br {
-    display: none;
-  }
-  .content.index .main .header .description div {
-    display: contents;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
-  .content.index .main .header .description {
-    width: 26rem;
-  }
-}
-@media only screen and (max-device-width: 570px) and (orientation: landscape) {
-  .content.index .main .header .description {
-    width: 100%;
-  }
-}
-@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
-  .content.index .main .header .description {
-    width: 36vw;
-  }
-  .content.index .main .header .description br {
-    display: none;
-  }
-}
 .content.index .main .gallery {
   position: relative;
   display: flex;
@@ -5312,13 +5226,8 @@ body.index {
   justify-content: space-between;
   pointer-events: all;
   margin: 0;
-  width: 95vw;
-  height: 63vh;
-}
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  .content.index .main .gallery {
-    width: 100vw;
-  }
+  width: 100vw;
+  height: 72vh;
 }
 .content.index .main .gallery .image-container {
   margin: auto;
@@ -5328,8 +5237,8 @@ body.index {
   bottom: 0;
   right: 0;
   overflow: hidden;
-  height: 74vh;
-  width: 70vw;
+  height: 100%;
+  width: 72vw;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -5342,22 +5251,11 @@ body.index {
   background-size: contain;
   justify-content: space-around;
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  .content.index .main .gallery .image-container {
-    height: 45vh;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
-  .content.index .main .gallery .image-container {
-    height: 100%;
-  }
-}
 .content.index .main .gallery .image-container img {
   position: absolute;
   margin: 0;
-  height: inherit;
-  width: 70vw;
-  max-width: 70rem;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   visibility: hidden;
   opacity: 0;
@@ -5396,29 +5294,6 @@ body.index {
 .content.index .main .gallery .image-container img.selected.right {
   left: var(--gallery-carousel-shift);
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  .content.index .main .gallery .image-container img.selected {
-    padding: 1rem 1rem;
-  }
-  .content.index .main .gallery .image-container img.selected.desk {
-    padding: 2rem 1rem;
-  }
-  .content.index .main .gallery .image-container img.selected.snowshoes {
-    padding: 1rem 0rem;
-  }
-  .content.index .main .gallery .image-container img.selected.lock-and-key {
-    padding: 0rem 4rem;
-  }
-  .content.index .main .gallery .image-container img.selected.walking-stick {
-    padding: 4rem 2rem;
-  }
-  .content.index .main .gallery .image-container img.selected.spyglass {
-    padding: 0rem 0rem;
-  }
-  .content.index .main .gallery .image-container img.selected.flute {
-    padding: 0rem 1rem;
-  }
-}
 .content.index .main .gallery .select {
   margin: auto;
   position: absolute;
@@ -5452,54 +5327,283 @@ body.index {
   stroke-width: 0.08rem;
   transform: rotate(0.25turn);
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  .content.index .main .gallery .select {
-    justify-content: flex-start;
-  }
-  .content.index .main .gallery .select .circle {
-    width: 14vw;
-    height: 14vw;
-    margin-left: -7vw;
-  }
-  .content.index .main .gallery .select .circle svg {
-    width: 1.6rem;
-    margin: 0 0 0 1.7rem;
-    stroke-width: 0.15rem;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
-  .content.index .main .gallery .select {
-    justify-content: center;
-  }
-}
-@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
-  .content.index .main .gallery .select .circle {
-    width: 10vw;
-    height: 10vw;
-  }
-}
-@media only screen and (max-aspect-ratio: 3/4) and (min-width: 560px) {
-  .content.index .main .gallery .select .circle {
-    width: 10vw;
-    height: 10vw;
-  }
-}
 .content.index .main .gallery .select.right {
   left: auto;
   right: 0;
   margin: auto;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 .content.index .main .gallery .select.right .circle svg {
   transform: rotate(-0.25turn);
   margin: 0 -0.2rem 0 0;
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  .content.index .main {
+    height: 90vh;
+  }
+  .content.index .main .menu {
+    z-index: 3;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    height: 8vh;
+    min-height: 8vh;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: var(--mobile-header-gray);
+    line-height: var(--explore-content-line-height);
+    letter-spacing: var(--explore-content-letter-spacing);
+    font-size: var(--explore-content);
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (max-width: 320px) and (max-height: 570px) and (orientation: portrait) {
+  .content.index .main .menu {
+    display: flex;
+    margin: 0;
+    height: 7.5vh;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  .content.index .main img.pinetree {
+    z-index: 10;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -2rem;
+    width: 8.5rem;
+    height: 8.5rem;
+  }
+  .content.index .main img.pinetree.hide {
+    display: none;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  .content.index .main .header {
+    width: 100%;
+    height: auto;
+    margin: 0vh 2vw 1vh 2vw;
+    flex-direction: column;
+  }
+  .content.index .main .header .title {
+    margin: 1.5vh 0 3vh 0;
+    padding-bottom: 0;
+  }
+  .content.index .main .header .title .world {
+    font-family: "Libre Caslon Text", serif;
+    font-weight: 700;
+  }
+  .content.index .main .header .separator {
+    width: 35%;
+    height: 1vh;
+    color: var(--medium-gray);
+    border-left: none;
+    border-top: 1px solid;
+  }
+  .content.index .main .header img.pinetree.noborder {
+    display: none;
+  }
+  .content.index .main .header .description {
+    width: 26rem;
+    margin: 2vh 0;
+    letter-spacing: var(--main-description-letter-spacing);
+    text-align: center;
+  }
+  .content.index .main .header .description .heading {
+    font-weight: 300;
+  }
+  .content.index .main .header .description br {
+    display: none;
+  }
+  .content.index .main .header .description div {
+    display: contents;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  .content.index .main .gallery {
+    width: 100vw;
+  }
+  .content.index .main .gallery .image-container {
+    height: 45vh;
+  }
+  .content.index .main .gallery .image-container img.selected {
+    padding: 1rem 1rem;
+  }
+  .content.index .main .gallery .image-container img.selected.desk {
+    padding: 2rem 1rem;
+  }
+  .content.index .main .gallery .image-container img.selected.snowshoes {
+    padding: 1rem 0rem;
+  }
+  .content.index .main .gallery .image-container img.selected.lock-and-key {
+    padding: 0rem 4rem;
+  }
+  .content.index .main .gallery .image-container img.selected.walking-stick {
+    padding: 4rem 2rem;
+  }
+  .content.index .main .gallery .image-container img.selected.spyglass {
+    padding: 0rem 0rem;
+  }
+  .content.index .main .gallery .image-container img.selected.flute {
+    padding: 0rem 1rem;
+  }
+  .content.index .main .gallery .select {
+    justify-content: flex-start;
+  }
+  .content.index .main .gallery .select .circle {
+    width: 16vw;
+    height: 16vw;
+    margin-left: -8vw;
+  }
+  .content.index .main .gallery .select .circle svg {
+    width: 1.6rem;
+    margin: 0 0 0 1.7rem;
+    stroke-width: 0.15rem;
+  }
+  .content.index .main .gallery .select.right {
+    justify-content: flex-end;
+  }
   .content.index .main .gallery .select.right .circle {
-    margin-right: -7vw;
+    margin-right: -8vw;
   }
   .content.index .main .gallery .select.right .circle svg {
     margin: 0 1.7rem 0 0;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
+  .content.index .main {
+    height: 100vh;
+  }
+  .content.index .main .header .title {
+    margin: 4vh 0 4vh 0;
+  }
+  .content.index .main .header .title .world {
+    font-family: "Libre Caslon Text", serif;
+    font-weight: 700;
+  }
+  .content.index .main .header .separator {
+    margin-left: 0.5vw;
+    width: 1.5vw;
+    height: 50%;
+  }
+  .content.index .main .header .description {
+    width: 26rem;
+  }
+  .content.index .main .gallery .image-container {
+    height: 100%;
+  }
+  .content.index .main .gallery .select {
+    justify-content: center;
+  }
+  .content.index .main .gallery .select .circle {
+    width: 16vh;
+    height: 16vh;
+  }
+}
+@media only screen and (min-aspect-ratio: 7/8) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
+  .content.index .main img.pinetree.noborder {
+    height: 9vw;
+  }
+  .content.index .main .header {
+    width: 100vw;
+  }
+  .content.index .main .header .separator {
+    width: 1.5vw;
+    height: 50%;
+    margin-left: 0;
+  }
+  .content.index .main .header .description {
+    width: 32vw;
+    min-width: 18rem;
+  }
+  .content.index .main .gallery .select {
+    min-width: 14%;
+  }
+  .content.index .main .gallery .select .circle {
+    width: 11.5vh;
+    height: 11.5vh;
+  }
+  .content.index .main .gallery .select .circle svg {
+    width: 5vh;
+    stroke-width: 0.175vh;
+  }
+}
+@media only screen and (max-aspect-ratio: 7/8) and (min-width: 500px) {
+  .content.index .main img.pinetree {
+    z-index: 10;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1vh;
+    width: 10vh;
+    height: 10vh;
+  }
+  .content.index .main img.pinetree.hide {
+    display: none;
+  }
+  .content.index .main .header {
+    width: 100%;
+    height: auto;
+    margin: 0 2vw;
+    flex-direction: column;
+  }
+  .content.index .main .header .title {
+    margin: 1.5vh 0 2vh 0;
+    padding-bottom: 0;
+  }
+  .content.index .main .header .title .world {
+    font-family: "Libre Caslon Text", serif;
+    font-weight: 700;
+  }
+  .content.index .main .header .separator {
+    width: 35%;
+    height: 1vh;
+    color: var(--medium-gray);
+    border-left: none;
+    border-top: 1px solid;
+  }
+  .content.index .main .header img.pinetree.noborder {
+    display: none;
+  }
+  .content.index .main .header .description {
+    width: 24rem;
+    margin: 1vh 0 1vh 0;
+    letter-spacing: var(--main-description-letter-spacing);
+    text-align: center;
+  }
+  .content.index .main .header .description .heading {
+    font-weight: 300;
+  }
+  .content.index .main .header .description br {
+    display: none;
+  }
+  .content.index .main .header .description div {
+    display: contents;
+  }
+  .content.index .main .gallery {
+    height: 50vh;
+  }
+  .content.index .main .gallery .select {
+    justify-content: flex-start;
+  }
+  .content.index .main .gallery .select .circle {
+    width: 18vw;
+    height: 18vw;
+    margin-left: -9vw;
+  }
+  .content.index .main .gallery .select .circle svg {
+    width: 5vw;
+    margin: 0 0 0 6vw;
+    stroke-width: 0.175vh;
+  }
+  .content.index .main .gallery .select.right {
+    justify-content: flex-end;
+  }
+  .content.index .main .gallery .select.right .circle {
+    margin-right: -9vw;
+  }
+  .content.index .main .gallery .select.right .circle svg {
+    margin: 0 6vw 0 0;
   }
 }
 .content.index .unmute-footer {
@@ -5546,6 +5650,76 @@ body.index {
   }
 }
 
+#window-inspector {
+  position: fixed;
+  pointer-events: none;
+  z-index: 200;
+  top: 16vh;
+  right: 1vw;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 30px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--black);
+  text-transform: none;
+  border-radius: 6px;
+}
+#window-inspector.changing {
+  display: flex;
+  animation: fade 12s forwards;
+}
+#window-inspector p {
+  margin: 4px 0;
+}
+#window-inspector p.media-query {
+  color: var(--black);
+}
+#window-inspector p.media-query::before {
+  content: "media-query: none";
+}
+@media only screen and (min-aspect-ratio: 3/2) and (max-aspect-ratio: 10/5) and (min-width: 720px) {
+  #window-inspector p.media-query::before {
+    content: "media-query: desktop";
+  }
+}
+@media only screen and (min-aspect-ratio: 7/8) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
+  #window-inspector p.media-query::before {
+    content: "media-query: desktop-square";
+  }
+}
+@media only screen and (max-aspect-ratio: 7/8) and (min-width: 500px) {
+  #window-inspector p.media-query::before {
+    content: "media-query: desktop-portrait";
+  }
+}
+@media only screen and (min-aspect-ratio: 10/5) and (min-width: 1280px) {
+  #window-inspector p.media-query::before {
+    content: "media-query: desktop-landscape";
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  #window-inspector p.media-query::before {
+    content: "media-query: mobile-portrait";
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 915px) and (max-height: 480px) and (orientation: landscape) {
+  #window-inspector p.media-query::before {
+    content: "media-query: mobile-landscape";
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+    background-color: rgba(96, 96, 96, 0.7);
+  }
+  to {
+    opacity: 0;
+    background-color: transparent;
+  }
+}
 div.viewport {
   position: absolute;
   top: 0;
@@ -5585,14 +5759,38 @@ div.viewport {
     }
   }
 }
-@media only screen and (min-aspect-ratio: 9/5) and (min-width: 1280px) {
-  html {
-    font-size: 110%;
+@media only screen and (min-aspect-ratio: 3/2) and (max-aspect-ratio: 10/5) and (min-width: 720px) {
+  @supports (font-size: clamp(10px, 1.2vw, 36px)) {
+    html {
+      font-size: clamp(10px, 1.2vw, 36px);
+    }
   }
 }
-@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
-  html {
-    font-size: 100%;
+@media only screen and (min-aspect-ratio: 10/5) and (min-width: 1280px) {
+  @supports (font-size: clamp(10px, 2.3vh, 36px)) {
+    html {
+      font-size: clamp(var(--minimum-font-size), 2.3vh, var(--maximum-font-size));
+    }
+    html.artifact {
+      font-size: clamp(var(--minimum-font-size), 1.4vh + 8px, var(--maximum-font-size));
+    }
+  }
+}
+@media only screen and (min-aspect-ratio: 7/8) and (max-aspect-ratio: 3/2) and (min-width: 640px) {
+  @supports (font-size: clamp(var(--minimum-font-size), 1.8vw, var(--maximum-font-size))) {
+    html {
+      font-size: clamp(var(--minimum-font-size), 1.8vw, var(--maximum-font-size));
+    }
+    html.artifact {
+      font-size: clamp(var(--minimum-font-size), 0.8vw + 8px, var(--maximum-font-size));
+    }
+  }
+}
+@media only screen and (max-aspect-ratio: 7/8) and (min-width: 500px) {
+  @supports (font-size: clamp(10px, 2vw, 36px)) {
+    html {
+      font-size: clamp(10px, 2vw, 36px);
+    }
   }
 }
 .offcanvas-backdrop {

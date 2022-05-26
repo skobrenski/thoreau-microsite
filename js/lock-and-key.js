@@ -45,8 +45,6 @@ const animationCacheData = [{
 
 app.maxContentScroll = 12;
 
-app.dev = true;
-
 app.domReady(() => {
   startup('lock-and-key', animations);
   if (preFetchNotSupported()) {

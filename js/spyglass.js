@@ -62,8 +62,6 @@ const animationCacheData = [{
 
 app.maxContentScroll = 12;
 
-app.dev = true;
-
 app.domReady(() => {
   startup('spyglass', animations);
   if (preFetchNotSupported()) {

@@ -3,7 +3,9 @@
 
 // eslint-disable-next-line no-unused-vars
 if (window.app === undefined) {
-  window.app = {};
+  window.app = {
+    dev: false
+  };
 }
 
 export const app = window.app;

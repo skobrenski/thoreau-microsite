@@ -7,6 +7,8 @@ import { zoom, setupDragHandling } from "./zoom.js";
 import { generateDropdownUL } from "./menu.js";
 import { pages } from "./pages.js";
 import { addDropdownMenuListeners } from "./dropdown-menu.js";
+import { router } from "./router.js";
+import { dev } from "./dev.js";
 
 app.logger(zoom);
 
@@ -16,6 +18,11 @@ app.firstUserSoundOnRequest = true;
 // startup() called when dom-ready
 //
 export const startup = (id, animations) => {
+  router.checkForDevMode();
+  if (app.dev) {
+    dev.setupWindowSizeListener();
+  }
+
   const container = document.getElementById(id);
   generateDropdownUL(id);
   // generateFooterItems();
